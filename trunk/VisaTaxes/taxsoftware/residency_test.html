@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src = 'residency_test.js' type ="text/javascript"></script>
+</head>
+
+<body>
+<form name="frm_residency_test" method="post" action="#" onsubmit="return printOutput();">
+<b><center>Residency Test Calculator</center></b>
+<br />
+
+Your current Visa Type&nbsp;:&nbsp;&nbsp;&nbsp;<select name="visatype" id="visatype" onchange="selParagraph();">
+                                                	<option value="Student">Student (F,J,Q,M Visas)</option>
+                                                	<option value="Teacher">Teacher or Trainee (J, Q Visas)</option>
+                                                 	<option value="Other">Other Visa </option>
+                                               </select>
+ <br />
+ <br />
+ <!--display only if Student Option is selected -->
+<p id="student" >
+    Have you been a Student in US for more than Five Years in United States? &nbsp;:&nbsp;
+                                                    <select name="more5years" id="more5years">
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No" selected>No</option>
+                                                     </select>
+  <br />
+  <br />
+</p>
+<p id="teacher" style="display:none"> 
+<!-- display only if Teacher or Trainee option is selected -->
+
+Have you been a Teacher or Trainee in US for more than Two Years in United States? &nbsp;:&nbsp;
+												 <select name="more2years" id="more2years">
+                                                	<option value="Yes">Yes</option>
+                                                	<option value="No" selected>No</option>
+                                                 </select>
+<br />
+<br />
+</p>
+<!-- display this section for everyone -->
+
+Are you a US Greencard holder ?  &nbsp;:&nbsp;
+								<select name="greencard" id="greencard">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No" selected>No</option>
+                                 </select>		
+                                 
+<br />
+<br />
+Please enter the Number of Days present in the United States&nbsp;:
+<br />
+<br /> 
+&nbsp;&nbsp;&nbsp;Year 2008 :&nbsp;&nbsp;<input type="text" name="days_current" id="days_current" size="5" maxlength="3" />&nbsp;Days
+<br /> 
+<br /> 
+&nbsp;&nbsp;&nbsp;Year 2007 :&nbsp;&nbsp;<input type="text" name="days_prev" id="days_prev" size="5" maxlength="3" />&nbsp;Days
+<br /> 
+<br /> 
+&nbsp;&nbsp;&nbsp;Year 2006 :&nbsp;&nbsp;<input type="text" name="days_prev1" id="days_prev1" size="5" maxlength="3" />&nbsp;Days
+<br />
+<br />
+If you still have any questions on your Residency, please ask in the Forum or Contact Us.
+<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="btnSub" value="SUBMIT" />
+<br />
+
+<strong><span style="text-decoration: underline">
+    Output:</span></strong><div id = "output"></div>
+
+
+</form>
+
+
+</body>
+</html>
