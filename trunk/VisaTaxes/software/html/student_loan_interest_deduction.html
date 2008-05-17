@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Form 1040NR-EZ - Student Loan Interest Deduction</title>
+<script language="javascript" src="student_loan_interest_deduction.js"/></script>
+</head>
+<form name="frmCalc1" action="#" method="post">
+
+What is your Marital Status? :
+<select name="filingstatus" onchange="window.document.forms[0].line9.value=student_interest(window.document.forms[0].box11098e.value,this.value,window.document.forms[0].line7.value,window.document.forms[0].line8.value,window.document.forms[0].line10.value);">
+	<option value="single" >single</option>
+    <option value="married" >married</option>
+</select>
+<br/><br/>
+
+Line 10: Adjusted Gross Income:
+<input type="text" name="line10" value="0" onchange="window.document.forms[0].line9.value=student_interest(window.document.forms[0].box11098e.value,window.document.forms[0].filingstatus.value,window.document.forms[0].line7.value,window.document.forms[0].line8.value,this.value);" />
+<br /> <br/>
+Student Loan Interest Statement: Box1 of Form 1098e :
+
+<input type="text" name="box11098e" value="0" onchange="window.document.forms[0].line9.value=student_interest(this.value,window.document.forms[0].filingstatus.value,window.document.forms[0].line7.value,window.document.forms[0].line8.value,window.document.forms[0].line10.value);"/>
+<br /> <br />
+Line 7:
+<input type="text" name="line7" value="0" onchange="window.document.forms[0].line9.value=student_interest(window.document.forms[0].box11098e.value,window.document.forms[0].filingstatus.value,this.value,window.document.forms[0].line8.value,window.document.forms[0].line10.value);"/>
+ <br />
+Line 8: Scholarship and Fellowship Grants Excluded :
+<input type="text" name="line8" value="0" onchange="window.document.forms[0].line9.value=student_interest(window.document.forms[0].box11098e.value,window.document.forms[0].filingstatus.value,window.document.forms[0].line7.value,this.value,window.document.forms[0].line10.value);"/>
+<br /><br />
+<b>Output:</b><br /><br />
+Line 9: Student Loan Interest Deduction :
+<input type="text" name="line9" value="0" readonly="readonly" />
+<br />
+<br />
+</form>
+<body>
+</body>
+</html>
