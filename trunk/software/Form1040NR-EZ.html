@@ -4,9 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="Content-Style-Type" content="text/css">
         <meta http-equiv="Content-Script-Type" content="text/javascript">
-
+		
         <title>Form 1040NR-EZ Non Resident Online Tax Software - International Student F1, J1 Taxes</title>
-
 <!-- Tax Logic Scripts Section -->
 
 <script src="scripts/tax_logic/residency_test.js" type="text/javascript"></script>
@@ -47,9 +46,10 @@
 		
 <!--Jquery Multitabs Scripts Section -->
       		
-<script src="scripts/jquery-1.1.3.1.pack.js" type="text/javascript"></script>
-<script src="scripts/jquery.history_remote.pack.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/jquery.tabs.css" type="text/css" media="print, projection, screen">
+  	
 <script src="scripts/jquery.tabs.pack.js" type="text/javascript"></script>
+
 <script type="text/javascript">
             
 					$(function() {
@@ -78,22 +78,18 @@
 			
 			
         </script>
- 
-       <!--CSS -->
-
-        <link rel="stylesheet" href="css/jquery.tabs.css" type="text/css" media="print, projection, screen">
-		
-        
-    </head>
-    <body onload="reInitialize();">		
 	
-		<!-- Here are the containers-->
+</head>
+
+<body  onload="reInitialize();">
+
+<!-- Here are the containers-->
         <div id="container-1">
             <ul>
                 <li><a href="#Form1040NR-EZ_Residency_Test"><span>Residency Test</span></a></li>
                 <li><a href="#Form1040NR-EZ_Personal"><span>Personal</span></a></li>
 				<li><a href="#Form1040NR-EZ_Immigration"><span>Immigration</span></a></li>
-				<li><a href="#Form1040NR-EZ_Forms"><span>Forms</span></a></li>
+				<li><a href="#Form1040NR-EZ_Forms" onClick="country_logic();tax_treaty()"><span>Forms</span></a></li>
 				<li><a href="#Form1040NR-EZ_Review_Submit"><span>Review and Download</span></a></li>
             </ul>
 			<!--Tab 1 Body-->
@@ -182,9 +178,9 @@
 						<tr>
 							<td>
 								<br>
-								First Name :&nbsp;<input type="text" id = "fname" name="fname">
+								First Name :&nbsp;<input type="text" id = "fname" name="fname" onChange="cmb_name();">
 								&nbsp;&nbsp;&nbsp;
-								Middle Name :&nbsp;<input type="text" id = "mname" name="mname">
+								Middle Name :&nbsp;<input type="text" id = "mname" name="mname" onChange="cmb_name();">
 								&nbsp;&nbsp;&nbsp;
 								Last Name :&nbsp;<input type="text" id = "lname" name="lname">
 							</td>
@@ -215,21 +211,21 @@
 						<tr>
 							<td>
 								<br>
-								Street and Apartment / Home Number :&nbsp;<input type="text" id = "us_street" name="us_street">
+								Street and Apartment / Home Number :&nbsp;<input type="text" id = "us_street" name="us_street" onChange="cmb_usaddress1();">
 							</td>
 						</tr>
                          <tr>
 							<td>
 								<br>
-								City :&nbsp;<input type="text" id = "us_city" name="us_city">
+								City :&nbsp;<input type="text" id = "us_city" name="us_city" onChange="cmb_usaddress2();">
 							</td>
 						</tr>
 							<tr>
 							<td>
 								<br>
-								State :&nbsp;<input type="text" id = "us_state" name="us_state">
+								State :&nbsp;<input type="text" id = "us_state" name="us_state" onBlur=="cmb_usaddress2();">
 							&nbsp;&nbsp;&nbsp;
-								Zip :&nbsp;<input type="text" id = "us_zip" name="us_zip">
+								Zip :&nbsp;<input type="text" id = "us_zip" name="us_zip" onChange="cmb_usaddress2();">
 							</td>
 						</tr>
 						
@@ -243,27 +239,27 @@
 						<tr>
 							<td>
 								<br>
-								Street and Apartment / Home Number :&nbsp; <input type="text" id = "foreign_street" name="foreign_street">
+								Street and Apartment / Home Number :&nbsp; <input type="text" id = "foreign_street" name="foreign_street" onChange="cmb_comb_foreignaddress();">
 							</td>
 						</tr>
 						<tr>
 							<td>	
 								<br>
-								City :&nbsp; <input type="text" id = "foreign_city" name="foreign_city">
+								City :&nbsp; <input type="text" id = "foreign_city" name="foreign_city" onChange="cmb_comb_foreignaddress();">
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<br>
-								State :&nbsp;<input type="text" id = "foreign_state" name="foreign_state">
+								State :&nbsp;<input type="text" id = "foreign_state" name="foreign_state" onChange="cmb_comb_foreignaddress();">
 									&nbsp;&nbsp;&nbsp;
-								Zip :&nbsp;<input type="text" id = "foreign_zip" name="foreign_zip">
+								Zip :&nbsp;<input type="text" id = "foreign_zip" name="foreign_zip" onChange="cmb_comb_foreignaddress();">
 							</td>
 						</tr>
 <tr>
 							<td>	
 								<br>
-								Country :&nbsp; <input type="text" id = "foreign_country" name="foreign_country">
+								Country :&nbsp; <input type="text" id = "foreign_country" name="foreign_country" onBlur="cmb_comb_foreignaddress();">
 							</td>
 						</tr>
 						
@@ -341,7 +337,7 @@
 							<td>
 								<br>
 								What is the purpose of your stay in US ?&nbsp;&nbsp;:&nbsp;
-								<select name="purpose_of_visit" id="purpose_of_visit" onchange="showHideUinvInfo();" >
+								<select name="purpose_of_visit" id="purpose_of_visit" onchange="showHideUinvInfo();tax_treaty();" >
 									<option value="student" selected="selected" >Student Full Time (F, J, Q , M Visas )</option>
 									<option value="teacher" >Teacher or Trainee (J, Q Visas)</option>
 									<option value="employment" >Employment (H1-B, TN, O-1 visas)</option>
@@ -370,19 +366,19 @@
 							<tr>
 								<td>
 									<br>
-									Street Address :&nbsp;<input type="text" id = "university_street" name="university_street">
+									Street Address :&nbsp;<input type="text" id = "university_street" name="university_street" onChange="cmb_universityaddress();">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<br>
-									City :&nbsp;<input type="text" id = "university_city" name="university_city">
+									City :&nbsp;<input type="text" id = "university_city" name="university_city" onChange="cmb_universityaddress();">
 								</td>
 							</tr>
 <tr>
 								<td>
 									<br>
-									State :&nbsp;<input type="text" id = "university_state" name="university_state">&nbsp;&nbsp;&nbsp;Zip :&nbsp;<input type="text" id = "university_zip" name="university_zip">
+									State :&nbsp;<input type="text" id = "university_state" name="university_state" onBlur="cmb_universityaddress();">&nbsp;&nbsp;&nbsp;Zip :&nbsp;<input type="text" id = "university_zip" name="university_zip" onChange="cmb_universityaddress();">
 
 									
 								</td>
@@ -391,7 +387,7 @@
 							<tr>
 								<td>
 									<br>
-									Phone :&nbsp;<input type="text" id = "university_phone" name="university_phone">
+									Phone :&nbsp;<input type="text" id = "university_phone" name="university_phone" onChange="cmb_universityaddress();">
 								</td>
 							</tr>
 							<tr>
@@ -408,12 +404,17 @@
 								<br>
 								Explain your purpose of your stay in United States<a href="help.html">Help Me</a>&nbsp; :
 								<br>
-								<textarea id="purpose_stay" name="purpose_stay" cols="50" rows="5">
-								</textarea>
-							</td>
+                                <br>
+							<!--<textarea id="purpose_stay" name="purpose_stay" cols="50" rows="5">
+								</textarea>-->
+							<input type="text" name="purpose_stay1" id="purpose_stay1" maxlength="70" size="70">
+                            <br>
+                            <br>
+                            <input type="text" name="purpose_stay2" id="purpose_stay2" maxlength="70" size="70">
+                            </td>
 						</tr>
 					</table>
-				</form>
+			  </form>
 				<br>
 				<br>
 				<!--Continue and back Buttons-->
@@ -437,7 +438,7 @@
 					
 								
 									<br>
-									Country that issued your passport * :&nbsp;<input type="text" id = "passport_country" name="passport_country"><br>
+									Country that issued your passport * :&nbsp;<input type="text" id ="passport_country" name="passport_country"    ><br>
 							
 
 									<br>
@@ -451,7 +452,7 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
 		<div id="CitizenshipDisp" style="display:none">
 
                           
-									Country of Citizenship * :&nbsp;<input type="text" id = "citizenship_country" name="citizenship_country">
+									Country of Citizenship * :&nbsp;<input type="text" id = "citizenship_country" name="citizenship_country" onBlur="country_logic();">
 							
 </div>	
 
@@ -464,7 +465,7 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
      <br />
      <div id="ResidentDisp" style="display:none">
          Resident country for Tax Treaty Calculation * : &nbsp;
-<input type="text" id = "resident_country" name="resident_country">
+<input type="text" id = "resident_country" name="resident_country" onChange="calcLine6_11();country_logic();tax_treaty();">
 </div>
 <br />
      
@@ -569,7 +570,7 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
      </td>
 
      <td>
-     &nbsp;&nbsp;<input name="visatype_yr_current" id="visatype_yr_current" size = "12" />
+     &nbsp;&nbsp;<input name="visatype_yr_current" id="visatype_yr_current" size = "12" onBlur="cmb_current_visadate();" />
      </td>
 
      <td>
@@ -581,15 +582,24 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
           <br />
      <br />
      Date when your current Visa was issued <a href="#">Help</a>  :
-     <input name="date_visa_issued" id="date_visa_issued" class="date_visa_issued" />
+     <input name="date_visa_issued" id="date_visa_issued" class="date_visa_issued" onChange="cmb_current_visadate();"/>
      <br />
      <br />
      
      Dates you entered and left the country in 2008 <a href="#">Help Me</a>:
      <br />
      <br />
-     <textarea id="entry_dates_text" name="entry_dates_text" cols="70" rows="5"></textarea>
-     
+     <!--<textarea id="entry_dates_text" name="entry_dates_text" cols="70" rows="5"></textarea>-->
+     <input type="text" name="entry_dates_1" id="entry_dates_1" maxlength="70" size="70">
+      <br />
+     <br />
+     <input type="text" name="entry_dates_2" id="entry_dates_2" maxlength="70" size="70">
+      <br />
+     <br />
+     <input type="text" name="entry_dates_3" id="entry_dates_3" maxlength="70" size="70">
+      <br />
+     <br />
+     <input type="text" name="entry_dates_4" id="entry_dates_4" maxlength="70" size="70">
      <br />
      <br />
      
@@ -602,7 +612,7 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
      <br />
      <div id="taxform" style="display:block">
 	     Name of the Tax Forms filed in 2007 : <a href="#">Help Me</a>
-	     <input type="text" name="tax_forms" id="tax_forms" />
+	     <input type="text" name="tax_forms" id="tax_forms" onChange="cmbcomb_taxforms();" />
 	 </div>
 				
 				<br>
@@ -621,257 +631,6 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
             </div>
 			<!--Tab 5 Body-->
 			<div id="Form1040NR-EZ_Forms">
-				<br>
-				
-                <b>Please select your country of Citizenship:</b>&nbsp;&nbsp;&nbsp;
-									<select name="citizencountry" id="citizencountry" onchange="calcLine6_11();">
-                                        <option value="Afghanisthan" selected="selected">Afghanisthan</option>
-                                        <option value="Albania">Albania</option>
-                                        <option value="Algeria">Algeria</option>
-                                        <option value="American Samoa">American Samoa</option>
-                                        <option value="Andorra">Andorra</option>
-                                        <option value="Angola">Angola</option>
-                                        <option value="Anguilla">Anguilla</option>
-                                        <option value="Antartica">Antartica</option>
-                                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                        <option value="Argentina">Argentina</option>
-                                        <option value="Armenia">Armenia</option>
-                                        <option value="Aruba">Aruba</option>
-                                        <option value="Australia">Australia</option>
-                                        <option value="Austria">Austria</option>
-                                        <option value="Azerbaijan">Azerbaijan</option>
-                                        <option value="Bahamas">Bahamas</option>
-                                        <option value="Bahrain">Bahrain</option>
-                                        <option value="Bangladesh">Bangladesh</option>
-                                        <option value="Barbados">Barbados</option>
-                                        <option value="Belarus">Belarus</option>
-                                        <option value="Belgium">Belgium</option>
-                                        <option value="Belize">Belize</option>
-                                        <option value="Benin">Benin</option>
-                                        <option value="Bermuda">Bermuda</option>
-                                        <option value="Bhutan">Bhutan</option>
-                                        <option value="Bolivia">Bolivia</option>
-                                        <option value="Bosnis and Herzegovina">Bosnis and Herzegovina</option>
-                                        <option value="Botswana">Botswana</option>
-                                        <option value="Bouvet Island">Bouvet Island</option>
-                                        <option value="Brazil">Brazil</option>
-                                        <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                                        <option value="Brunei">Brunei</option>
-                                        <option value="Bulgeria">Bulgeria</option>
-                                        <option value="Burkina Faso">Burkina Faso</option>
-                                        <option value="Cambodia">Cambodia</option>
-                                        <option value="Cameroon">Cameroon</option>
-                                        <option value="Canada">Canada</option>
-                                        <option value="Cape Verde">Cape Verde</option>
-                                        <option value="Cayman Islands">Cayman Islands</option>
-                                        <option value="Central African Republic">Central African Republic</option>
-                                        <option value="Chad">Chad</option>
-                                        <option value="Chile">Chile</option>
-                                        <option value="China">China</option>
-                                        <option value="Christmas Island">Christmas Island</option>
-                                        <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                                        <option value="Colombia">Colombia</option>
-                                        <option value="Comoros">Comoros</option>
-                                        <option value="Congo">Congo</option>
-                                        <option value="Congo (DRC)">Congo (DRC)</option>
-                                        <option value="Cook Islands">Cook Islands</option>
-                                        <option value="Costa Rica">Costa Rica</option>
-                                        <option value="Cote d'lvoire">Cote d'lvoire</option>
-                                        <option value="Croatia (Hrvatska)">Croatia (Hrvatska)</option>
-                                        <option value="Cuba">Cuba</option>
-                                        <option value="Cyprus">Cyprus</option>
-                                        <option value="Czeck Republic">Czeck Republic</option>
-                                        <option value="Denmark">Denmark</option>
-                                        <option value="Dijibouti">Dijibouti</option>
-                                        <option value="Dominic Republic">Dominic Republic</option>
-                                        <option value="Dominica">Dominica</option>
-                                        <option value="East Trimor">East Trimor</option>
-                                        <option value="Ecuador">Ecuador</option>
-                                        <option value="Egypt">Egypt</option>
-                                        <option value="El Salvador">El Salvador</option>
-                                        <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                        <option value="Eritrea">Eritrea</option>
-                                        <option value="Estonia">Estonia</option>
-                                        <option value="Ethiopia">Ethiopia</option>
-                                        <option value="Falkland Islands (Islas Malvinas)">Falkland Islands (Islas Malvinas)</option>
-                                        <option value="Faroe Islands">Faroe Islands</option>
-                                        <option value="Fiji Islands">Fiji Islands</option>
-                                        <option value="Finland">Finland</option>
-                                        <option value="France">France</option>
-                                        <option value="French Guinea">French Guinea</option>
-                                        <option value="French Polynesia">French Polynesia</option>
-                                        <option value="French Southern and Antarctic Lands">French Southern and Antarctic Lands</option>
-                                        <option value="Gabon">Gabon</option>
-                                        <option value="Gambia">Gambia</option>
-                                        <option value="Georgia">Georgia</option>
-                                        <option value="Germany">Germany</option>
-                                        <option value="Ghana">Ghana</option>
-                                        <option value="Gibraltar">Gibraltar</option>
-                                        <option value="Greece">Greece</option>
-                                        <option value="Greenland">Greenland</option>
-                                        <option value="Grenada">Grenada</option>
-                                        <option value="Guadeloupe">Guadeloupe</option>
-                                        <option value="Guam">Guam</option>
-                                        <option value="Guatemala">Guatemala</option>
-                                        <option value="Guinea">Guinea</option>
-                                        <option value="Guinea-Bissau">Guinea-Bissau</option>
-                                   		<option value="Guyana">Guyana</option>
-                                        <option value="Haiti">Haiti</option>
-                                        <option value="Heart Island and McDonald Islands">Heart Island and McDonald Islands</option>
-                                        <option value="Honduras">Honduras</option>
-                                        <option value="Hong Kong SAR">Hong Kong SAR</option>
-                                        <option value="Hungary">Hungary</option>
-                                        <option value="Iceland">Iceland</option>
-                                        <option value="India">India</option>
-                                        <option value="Indonesia">Indonesia</option>
-                                        <option value="Iran">Iran</option>
-                                        <option value="Iraq">Iraq</option>
-                                        <option value="Ireland">Ireland</option>
-                                        <option value="Israel">Israel</option>
-                                        <option value="Italy">Italy</option>
-                                        <option value="Jamaica">Jamaica</option>
-                                        <option value="Japan">Japan</option>
-                                        <option value="Jordan">Jordan</option>
-                                        <option value="Kazakhstan">Kazakhstan</option>
-                                        <option value="Kenya">Kenya</option>
-                                        <option value="Korea">Korea</option>
-                                        <option value="Kribati">Kribati</option>
-                                        <option value="Krygyzstan">Krygyzstan</option>
-                                        <option value="Kuwait">Kuwait</option>
-                                        <option value="Laos">Laos</option>
-                                        <option value="Latvia">Latvia</option>
-                                        <option value="Lebanon">Lebanon</option>
-                                        <option value="Lesotho">Lesotho</option>
-                                        <option value="Liberia">Liberia</option>
-                                        <option value="Libya">Libya</option>
-                                        <option value="Liechtenstein">Liechtenstein</option>
-                                        <option value="Lithunia">Lithunia</option>
-                                        <option value="Luxemborg">Luxemborg</option>
-                                        <option value="Macao SAR">Macao SAR</option>
-                                        <option value="Macedonia">Macedonia</option>
-                                        <option value="Madagascar">Madagascar</option>
-                                        <option value="Malawi">Malawi</option>
-                                        <option value="Malaysia">Malaysia</option>
-                                        <option value="Maldives">Maldives</option>
-                                        <option value="Mali">Mali</option>
-                                        <option value="Malta">Malta</option>
-                                        <option value="Marshall Islands">Marshall Islands</option>
-                                        <option value="Martinique">Martinique</option>
-                                        <option value="Mauritania">Mauritania</option>
-                                        <option value="Mauritius">Mauritius</option>
-                                        <option value="Mayotte">Mayotte</option>
-                                        <option value="Mexico">Mexico</option>
-                                        <option value="Micronesia">Micronesia</option>
-                                        <option value="Moldova">Moldova</option>
-                                        <option value="Monaco">Monaco</option>
-                                        <option value="Mongolia">Mongolia</option>
-                                        <option value="Montserrat">Montserrat</option>
-                                        <option value="Morocco">Morocco</option>
-                                        <option value="Mozambique">Mozambique</option>
-                                        <option value="Myanmar">Myanmar</option>
-                                        <option value="Namibia">Namibia</option>
-                                        <option value="Nauru">Nauru</option>
-                                        <option value="Nepal">Nepal</option>
-                                        <option value="Netharlands">Netharlands</option>
-                                        <option value="Netharlands Antilles">Netharlands Antilles</option>
-                                        <option value="New Caledonia">New Caledonia</option>
-                                        <option value="New Zealand">New Zealand</option>
-                                        <option value="Nicaragua">Nicaragua</option>
-                                        <option value="Niger">Niger</option>
-                                        <option value="Nigeria">Nigeria</option>
-                                        <option value="Niue">Niue</option>
-                                        <option value="Norfolk Island">Norfolk Island</option>
-                                        <option value="North Korea">North Korea</option>
-                                        <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                                        <option value="Norway">Norway</option>
-                                        <option value="Oman">Oman</option>
-                                        <option value="Pakisthan">Pakisthan</option>
-                                        <option value="Palau">Palau</option>
-                                        <option value="Panama">Panama</option>
-                                        <option value="Papua New Guinea">Papua New Guinea</option>
-                                        <option value="Paraguay">Paraguay</option>
-                                        <option value="Peru">Peru</option>
-                                        <option value="Phillipines">Phillipines</option>
-                                        <option value="Pitcairn Islands">Pitcairn Islands</option>
-                                        <option value="Poland">Poland</option>
-                                        <option value="Portugal">Portugal</option>
-                                        <option value="Puerto Rico">Puerto Rico</option>
-                                        <option value="Qatar">Qatar</option>
-                                        <option value="Reunion">Reunion</option>
-                                        <option value="Romania">Romania</option>
-                                        <option value="Russia">Russia</option>
-                                        <option value="Rwanda">Rwanda</option>
-                                        <option value="Samoa">Samoa</option>
-                                        <option value="San Marino">San Marino</option>
-                                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                        <option value="Saudi Arabia">Saudi Arabia</option>
-                                        <option value="Senegak and Montenegro">Senegak and Montenegro</option>
-                                        <option value="Senegal">Senegal</option>
-                                        <option value="Seychelles">Seychelles</option>
-                                        <option value="Sierra Leone">Sierra Leone</option>
-                                        <option value="Singapore">Singapore</option>
-                                        <option value="Slovakia">Slovakia</option>
-                                        <option value="Slovenia">Slovenia</option>
-                                        <option value="Solomon Islands">Solomon Islands</option>
-                                        <option value="Somalia">Somalia</option>
-                                        <option value="South Africa">South Africa</option>
-                                        <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
-                                        <option value="Spain">Spain</option>
-                                        <option value="Sri Lanka">Sri Lanka</option>
-                                        <option value="St. Helena">St. Helena</option>
-                                        <option value="St. Kitts and Nevis">St. Kitts and Nevis</option>
-                                        <option value="St. Pierre and Miquelon">St. Pierre and Miquelon</option>
-                                        <option value="St. Vincent and the Grenadines">St. Vincent and the Grenadines</option>
-                                        <option value="St.Lucia">St.Lucia</option>
-                                        <option value="Sudan">Sudan</option>
-                                        <option value="Suriname">Suriname</option>
-                                        <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                                        <option value="Swaziland">Swaziland</option>
-                                        <option value="Sweden">Sweden</option>
-                                        <option value="Switzerland">Switzerland</option>
-                                        <option value="Syria">Syria</option>
-                                        <option value="Taiwan">Taiwan</option>
-                                        <option value="Tajikistan">Tajikistan</option>
-                                        <option value="Tanzania">Tanzania</option>
-                                        <option value="Thailand">Thailand</option>
-                                        <option value="Togo">Togo</option>
-                                        <option value="Tokelau">Tokelau</option>
-                                        <option value="Tonga">Tonga</option>
-                                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                                        <option value="Tunisia">Tunisia</option>
-                                        <option value="Turkey">Turkey</option>
-                                        <option value="Turkmenistan">Turkmenistan</option>
-                                        <option value="Turkos and Calcos Islands">Turkos and Calcos Islands</option>
-                                        <option value="Tuvalu">Tuvalu</option>
-                                        <option value="Uganda">Uganda</option>
-                                        <option value="Ukraine">Ukraine</option>
-                                        <option value="United Arab Emirates">United Arab Emirates</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="United States">United States</option>
-                                        <option value="Unites States Minor Outlying Islands">Unites States Minor Outlying Islands</option>  
-                                        <option value="Uruguay">Uruguay</option>
-                                        <option value="Uzbekistan">Uzbekistan</option>
-                                        <option value="Vanuatu">Vanuatu</option>
-                                        <option value="Vatican City">Vatican City</option>
-                                        <option value="Venezuala">Venezuala</option>
-                                        <option value="Virgin Islands">Virgin Islands</option>
-                                        <option value="Virgin Islands (British)">Virgin Islands (British)</option>
-                                        <option value="Wallis and Futuna">Wallis and Futuna</option>
-                                        <option value="Yemen">Yemen</option>
-                                        <option value="Zambia">Zambia</option>
-                                        <option value="Zimbabwe">Zimbabwe</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-									<br><br>
-				<b>Your current Type of Visa:</b>&nbsp;&nbsp;:&nbsp;
-										<select name="visatype_treaty" id="visatype_treaty" onchange="tax_treaty();">
-                                              <option value="Student" selected="selected">Student (F,J,Q,M Visas)</option>
-                                              <option value="Teacher">Teacher or Trainee (J, Q Visas)</option>
-                                              <option value="Other">Other Visa Types</option>
-                                         </select>
-										 
-					
-				
 				<br>
 				<br>
 				<hr>
@@ -993,7 +752,7 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
 							Passport Country :
 						</td>
 						<td>
-							<input type ="text" id = "passport_country" name="passport_country"  readonly>
+							<input type ="text" id = "passportcountry_value" name="passportcountry_value"  readonly>
 						</td>
 					</tr>
      <tr>
@@ -1009,7 +768,7 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
 							Resident Country for Tax Treaty Purposes :
 						</td>
 						<td>
-							<input type ="text" id = "resident_country" name="resident_country"  readonly>
+							<input type ="text" id = "residentcountry_value" name="residentcountry_value"  readonly>
 						</td>
 					</tr>
 					<tr>
@@ -1196,17 +955,16 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
 					</tr>
 					<tr>
 						<td>
-							Line J: Tax Treaty Exemption Amount and Article:
+                        	<div id="labellinej"></div>
+							
 						</td>
 						<td>
-							<div id="linej">
-							</div>
+							<div id="linej"></div>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							State and Local Income Taxes =
-						</td>
+							State and Local Income Taxes </td>
 						<td>
 							<input type ="text" id="state_local_taxes" name="state_local_taxes" value = "0" readonly>
 						</td>
@@ -1214,7 +972,7 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
 				</table>
 				<!-- Call tax_treaty to update linej & line6 & line3-->
 				<script language="javascript">
-						tax_treaty();
+					tax_treaty();
 				</script>
 				<br>
 				<br>
@@ -1260,6 +1018,8 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
 				 </tr>
                 </table><br><br>
 				<table width="100%">
+                	<tr><td height="64" align="left">&nbsp;&nbsp;
+               	  <input type="checkbox" name="chkAccept" id="chkAccept">&nbsp;I accept the Terms and Conditions </td></tr>
 					<tr>
 						<td align="left">
 							<a href="#Form1040NR-EZ_
@@ -1272,6 +1032,5 @@ Country of Citizenship in 2008 :&nbsp;&nbsp;Same as above &nbsp;<input type="rad
 				
             </div>
         </div>
-				
-    </body>
+</body>
 </html>
