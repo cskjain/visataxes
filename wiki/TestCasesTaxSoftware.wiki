@@ -1,8 +1,8 @@
-#labels NonResidentTaxSoftware,Form1040NR-EZ,Form8843
+#labels Instructions,Form1040NR-EZ,1040NR
 = Test Cases for the Tax Software = 
 
 Before you begin testing,
 
 1. Download Instructions for Form 1040NR-EZ from the IRS website
 
-www.irs.gov/pub/irs-pdf/i1040nre.pdf
+http://www.irs.gov/pub/irs-pdf/i1040nre.pdf
