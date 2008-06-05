@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+	</head>
+	<body>
+		<form name="Personal" method="post" action="SetaPDF_Mapping_Prototype.php">
+			<b>Personal Information :</b><br>
+			<table>
+				<tr>
+					<td>
+						<br>
+						First Name :&nbsp;<input type="text" id = "fname" name="fname">
+						&nbsp;&nbsp;&nbsp;
+						Last Name :&nbsp;<input type="text" id = "lname" name="lname">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br>
+						Social Security Number (or) Individual Tax Identification Number (ITIN) <a href="help.html">Help Me</a>&nbsp;:&nbsp;<input type="text" id = "ssn_itin" name="ssn_itin">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br>
+						Tax Value1 :&nbsp;<input type="text" value = "0" id = "value1" name="value1" onchange="calcLine1_2();">
+						&nbsp;&nbsp;&nbsp;
+						Tax Value2 :&nbsp;<input type="text" value = "0" id = "value2" name="value2" onchange="calcLine1_2();">
+						&nbsp;&nbsp;&nbsp;
+						Tax Value3 :&nbsp;<input type="text" value = "0" id = "value3" name="value3" onchange="calcLine1_2();">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<br>
+						<input type="submit" value="Submit" />
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" id ="line1" name ="line1" value = "0">
+			<input type="hidden" id ="line2" name ="line2" value = "0">
+		</form>
+	</body>
+</html>
