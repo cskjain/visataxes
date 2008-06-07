@@ -1,0 +1,1077 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+		
+        <title>Non Resident Tax Software - File Form 1040NR-EZ - Form 8843 - International Student F1, J1 Taxes - US Tax Treaty - Optional Practical Training - Form 843 - SS and Medicare Tax Refund</title>
+
+<!-- Javascript Popup -->
+
+<script language="javascript" type="text/javascript">
+
+function popitup(url) {
+	newwindow=window.open(url,'name','height=400,width=400, scrollbars = yes, resizable = yes');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+</script>
+
+<!-- Tax Logic Scripts Section -->
+<script src="scripts/tax_logic/residency_test.js" type="text/javascript"></script>
+<script src="scripts/tax_logic/form1040nrez_ui.js" type="text/javascript"></script>
+<script src="scripts/tax_logic/form1040nrez.js" type="text/javascript"></script>
+<script src="scripts/tax_logic/tax_treaty.js" type="text/javascript"></script>
+<script src="scripts/tax_logic/itemized_deductions.js" type="text/javascript"></script>
+<script src="scripts/tax_logic/student_loan_interest_deduction.js" type="text/javascript"></script>
+<script src="scripts/tax_logic/tax.js" type="text/javascript"></script>
+<script type="text/javascript" src="scripts/tax_logic/personal_immigration.js"></script>
+
+<!-- Jquery Main Script Section -->
+<script src="scripts/jquery/jquery.js" type="text/javascript"></script>
+
+<!-- Jquery Autocomplete Scripts Section  -->
+<script src="scripts/jquery_autocomplete/jquery.autocomplete.js" type="text/javascript"></script>
+<script src="scripts/jquery_autocomplete/jquery.bgiframe.min.js" type="text/javascript"></script>
+<script src="scripts/jquery_autocomplete/jquery.dimensions.js" type="text/javascript"></script>
+<script src="scripts/jquery_autocomplete/visataxes.autocomplete.js" type="text/javascript"></script>
+<script src="scripts/data/local_data.js" type="text/javascript"></script>
+<link href="css/jquery.autocomplete.css" rel="stylesheet" type="text/css">
+
+
+<!-- Jquery Datepicker Scripts Section -->
+<script type="text/javascript" src="scripts/jquery_datepicker/date.js"></script>
+<script type="text/javascript" src="scripts/jquery_datepicker/jquery.datePicker.js">
+</script>
+<link href="css/jquery.datePicker.css" rel="stylesheet" type="text/css">
+
+		
+<!--Jquery Multitabs Scripts Section -->
+<link rel="stylesheet" href="css/jquery.tabs.css" type="text/css" media="print, projection, screen">
+<script src="scripts/jquery_multitabs/jquery.tabs.pack.js" type="text/javascript"></script>
+<script type="text/javascript">
+            
+					$(function() {
+
+                $('#container-1').tabs();
+                $('#container-2').tabs(2);
+                $('#container-3').tabs({ fxSlide: true });
+                $('#container-4').tabs({ fxFade: true, fxSpeed: 'fast' });
+                $('#container-5').tabs({ fxSlide: true, fxFade: true, fxSpeed: 'normal' });
+                $('#container-6').tabs({
+                    fxFade: true,
+                    fxSpeed: 'fast',
+                    onClick: function() {
+                        alert('onClick');
+                    },
+                    onHide: function() {
+                        alert('onHide');
+                    },
+                    onShow: function() {
+                        alert('onShow');
+                    }
+                });
+
+
+            });
+			
+			
+        </script>
+	
+</head>
+
+<body  onload="reInitialize();">
+
+<!-- Here are the containers / Tabs -->
+
+        <div id="container-1">
+            <ul>
+                <li><a href="#Form1040NR-EZ_Residency_Test"><span>Residency Test</span></a></li>
+                <li><a href="#Form1040NR-EZ_Personal"><span>Personal</span></a></li>
+				<li><a href="#Form1040NR-EZ_Immigration"><span>Immigration</span></a></li>
+				<li><a href="#Form1040NR-EZ_Forms" onClick="country_logic();tax_treaty()"><span>Forms</span></a></li>
+				<li><a href="#Form1040NR-EZ_Review_Submit"><span>Review and Download</span></a></li>
+            </ul>
+			<!--Tab 1 Body-->
+
+
+            <div id="Form1040NR-EZ_Residency_Test">
+				
+				<form name="frm_residency_test" method="post" action="#" onsubmit="return printOutput();">
+</br>
+</br>
+</br>
+					<b>Residency Test Calculator :</b> 
+<a href="help/residency_test.htm" onclick="return popitup('help/residency_test.htm')"
+	>Help Me</a>
+					<br /><br />
+					Your current Visa Type *&nbsp;:&nbsp;&nbsp;&nbsp;
+					<select name="visatype_residency" id="visatype_residency" onchange="selParagraph();">
+                        <option value="Student">Student (F, J, Q, M Visas)</option>
+                        <option value="Teacher">Teacher or Trainee (J, Q Visas)</option>
+                        <option value="Other">Other Visa </option>
+                    </select>
+				 
+				 <br />
+				 <!--display only if Student Option is selected -->
+			<p id="student" >
+				    Have you been a Student in US for more than Five Years in United States? * &nbsp;:&nbsp;
+				                                                    <select name="more5years" id="more5years">
+				                                                        <option value="Yes">Yes</option>
+				                                                        <option value="No" selected>No</option>
+				                                                     </select>
+				  
+				  <br />
+			</p>
+			<p id="teacher" style="display:none"> 
+			<!-- display only if Teacher or Trainee option is selected -->
+
+			Have you been a Teacher or Trainee in US for more than Two Years in United States? * &nbsp;:&nbsp;
+			<select name="more2years" id="more2years">
+			<option value="Yes">Yes</option>
+			<option value="No" selected>No</option>
+			</select>
+			<br />
+			<br />
+			</p>
+			<!-- display this section for everyone -->
+               
+				Are you a US Greencard holder ? *  &nbsp;:&nbsp;
+				<select name="greencard" id="greencard">
+									<option value="Yes">Yes</option>
+									<option value="No" selected>No</option>
+								 </select>		
+								                                 
+				<br />
+				<br />
+				Please enter the Number of Days present in the United States *&nbsp;:
+				<br />
+				<br /> 
+				&nbsp;&nbsp;&nbsp;Year 2008 * :&nbsp;&nbsp;<input type="text" name="days_current" id="days_current" size="5" maxlength="3" />&nbsp;Days
+				<br /> 
+				<br /> 
+				&nbsp;&nbsp;&nbsp;Year 2007 * :&nbsp;&nbsp;<input type="text" name="days_prev" id="days_prev" size="5" maxlength="3" />&nbsp;Days
+				<br /> 
+				<br /> 
+				&nbsp;&nbsp;&nbsp;Year 2006 * :&nbsp;&nbsp;<input type="text" name="days_prev1" id="days_prev1" size="5" maxlength="3" />&nbsp;Days
+				<br />
+				<br />
+				If you still have any questions on your Residency, please post in the <a href="http://forum.visataxes.com" onclick="return popitup('http://forum.visataxes.com')"
+	>Forum</a>
+ or <a href="http://www.visataxes.com/contact_us.php" onclick="return popitup('http://www.visataxes.com/contact_us.php')"
+	>Contact Us</a>.
+				<br />
+				<br />
+				<input type="submit" name="btnSub" value="SUBMIT" />
+				<br /><br />
+
+				<strong>
+				Output :</span></strong><div id = "output"></div><br /><br />
+				<br />
+
+
+<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>
+<br />
+<br />
+				<!--Continue Button-->
+				<table width="100%">
+					<tr>
+						<td align="center">
+							<a href="#Form1040NR-EZ_Personal"><span><img src="imgs/Continue.gif"/></span></a>
+						</td>
+					</tr>
+				</table>
+
+				</form>
+            </div>
+			<!--Tab 2 Body-->
+            <div id="Form1040NR-EZ_Personal">
+                <form name="Personal" action="post">
+					<b>Personal Information :</b><br>
+					<table>
+						<tr>
+							<td>
+								<br>
+								First Name * :&nbsp;<input type="text" id = "fname" name="fname" onChange="cmb_name();">
+								&nbsp;&nbsp;&nbsp;
+								Middle Name :&nbsp;<input type="text" id = "mname" name="mname" onChange="cmb_name();">
+								&nbsp;&nbsp;&nbsp;
+								Last Name * :&nbsp;<input type="text" id = "lname" name="lname">
+							</td>
+						</tr>
+                        <tr>
+							<td>
+								<br>
+                        Please select your Marital Status * : 
+					<select name="filingstatus" id = "filingstatus" onchange="calcLine_1_2_9_11_13_15();" >
+						<option value="single" selected="selected">Single </option>
+						<option value="married" >Married </option>
+					</select> 
+<a href="help/marital_status.htm" onclick="return popitup('help/marital_status.htm')"
+	>Help Me</a>
+						</td>
+                        </tr>
+						<tr>
+							<td>
+								<br>
+								Social Security Number (SSN) (or) Individual Tax Identification Number (ITIN) &nbsp;:&nbsp;<input type="text" id = "ssn_itin" name="ssn_itin"> <a href="help/ssn_itin.htm" onclick="return popitup('help/ssn_itin.htm')"
+	>Help Me</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								<br>
+								<b>Present United States Address :</b>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								Street and Apartment / Home Number * :&nbsp;<input type="text" id = "us_street" name="us_street" onChange="cmb_usaddress1();">
+							</td>
+						</tr>
+                         <tr>
+							<td>
+								<br>
+								City * :&nbsp;<input type="text" id = "us_city" name="us_city" onChange="cmb_usaddress2();">
+							</td>
+						</tr>
+							<tr>
+							<td>
+								<br>
+								State * :&nbsp;<input type="text" id = "us_state" name="us_state" onBlur=="cmb_usaddress2();">
+							&nbsp;&nbsp;&nbsp;
+								Zip * :&nbsp;<input type="text" id = "us_zip" name="us_zip" onChange="cmb_usaddress2();">
+							</td>
+						</tr>
+						
+						
+						<tr>
+							<td>
+								<br><br>
+								<b>Foreign Address :</b>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								Street and Apartment / Home Number * :&nbsp; <input type="text" id = "foreign_street" name="foreign_street" onChange="cmb_comb_foreignaddress();">
+							</td>
+						</tr>
+						<tr>
+							<td>	
+								<br>
+								City * :&nbsp; <input type="text" id = "foreign_city" name="foreign_city" onChange="cmb_comb_foreignaddress();">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								State * :&nbsp;<input type="text" id = "foreign_state" name="foreign_state" onChange="cmb_comb_foreignaddress();">
+									&nbsp;&nbsp;&nbsp;
+								Zip * :&nbsp;<input type="text" id = "foreign_zip" name="foreign_zip" onChange="cmb_comb_foreignaddress();">
+							</td>
+						</tr>
+<tr>
+							<td>	
+								<br>
+								Country * :&nbsp; <input type="text" id = "foreign_country" name="foreign_country" onBlur="cmb_comb_foreignaddress();">
+							</td>
+						</tr>
+						
+												
+						<tr>
+							<td>
+								<br><br>
+								<b>Mode of Payment :</b>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<br>
+								I want my IRS Tax Refund sent to my * :&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="mail_irs_refund" value ="us" checked> US Address&nbsp;&nbsp;:&nbsp;
+								<input type="radio" name="mail_irs_refund" value ="foreign"> Foreign Address
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<br>
+								I would like to pay the amount I owe, or get a refund from IRS by * :&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="mode_payment" value ="direct" checked onclick="showDiv('bank_information');"> Direct Deposit&nbsp;&nbsp;:&nbsp;
+								<input type="radio" name="mode_payment" value ="postal" onclick="hideDiv('bank_information');"> Postal Mail
+							</td>
+						</tr>
+					</table>
+					<div id="bank_information">
+						<table>
+							<tr>
+								<td>
+									<br><br>
+									<b>Bank Information :</b>
+<a href="help/bank_information.htm" onclick="return popitup('help/bank_information.htm')"
+	>Help Me</a>
+							</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									Name of the Bank * :&nbsp;<input type="text" id = "bank_name" name="bank_name">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									Routing Number of your Bank Account * :&nbsp;<input type="text" id = "routing_no" name="routing_no"> 
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									Account Number of your Bank Account * :&nbsp;<input type="text" id = "acc_no" name="acc_no">  
+								</td>
+							</tr>	
+							<tr>
+								<td>
+									<br>
+									Type of Bank Account *:&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="bank_type" value ="saving" checked> Savings&nbsp;&nbsp;:&nbsp;
+									<input type="radio" name="bank_type" value ="checking"> Checking
+								</td>
+							</tr>
+						</table>
+					</div>
+						<table>
+						<tr>
+							<td>
+								<br><br>
+								<b>Purpose of Visit :</b> 
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<br>
+								What is the purpose of your stay in US * ?&nbsp;&nbsp;:&nbsp;
+								<select name="purpose_of_visit" id="purpose_of_visit" onchange="showHideUinvInfo();tax_treaty();" >
+									<option value="student" selected="selected" >Student Full Time (F, J, Q , M Visas )</option>
+									<option value="teacher" >Teacher or Trainee (J, Q Visas)</option>
+									<option value="employment" >Employment (H1-B, TN, O-1 visas)</option>
+									<option value="other" >Other</option>
+								</select> 
+								
+							</td>
+						</tr>
+					</table>
+					
+					
+					<div id="university_information">
+						<table>
+							<tr>
+								<td>
+									<br><br>
+									<b>University Information * :</b>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									Name of your Educational  Institution * :&nbsp;<input type="text" id = "university_name" name="university_name">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									Street Address * :&nbsp;<input type="text" id = "university_street" name="university_street" onChange="cmb_universityaddress();">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									City * :&nbsp;<input type="text" id = "university_city" name="university_city" onChange="cmb_universityaddress();">
+								</td>
+							</tr>
+<tr>
+								<td>
+									<br>
+									State * :&nbsp;<input type="text" id = "university_state" name="university_state" onBlur="cmb_universityaddress();">&nbsp;&nbsp;&nbsp;Zip :&nbsp;<input type="text" id = "university_zip" name="university_zip" onChange="cmb_universityaddress();">
+
+									
+								</td>
+							</tr>
+							
+							<tr>
+								<td>
+									<br>
+									Phone *:&nbsp;<input type="text" id = "university_phone" name="university_phone" onChange="cmb_universityaddress();">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									Name of your Program Director * : &nbsp;<input type="text" id = "director_name" name="director_name"> 
+								</td>
+							</tr>
+						</table>
+					</div>
+					<table>
+						<tr>
+							<td>
+								<br>
+								Explain your purpose of your stay in United States * : <a href="help/purpose_of_stay.htm" onclick="return popitup('help/purpose_of_stay.htm')"
+	>Help Me</a>
+						<br>
+                                <br>
+						
+							<input type="text" name="purpose_stay1" id="purpose_stay1" maxlength="70" size="70">
+                            <br>
+                            
+                            <input type="text" name="purpose_stay2" id="purpose_stay2" maxlength="70" size="70">
+                            </td>
+						</tr>
+					</table>
+			  </form>
+<br />
+<br />
+<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>		
+<br>
+<br>
+				<!--Continue and back Buttons-->
+				<table width="100%">
+					<tr>
+						<td align="right">
+							<a href="#Form1040NR-EZ_Instructions_Mailing_Address"><img src="imgs/Back.gif"></a>
+						</td>
+						<td align="left">
+							<a href="#Form1040NR-EZ_Immigration"><img src="imgs/Continue.gif"></a>
+						</td>
+					</tr>
+				</table>
+            </div>
+			<!--Tab 4 Body-->
+			<div id="Form1040NR-EZ_Immigration">
+             <b>Immigration Information :</b>
+                             
+									<br><br>
+									<b>Country Information :</b><br>
+					
+								
+									<br>
+									Country that issued your passport * :&nbsp;<input type="text" id ="passport_country" name="passport_country"    ><br>
+							
+
+									<br>
+									Enter your passport number * :&nbsp;<input type="text" id = "passport_number" name="passport_number"><br><br>
+					
+
+Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="radio" id="citizen_same" name="citizen_same"  value="yes" checked="checked" onclick="toggleCitizen(0);"/>&nbsp;&nbsp;Different &nbsp;<input type="radio" id="citizen_same" name="citizen_same"  value="No" onclick="toggleCitizen(1);"/>
+<br />
+     <br />
+					
+		<div id="CitizenshipDisp" style="display:none">
+
+                          
+									Country of Citizenship * :&nbsp;<input type="text" id = "citizenship_country" name="citizenship_country" onBlur="country_logic();">
+							
+</div>	
+
+
+
+
+ 
+     Resident country for Tax Treaty Calculation * :  &nbsp;&nbsp; Same as above<input type="radio" id="resident_same" name="resident_same"  value="yes" checked="checked" onclick="toggleResident(0);" />&nbsp;&nbsp;Different<input type="radio" id="resident_same" name="resident_same"  value="No" onclick="toggleResident(1);" /> <a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
+	>Help Me</a>
+  <br />
+     <br />
+     <div id="ResidentDisp" style="display:none">
+         Resident country for Tax Treaty Calculation * : &nbsp;
+<input type="text" id = "resident_country" name="resident_country" onChange="calcLine6_11();country_logic();tax_treaty();">
+</div>
+<br />
+     
+             
+     <b>Type of Visa and Dates Information :</b>
+     <br />
+     <br />
+     Date you first entered the United States * :
+     <input name="date_entry" id="date_entry" class="date_entry" />
+	 <br />
+     <br />
+     Type of Visa when you first entered United States * :
+     <input name="date_entry" id="visa_entry" class="visa_entry" />
+     <br />
+     <br />
+
+     <table>
+     <tr>
+     <td>
+</br>
+     <b>Year</b>
+     </td>
+
+     <td>
+</br>
+     &nbsp;&nbsp;<b>Visa Type</b>
+     </td>
+
+     <td>
+</br>
+     &nbsp;&nbsp;<b>Days</b>
+     </td>
+</tr>
+  <tr>
+     <td>
+     2003
+     </td>
+
+     <td>
+     &nbsp;&nbsp;<input name="visatype_yr6" id="visatype_yr6" size = "12" />
+     </td>
+
+     <td>
+      &nbsp;&nbsp;<input type="text" id="days_yr6" name="days_yr6" size="12">
+     </td>
+</tr>
+  <tr>
+     <td>
+     2004
+     </td>
+
+     <td>
+     &nbsp;&nbsp;<input name="visatype_yr5" id="visatype_yr5" size = "12" />
+     </td>
+
+     <td>
+      &nbsp;&nbsp;<input type="text" id="days_yr5" name="days_yr5" size="12">
+     </td>
+</tr>
+  <tr>
+     <td>
+     2005
+     </td>
+
+     <td>
+     &nbsp;&nbsp;<input name="visatype_yr4" id="visatype_yr4" size = "12" />
+     </td>
+
+     <td>
+      &nbsp;&nbsp;<input type="text" id="days_yr4" name="days_yr4" size="12">
+     </td>
+</tr>
+  <tr>
+     <td>
+     2006
+     </td>
+
+     <td>
+     &nbsp;&nbsp;<input name="visatype_yr3" id="visatype_yr3" size = "12" />
+     </td>
+
+     <td>
+      &nbsp;&nbsp;<input type="text" id="days_yr3" name="days_yr3" size="12">
+     </td>
+</tr>
+  <tr>
+     <td>
+     2007
+     </td>
+
+     <td>
+     &nbsp;&nbsp;<input name="visatype_yr2" id="visatype_yr2" size = "12" />
+     </td>
+
+     <td>
+      &nbsp;&nbsp;<input type="text" id="days_yr2" name="days_yr2" size="12">
+     </td>
+</tr>
+ <tr>
+     <td>
+     2008
+     </td>
+
+     <td>
+     &nbsp;&nbsp;<input name="visatype_yr_current" id="visatype_yr_current" size = "12" onBlur="cmb_current_visadate();" />
+     </td>
+
+     <td>
+      &nbsp;&nbsp;<input type="text" id="days_yr_current" name="days_yr_current" size="12">
+     </td>
+</tr>
+</table>
+    
+          <br />
+     <br />
+     Date when your current Visa was issued * :
+     <input name="date_visa_issued" id="date_visa_issued" class="date_visa_issued" onChange="cmb_current_visadate();"/>
+     <br />
+     <br />
+     
+     Dates you entered and left United States in 2008 * : 
+
+<a href="help/dates_entry_departure.htm" onclick="return popitup('help/dates_entry_departure.htm')"
+	>Help Me</a>
+     <br />
+     <br />
+    
+     <input type="text" name="entry_dates_1" id="entry_dates_1" maxlength="70" size="70">
+      <br />
+     <input type="text" name="entry_dates_2" id="entry_dates_2" maxlength="70" size="70">
+      <br />
+     
+     <input type="text" name="entry_dates_3" id="entry_dates_3" maxlength="70" size="70">
+      <br />
+  
+     <input type="text" name="entry_dates_4" id="entry_dates_4" maxlength="70" size="70">
+     <br />
+     <br />
+     
+     Have you filed a United States tax return in 2007 * ?
+     <select name="prev_year_tax_filing" id="prev_year_tax_filing" onchange="selTaxForm(this.value);">
+         <option value="Yes" selected="selected">Yes</option>
+         <option value="No">No</option>
+     </select>
+     <br />
+     <br />
+     <div id="taxform" style="display:block">
+	     Name of the Tax Forms filed in the Year 2007 * : 
+	     <input type="text" name="tax_forms" id="tax_forms" onChange="cmbcomb_taxforms();" /> 
+<a href="help/prev_year_tax_forms.htm" onclick="return popitup('help/prev_year_tax_forms.htm')">Help Me</a>
+	
+<br />
+<br />
+<br />
+<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>
+
+	 </div>
+				
+				<br>
+				<br>
+				<!--Continue and back Buttons-->
+				<table width="100%">
+					<tr>
+						<td align="right">
+							<a href="#Form1040NR-EZ_Personal"><img src="imgs/Back.gif"></a>
+						</td>
+						<td align="left">
+							<a href="#Form1040NR-EZ_Forms"><img src="imgs/Continue.gif"></a>
+						</td>
+					</tr>
+				</table>
+            </div>
+			<!--Tab 5 Body-->
+			<div id="Form1040NR-EZ_Forms">
+				<br>
+				<br>
+	
+				
+				
+				Did you receive Form W-2? 
+ <a href="help/FormW2_wages_salary.htm" onclick="return popitup('help/FormW2_wages_salary.htm')"
+	>Help Me</a><br>
+
+				<input type="radio" id ="formw-2radio_1" name="formw-2radio" value ="1" onclick="showFormW2();"> Yes<br>
+				<input type="radio" id ="formw-2radio_2" name="formw-2radio" value ="0" checked onclick="hideFormW2();" > No<br> 
+				<input type="hidden" id="formW-2Counter" value="0">
+				<div id="formw-2">
+				</div>
+				<br>
+				<br>
+				
+				
+				
+				Did you receive Form 1042-S?  <a href="help/Form1042S_Scholarship_Fellowship.htm" onclick="return popitup('help/Form1042S_Scholarship_Fellowship.htm')"
+	>Help Me</a> <br> 
+				<input type="radio" id="form1042-Sradio_1" name="form1042-Sradio" value ="1" onclick="showForm1042S();"> Yes<br>
+				<input type="radio" id="form1042-Sradio_2" name="form1042-Sradio" value ="0" checked onclick="hideForm1042S();" > No<br> 
+				<input type="hidden" id="form1042-SCounter" value="0">
+				<div id="form1042-S">
+				</div>
+				<br>
+				<br>
+				
+				
+				
+				Did you receive Form 1099-G?  <a href="help/Form1099G_State_Tax_Refund.htm" onclick="return popitup('help/Form1099G_State_Tax_Refund.htm')"
+	>Help Me</a><br> 
+				<input type="radio" id="form1099-Gradio_1" name="form1099-Gradio" value ="1" onclick="showForm1099G();"> Yes<br>
+				<input type="radio" id="form1099-Gradio_2" name="form1099-Gradio" value ="0" checked onclick="hideForm1099G();" > No<br> 
+				<input type="hidden" id="form1099-GCounter" value="0">
+				<div id="form1099-G">
+				</div>
+				<br>
+				<br>
+			
+				
+				<!--
+				Do you receive Form 4137b? <a href="#">Help Me</a><br> 
+				<input type="radio" id="form4137bradio_1" name="form4137bradio" value ="1" onclick="showDivform4137bDiv();"> Yes<br>
+				<input type="radio" id="form4137bradio_2" name="form4137bradio" value ="0" checked onclick="hideDivform4137b();" > No<br> 
+				<div id="form4137bDiv" style="display: none;">
+					Please enter the amount as shown in Form 4137b :
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					$<input type ="text" id = "form4137b" name="form4137b" onchange="calcLine16()">
+				</div>
+				<br>
+				<br>
+				
+				
+				
+				Do you receive Form 8919? <a href="#">Help Me</a> <br> 
+				<input type="radio" id="form8919radio_1" name="form8919radio" value ="1" onclick="showDivform8919Div();"> Yes<br>
+				<input type="radio" id="form8919radio_2" name="form8919radio" value ="0" checked onclick="hideDivform8919();" > No<br> 
+				<div id="form8919Div" style="display: none;">
+					Please enter the amount as shown in Form 8919:
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					$<input type ="text" id = "form8919" name="form8919" onchange="calcLine16()">
+					
+				</div>
+				<br>
+				<br> 
+				
+				
+				
+				Do you receive Form 1040-C? <a href="#">Help Me</a> <br> 
+				<input type="radio" id="form1040-Cradio_1" name="form1040-Cradio" value ="1" onclick="showDiv('form1040-CDiv');"> Yes<br>
+				<input type="radio" id="form1040-Cradio_2" name="form1040-Cradio" value ="0" checked onclick="hideDivform1040_C();" > No<br> 
+				<div id="form1040-CDiv" style="display: none;">
+					Please enter the amount as shown in Form 1040-C:
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					$<input type ="text" id = "line20_value" name="line20_value" onchange="calcLine20()" >
+					
+				</div>
+				<br>
+				<br> -->
+				
+				
+				
+				Did you receive Form 1098-E ?  <a href="help/Form1098E_Student_Loan_Interest.htm" onclick="return popitup('help/Form1098E_Student_Loan_Interest.htm')"
+	>Help Me</a><br> 				<input type="radio" id="form1098-Eradio_1" name="form1098-Eradio" value ="1" onclick="showDiv('form1098-EDiv');"> Yes<br>
+				<input type="radio" id="form1098-Eradio_2" name="form1098-Eradio" value ="0" checked onclick="hideDivform1098_E();" > No<br> 
+				<div id="form1098-EDiv" style="display: none;">
+					Please enter the amount shown in Box 1 of Form 1098-E :
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					$<input type ="text" id = "1098ebox1" name="1098ebox1"  onchange="calcLine9();">
+					
+				</div>
+				<br>
+				<br>
+				
+				<!--
+				Did you payment Estimated Taxes or apply a portion of your previous tax return ? <a href="#">Help Me</a> <br> 
+				<input type="radio" id="line19Radio_1" name="line19Radio" value ="1" onclick="showDiv('line19Div');"> Yes<br>
+				<input type="radio" id="line19Radio_2" name="line19Radio" value ="0" checked onclick="hideline19Div();" > No<br> 
+				<div id="line19Div" style="display: none;">
+					Please enter the amount:
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					$<input type ="text" id = "line19_value" name="line19_value" onchange="calcLine19()">
+					
+				</div>
+				<br>
+				<br> -->
+			
+				
+				
+				<table>
+                     <tr>
+                         <td>
+                      <b>Tax Logic Testbed: </b>
+                        </td>
+                      </tr>
+ <tr><td></td></tr>
+					<tr>
+						<td>
+                           
+							Filing Status :
+						</td>
+						<td>
+							<input type ="text" id = "filingstatus_value" name="filingstatus" value = "single" readonly>
+						</td>
+					</tr>
+                       <tr>
+						<td>
+							Passport Country :
+						</td>
+						<td>
+							<input type ="text" id = "passportcountry_value" name="passportcountry_value"  readonly>
+						</td>
+					</tr>
+     <tr>
+						<td>
+							Citizen Country :
+						</td>
+						<td>
+							<input type ="text" id = "citizen_country" name="citizen_country" readonly>
+						</td>
+					</tr>
+  <tr>
+						<td>
+							Resident Country for Tax Treaty Purposes :
+						</td>
+						<td>
+							<input type ="text" id = "residentcountry_value" name="residentcountry_value"  readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 3: Wages, Salaries, Tips etc:
+						</td>
+						<td>
+							<input type ="text" id = "line3" name="line3" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 4: Taxable Refunds, Credits, Offsets of State and Local Income Taxes:
+						</td>
+						<td>
+							<input type ="text" id = "line4" name="line4" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 5: Scholarship and Fellowship Grants. Attach Explanation:
+						</td>
+						<td>
+							<input type ="text" id = "line5" name="line5" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 6: Total Wages and Scholarships Exempted by a treaty from Page 2, Item J:
+						</td>
+						<td>
+							<input type ="text" id = "line6" name="line6" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 7:
+						</td>
+						<td>
+							<input type ="text" id = "line7" name="line7" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 8: Scholarship and Fellowship Grants Excluded :
+						</td>
+						<td>
+							<input type ="text" id = "line8" name="line8" value = "0" readonly onchange="calcLine9_10();">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 9: Student Loan Interest Deduction :
+						</td>
+						<td>
+							<input type ="text" id = "line9" name="line9" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 10: Adjusted Gross Income: $Line10 :
+						</td>
+						<td>
+							<input type ="text" id = "line10" name="line10" value = "0" readonly>
+						</td>
+					</tr><tr>
+						<td>
+							Line 11: Itemized Deductions :						</td>
+						<td>
+							<input type ="text" id = "line11" name="line11" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 12:
+						</td>
+						<td>
+							<input type ="text" id = "line12" name="line12" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 13: Exemption Deduction:
+						</td>
+						<td>
+							<input type ="text" id = "line13" name="line13" value = "3400" readonly onchange="calcLine14();">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 14: Taxable Income . Subtract Line 13 from Line 12:
+						</td>
+						<td>
+							<input type ="text" id = "line14" name="line14" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 15 : Tax . Find your Tax from the Tax Table:
+						</td>
+						<td>
+							<input type ="text" id = "line15" name="line15" value = "0" readonly>
+						</td>
+					</tr>
+
+<!--
+					<tr>
+						<td>
+							Line 16: Unreported Social Security and Medicare Taxes from:
+						</td>
+						<td>
+							<input type ="text" id = "line16" name="line16" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Form 4137b:
+						</td>
+						<td>
+							<input type ="text" id = "chkform4137b_value" name="chkform4137b" value = "No" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Form 8919:
+						</td>
+						<td>
+							<input type ="text" id = "chkform8919_value" name="chkform8919" value = "No" readonly>
+						</td>
+					</tr>
+
+-->
+					<tr>
+						<td>
+							Line 17: Total Tax:
+						</td>
+						<td>
+							<input type ="text" id = "line17" name="line17" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 18: Federal Income Tax withheld :
+						</td>
+						<td>
+							<input type ="text" id="line18" name="line18" value = "0" readonly>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Line 21: Total Payments:
+						</td>
+						<td>
+							<input type ="text" id="line21" name="line21" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 22: Amount Overpaid - Your Refund from the IRS :
+						</td>
+						<td>
+							<input type ="text" id="line22" name="line22" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Line 25: Amount you owe - You need to pay the IRS :
+						</td>
+						<td>
+							<input type ="text" id="line25" name="line25" value = "0" readonly>
+						</td>
+					</tr>
+					<tr>
+						<td>
+                        	<div id="labellinej"></div>
+							
+						</td>
+						<td>
+							<div id="linej"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							State and Local Income Taxes </td>
+						<td>
+							<input type ="text" id="state_local_taxes" name="state_local_taxes" value = "0" readonly>
+						</td>
+					</tr>
+				</table>
+				<script language="javascript">
+					tax_treaty();
+				</script>
+<br />
+<br />
+<br />
+<br />
+<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>
+
+				<br>
+				<br>
+				<!--Continue and back Buttons-->
+				<table width="100%">
+					<tr>
+						<td align="right">
+							<a href="#Form1040NR-EZ_Immigration"><img src="imgs/Back.gif"></a>
+						</td>
+						<td align="left">
+							<a href="#Form1040NR-EZ_Review_Submit"><img src="imgs/Continue.gif"></a>
+						</td>
+					</tr>
+				</table>
+				
+            </div>
+			<!--Tab 6 Body-->
+			<div id="Form1040NR-EZ_Review_Submit">
+                <b>Review and Download</b>
+			</br>
+</br>
+                <table>
+
+	             <tr>
+				 <td>
+				 Amount Overpaid - Your Refund from the IRS : $
+				  <input type ="text" id="line22" name="line22" value = "0" readonly>
+
+				 </td>
+				 
+<br>
+				 </tr> 
+<tr></tr>
+				 <tr> 
+                 
+				 <td>
+               
+				 Amount you owe - You need to pay the IRS : $
+				  <input type ="text" id="line25" name="line25" value = "0" readonly>
+
+			
+				 </tr>
+<tr><td height="64" align="left">&nbsp;&nbsp;
+               	  <input type="checkbox" name="chkAccept" id="chkAccept">&nbsp;I accept the <a href="http://www.visataxes.com/terms_of_service.php" onclick="return popitup('http://www.visataxes.com/terms_of_service.php')" 
+	>Terms and Conditions</a> and the <a href="http://www.visataxes.com/privacy.php" onclick="return popitup('http://www.visataxes.com/privacy.php')" 
+	>Privacy Policy</a>  at VisaTaxes.com</td></tr>
+                </table><br><br>
+				<table width="100%">
+               
+					<tr>
+						<td align="left">
+							<a href="#Form1040NR-EZ_
+"><img src="imgs/Back.gif"></a>
+							<a href="#"><img src="imgs/Download_Form_1040NR_EZ.gif"></a>
+							<a href="#"><img src="imgs/Download_Form_8843.gif"></a>
+						</td>
+					</tr>
+				</table>
+				
+            </div>
+        </div>
+</body>
+</html>
