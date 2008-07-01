@@ -81,7 +81,33 @@
         
 </head>
 
-<body  onload="reInitialize();">
+
+<body  onload="init()">
+<!-- <body  onload="reInitialize();"> -->
+
+<!-- Page Uploading Progress bar Script -->
+
+<div id="loading" style="position:absolute; width:100%; text-align:center; top:300px;">
+<img src="imgs/progress_bar.gif" border=0></div>
+
+<script>
+ var ld=(document.all);
+  var ns4=document.layers;
+ var ns6=document.getElementById&&!document.all;
+ var ie4=document.all;
+  if (ns4)
+ 	ld=document.loading;
+ else if (ns6)
+ 	ld=document.getElementById("loading").style;
+ else if (ie4)
+ 	ld=document.all.loading.style;
+  function init()
+ {
+ if(ns4){ld.visibility="hidden";}
+ else if (ns6||ie4) ld.display="none";
+ }
+ </script>
+
 <form name ="visataxes" method="POST">
 <!-- Here are the containers / Tabs -->
 
@@ -188,7 +214,7 @@
                         <!--Tab 2 Body-->
             <div id="Form1040NR-EZ_Personal">
 
-            
+                                      <br>
                                         <table >
                                                 <tr>
                                                 <td> <br><b>Personal Information :</b></td>
@@ -981,13 +1007,11 @@ Line J : Tax Treaty on Wages for Students :
         >Privacy Policy</a>  at VisaTaxes.com</td>            
                
                                         </tr>
-
-                                                                        <td align="left">
-
-
-                                                        <INPUT TYPE="Image" src="imgs/Download_Form_1040NR_EZ.gif" ALT="Submit button" onclick="changeAction(0);">
-                                                        <INPUT TYPE="IMAGE" src="imgs/Download_Form_8843.gif" ALT="Submit button" onclick="changeAction(1);">
-                                                </td>
+										<tr>
+											<td align="left">
+													<INPUT TYPE="Image" src="imgs/Download_Form_1040NR_EZ.gif" ALT="Submit button" onclick="changeAction(0);">
+													<INPUT TYPE="IMAGE" src="imgs/Download_Form_8843.gif" ALT="Submit button" onclick="changeAction(1);">
+											</td>
                                         </tr>
 
 
@@ -996,7 +1020,8 @@ Line J : Tax Treaty on Wages for Students :
         </div>
         </form><br><br><br><br>
 <b> Donate $15 </b> - if you found the Tax Software helpful, by clicking the button below.<br><br>
-<form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/728063127949155" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm">
+
+<form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/728063127949155" target="_blank" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm">
     <input name="item_name_1" type="hidden" value="Donate $15 - Tax Software"/>
     <input name="item_description_1" type="hidden" value="Donate $15 - Tax Software to file Form 1040NR-EZ and Form 8843"/>
     <input name="item_quantity_1" type="hidden" value="1"/>
