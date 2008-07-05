@@ -1,4 +1,5 @@
-// JavaScript Document for personal.html
+// www.VisaTaxes.com 
+//JavaScript Document for Personal and Immigration Tabs in Tax Software
 
 
 var passport_country="Select Country";
@@ -7,6 +8,7 @@ var resident_country="Select Country";
 var citizenship_same = "yes";
 var resident_same = "yes";
 var comb_fname_mname="";
+var comb_us_address="";
 var comb_us_address1="";
 var comb_us_address2="";
 var comb_foreign_address="";
@@ -95,7 +97,7 @@ function selTaxForm(value){
 
 }
 
-//function for couintry selection
+//function for country selection
 //country_logic ( passport_country, citizenship_country, resident_country, citizenship_same, resident_same)
 function country_logic()
 {
@@ -123,9 +125,9 @@ function country_logic()
 	         citizenship_country = passport_country ;
          }
 		
-		 document.getElementById("passportcountry_value").value=passport_country;
+		 document.getElementById("passportcountry").value=passport_country;
 		 document.getElementById("citizen_country").value=citizenship_country;
-		 document.getElementById("residentcountry_value").value=resident_country;
+		 document.getElementById("residentcountry").value=resident_country;
 		  
 		// document.getElementById("output1").innerHTML="Passport Country :"+passport_country+"<br>"+"Citizenship Country :"+citizenship_country+"<br>"+"Resident Country: "+resident_country;
 
@@ -133,10 +135,40 @@ function country_logic()
 //function for combination of fname and mname
 function cmb_name(){
 	comb_fname_mname   =document.getElementById("fname").value+" "+document.getElementById("mname").value;
+	document.getElementById("comb_fname_mname").value = comb_fname_mname;
 }
+
+
+// single function for usaddress combination
+
+function cmb_us_address()
+{
+
+if(!document.getElementById("us_street").value==""){
+		comb_us_address1=document.getElementById("us_street").value;
+	}
+if(!document.getElementById("us_city").value==""){
+		comb_us_address2=document.getElementById("us_city").value;
+	}
+	if(!document.getElementById("us_state").value==""){
+		comb_us_address2=comb_us_address2+","+" "+document.getElementById("us_state").value;
+	}
+	if(!document.getElementById("us_zip").value==""){
+		comb_us_address2=comb_us_address2+","+" "+document.getElementById("us_zip").value;
+	}
+
+
+	document.getElementById("comb_us_address2").value= comb_us_address2;
+
+comb_us_address = comb_us_address1 + "," + "" + comb_us_address2 + + "," + "" + "United States" ;
+
+	document.getElementById("comb_us_address").value= comb_us_address;
+
+}
+
 //function for uscombination
 function cmb_usaddress1(){
-	comb_us_address1=document.getElementById("us_street").value;
+	document.getElementById("comb_us_address1").value=document.getElementById("us_street").value;
 	
 }
 function cmb_usaddress2(){
@@ -150,7 +182,7 @@ function cmb_usaddress2(){
 	if(!document.getElementById("us_zip").value==""){
 		comb_us_address2=comb_us_address2+","+" "+document.getElementById("us_zip").value;
 	}
-	
+	document.getElementById("comb_us_address2").value= comb_us_address2;
 }
 //function for comb_foreign_address
 function cmb_comb_foreignaddress(){
@@ -170,7 +202,7 @@ function cmb_comb_foreignaddress(){
 	if(!document.getElementById("foreign_country").value==""){
 		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_country").value;
 	}
-	
+	document.getElementById("comb_foreign_address").value = comb_foreign_address ;
 }
 //function for comb_university_address
 function cmb_universityaddress(){
@@ -191,7 +223,7 @@ function cmb_universityaddress(){
 	if(!document.getElementById("university_phone").value==""){
 		comb_university_address=comb_university_address+" "+document.getElementById("university_phone").value;
 	}
-	
+	document.getElementById("comb_university_address").value = comb_university_address;
 }
 //function for comb_current_visa_date
 function cmb_current_visadate(){
@@ -202,11 +234,11 @@ function cmb_current_visadate(){
 	if(!document.getElementById("date_visa_issued").value==""){
 		comb_current_visa_date=comb_current_visa_date+","+" "+document.getElementById("date_visa_issued").value;
 	}
-	
+	document.getElementById("comb_current_visa_date").value = comb_current_visa_date;
 }
 //function for comb_tax_forms
 function cmbcomb_taxforms(){
 	comb_tax_forms="";
 	comb_tax_forms="Year 2007"+" "+document.getElementById("tax_forms").value;
-	
+	document.getElementById("comb_tax_forms").value = comb_tax_forms;
 }
