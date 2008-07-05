@@ -1,8 +1,0 @@
-#labels Instructions,Form1040NR-EZ,1040NR
-= Test Cases for the Tax Software = 
-
-Before you begin testing,
-
-1. Download Instructions for Form 1040NR-EZ from the IRS website
-
-http://www.irs.gov/pub/irs-pdf/i1040nre.pdf
