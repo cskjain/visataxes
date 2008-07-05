@@ -9,11 +9,11 @@ IRS Form 1040NR-EZ Instructions
 
 *Form 1040NR-EZ Final Logic*
 
-Line 1:
+Line 1: Single
 
-Line 2:
+Line 2: Married
 
-Line 3:
+Line 3: 
 
 Line 4:
 
@@ -54,5 +54,3 @@ Line 21:
 Line 22:
 
 Line 25:
-
-
