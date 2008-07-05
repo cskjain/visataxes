@@ -1,4 +1,4 @@
-#labels Form1040NR-EZ,Form1040NR,Form8843,OptionalPracticalTrainingTaxes,F1OPTH1BTax
+#labels Form1040NR-EZ,Form1040NR,Form8843,Featured
 1. Form 1040NR-EZ
 
 2. Form 8843
@@ -11,7 +11,11 @@
 
 6. Form 1040NR
 
-7. Form 540NR
+7. Form 540NR-Short
+
+8. Form 540NR-Long
+
+9. Form 1042-S
 
 For more details visit
 
