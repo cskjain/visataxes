@@ -6,6 +6,8 @@
 
 function calcLine3(){
 
+	tax_treaty();
+
 //get all W-2 Box 1 Values
 
 	var w2box1 = document.getElementsByName("w2box1"); 
@@ -169,7 +171,7 @@ function calcLine15(){
 
 // The code sections for line16, form 4137b, 8919, line19 and line20 are deprecated
 
-<!-- function calcLine16()
+/* function calcLine16()
 {
 	var form4137b = ( document.getElementById('form4137b').value -1 + 1 );
 	var form8919 = ( document.getElementById('form8919').value - 1 + 1 );
@@ -178,13 +180,12 @@ function calcLine15(){
 		line16 = 0;
 	document.getElementById('line16').value = line16;
 	calcLine17();
-} -->
+} */
 
 
 function calcLine17(){
 	var line15 = document.getElementById("line15").value - 1 + 1 ;
-	var line16 = document.getElementById("line16").value - 1 + 1 ;
-	var line17 = Math.round ( line15 + line16 );
+	var line17 = Math.round ( line15 );
 	if (line17 < 0)
 		line17 = 0;
 	document.getElementById("line17").value = line17;
@@ -192,7 +193,7 @@ function calcLine17(){
 	calcLine25();
 }
 
-<!--
+/*
 function calcLine19(){
 	var line19 = document.getElementById("line19_value").value - 1 + 1 ;
 	line19 = Math.round ( line19 );
@@ -213,7 +214,7 @@ function calcLine20(){
 	calcLine21();
 }
 
--->
+*/
 
 function calcLine21(){
 	var line18 = document.getElementById("line18").value - 1 + 1 ;
@@ -232,6 +233,7 @@ function calcLine22(){
 	if ( line22 < 0 )
 		line22 = 0 ;
 	document.getElementById("line22").value = line22;
+	document.getElementById("line22_1").value = line22;
 }
 
 function calcLine25(){
@@ -241,6 +243,7 @@ function calcLine25(){
 	if ( line25 < 0 )
 		line25 = 0 ;
 	document.getElementById("line25").value = line25;
+	document.getElementById("line25_1").value = line25;
 }
 
 
