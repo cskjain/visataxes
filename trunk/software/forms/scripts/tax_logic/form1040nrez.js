@@ -1,12 +1,23 @@
-// VisaTaxes Project under GNU Open Source License
+// www.VisaTaxes.com
 
-// start of Logic to update line3 
+// Form 1040NR-EZ Logic
+
+// update when filing status Line 1 and Line 2 changes
+
+function calcLine_1_2_9_11_13_15()
+{
+	document.getElementById('filingstatus_value').value = document.getElementById('filingstatus').value;
+	calcLine9();
+	calcLine11();
+	calcLine15();
+	
+}
 
 // line3 = sum (w2 box 8) + sum (w2 box 1) - line 6
 
-function calcLine3(){
+function calcLine3()
 
-tax_treaty();
+{
 
 //get all W-2 Box 1 Values
 
@@ -43,37 +54,7 @@ tax_treaty();
 	
 }
 
-// End of Logic to update line 3
 
-
-
-// Start of Logic to update Line 5
-
-// line 5 = sum (1042-S Box 2)
-
-function calcLine5(){
-
-//get all the 1024-s box2 values
-
-	var box21042 = document.getElementsByName("1042sbox2"); 
-	var i = 0;
-	var sum1042sbox2 = 0;
-	for ( i = 0 ; i < box21042.length ; i++ )
-	{
-		sum1042sbox2 = sum1042sbox2 + ( box21042[i].value -1 + 1 );
-	}
-	
-	var line5 = Math.round ( sum1042sbox2 );
-	if (line5 < 0)
-		line5 = 0;
-	document.getElementById('line5').value = line5;
-	calcLine7();
-}
-
-// End of Logic to update line 5
-
-
-// Start of Logic to update line 4
 
 // line 4 = Sum (1099-G Box 2)
 
@@ -96,7 +77,31 @@ function calcLine4(){
 	calcLine7();
 }
 
-// End of the Logic to update Line 4
+
+// line 5 = sum (1042-S Box 2)
+
+function calcLine5(){
+
+//get all the 1024-s box2 values
+
+	var box21042 = document.getElementsByName("1042sbox2"); 
+	var i = 0;
+	var sum1042sbox2 = 0;
+	for ( i = 0 ; i < box21042.length ; i++ )
+	{
+		sum1042sbox2 = sum1042sbox2 + ( box21042[i].value -1 + 1 );
+	}
+	
+	var line5 = Math.round ( sum1042sbox2 );
+	if (line5 < 0)
+		line5 = 0;
+	document.getElementById('line5').value = line5;
+	calcLine7();
+}
+
+
+// Line 6 is calculated from the function Tax_treaty();
+
 
 // Logic to update Line 7
 
@@ -114,8 +119,9 @@ function calcLine7(){
 	calcLine9();
 }
 
-// End of Logic for Line 7
+// Line 8 is 0 
 
+var line8 = 0;
 
 
 function calcLine9_10(){
@@ -154,9 +160,13 @@ function calcLine12(){
 	calcLine14();
 }
 
-function calcLine14(){
+// Exemption Deduction Line 13 value for Year 2007 is $3400
+
+var line13 = 3400;
+
+function calcLine14()
+{
 	var line12 = document.getElementById("line12").value - 1 + 1 ;
-	var line13 = document.getElementById("line13").value - 1 + 1 ;
 	var line14 = Math.round ( line12 - line13 );
 	if (line14 < 0)
 		line14 = 0;
@@ -169,23 +179,12 @@ function calcLine15(){
 	calcLine17();
 }
 
-// The code sections for line16, form 4137b, 8919, line19 and line20 are deprecated
+// Line 16 is 0
 
-<!-- function calcLine16()
-{
-	var form4137b = ( document.getElementById('form4137b').value -1 + 1 );
-	var form8919 = ( document.getElementById('form8919').value - 1 + 1 );
-	var line16 = Math.round ( form4137b + form8919 ) ;
-	if (line16 < 0)
-		line16 = 0;
-	document.getElementById('line16').value = line16;
-	calcLine17();
-} -->
-
+var line16 = 0;
 
 function calcLine17(){
 	var line15 = document.getElementById("line15").value - 1 + 1 ;
-	var line16 = document.getElementById("line16").value - 1 + 1 ;
 	var line17 = Math.round ( line15 + line16 );
 	if (line17 < 0)
 		line17 = 0;
@@ -194,28 +193,43 @@ function calcLine17(){
 	calcLine25();
 }
 
-<!--
-function calcLine19(){
-	var line19 = document.getElementById("line19_value").value - 1 + 1 ;
-	line19 = Math.round ( line19 );
-	if (line19 < 0)
-		line19 = 0;
-	document.getElementById("line19").value = line19;
+
+function calcLine18()
+
+    {
+	var w2box2 = document.getElementsByName("w2box2");
+	var i = 0;
+	var sumw2box2 = 0;
+	for ( i = 0 ; i < w2box2.length ; i++ )
+	{
+		sumw2box2 = sumw2box2 + ( w2box2[i].value -1 + 1 );
+	}
+	
+	
+	var box71042 = document.getElementsByName("1042sbox7");
+	var j = 0;
+	var sum1042sbox7 = 0;
+	for ( j = 0 ; j < box71042.length ; j++ )
+	{
+		sum1042sbox7 = sum1042sbox7 + ( box71042[j].value -1 + 1 );
+	}
+
+	
+	var box41099g = document.getElementsByName("1099gbox4");
+	var k = 0;
+	var sum1099gbox4 = 0;
+	for ( k = 0 ; k < box41099g.length ; k++ )
+	{
+		sum1099gbox4 = sum1099gbox4 + ( box41099g[k].value -1 + 1 );
+	}
+	
+	var line18 = Math.round ( sumw2box2 + sum1042sbox7 + sum1099gbox4 );
+	if (line18 < 0)
+		line18 = 0;
+	document.getElementById('line18').value = line18;
 	calcLine21();
+	
 }
-
-
-
-function calcLine20(){
-	var line20 = document.getElementById("line20_value").value - 1 + 1 ;
-	line20 = Math.round ( line20 );
-	if (line20 < 0)
-		line20 = 0;
-	document.getElementById("line20").value = line20;
-	calcLine21();
-}
-
--->
 
 function calcLine21(){
 	var line18 = document.getElementById("line18").value - 1 + 1 ;
@@ -251,43 +265,6 @@ function calcLine6_11(){
 	calcLine11();
 }
 
-
-function calcLine18(){
-	var w2box2 = document.getElementsByName("w2box2");
-	var i = 0;
-	var sumw2box2 = 0;
-	for ( i = 0 ; i < w2box2.length ; i++ )
-	{
-		sumw2box2 = sumw2box2 + ( w2box2[i].value -1 + 1 );
-	}
-	
-	
-	var box71042 = document.getElementsByName("1042sbox7");
-	var j = 0;
-	var sum1042sbox7 = 0;
-	for ( j = 0 ; j < box71042.length ; j++ )
-	{
-		sum1042sbox7 = sum1042sbox7 + ( box71042[j].value -1 + 1 );
-	}
-
-	
-	var box41099g = document.getElementsByName("1099gbox4");
-	var k = 0;
-	var sum1099gbox4 = 0;
-	for ( k = 0 ; k < box41099g.length ; k++ )
-	{
-		sum1099gbox4 = sum1099gbox4 + ( box41099g[k].value -1 + 1 );
-	}
-	
-	var line18 = Math.round ( sumw2box2 + sum1042sbox7 + sum1099gbox4 );
-	if (line18 < 0)
-		line18 = 0;
-	document.getElementById('line18').value = line18;
-	calcLine21();
-	
-}
-
-
 function calcstate_local_taxes()
 {
 	var w2box17 = document.getElementsByName("w2box17");
@@ -311,13 +288,4 @@ function calcstate_local_taxes()
 		state_local_taxes = 0;
 	document.getElementById('state_local_taxes').value = state_local_taxes;
 	calcLine11();
-}
-
-function calcLine_1_2_9_11_13_15()
-{
-	document.getElementById('filingstatus_value').value = document.getElementById('filingstatus').value;
-	calcLine9();
-	calcLine11();
-	calcLine15();
-	
 }
