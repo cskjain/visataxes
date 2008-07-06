@@ -6,6 +6,8 @@
 
 function calcLine3(){
 
+tax_treaty();
+
 //get all W-2 Box 1 Values
 
 	var w2box1 = document.getElementsByName("w2box1"); 
