@@ -128,10 +128,9 @@ function calcLine9(){
 }
 
 function calcLine10(){
-	var line7 = document.getElementById("line7").value - 1 + 1 ;
-	var line8 = document.getElementById("line8").value - 1 + 1 ;
+    var line7 = document.getElementById("line7").value - 1 + 1 ;
 	var line9 = document.getElementById("line9").value - 1 + 1 ;
-	var line10 = Math.round ( line7 - ( line8 + line9 ) );
+	var line10 = Math.round ( line7 - line9 );
 	if (line10 < 0)
 		line10 = 0;
 	document.getElementById("line10").value = line10;
@@ -169,19 +168,6 @@ function calcLine15(){
 	calcLine17();
 }
 
-// The code sections for line16, form 4137b, 8919, line19 and line20 are deprecated
-
-/* function calcLine16()
-{
-	var form4137b = ( document.getElementById('form4137b').value -1 + 1 );
-	var form8919 = ( document.getElementById('form8919').value - 1 + 1 );
-	var line16 = Math.round ( form4137b + form8919 ) ;
-	if (line16 < 0)
-		line16 = 0;
-	document.getElementById('line16').value = line16;
-	calcLine17();
-} */
-
 
 function calcLine17(){
 	var line15 = document.getElementById("line15").value - 1 + 1 ;
@@ -193,28 +179,42 @@ function calcLine17(){
 	calcLine25();
 }
 
-/*
-function calcLine19(){
-	var line19 = document.getElementById("line19_value").value - 1 + 1 ;
-	line19 = Math.round ( line19 );
-	if (line19 < 0)
-		line19 = 0;
-	document.getElementById("line19").value = line19;
+
+function calcLine18(){
+	var w2box2 = document.getElementsByName("w2box2");
+	var i = 0;
+	var sumw2box2 = 0;
+	for ( i = 0 ; i < w2box2.length ; i++ )
+	{
+		sumw2box2 = sumw2box2 + ( w2box2[i].value -1 + 1 );
+	}
+	
+	
+	var box71042 = document.getElementsByName("1042sbox7");
+	var j = 0;
+	var sum1042sbox7 = 0;
+	for ( j = 0 ; j < box71042.length ; j++ )
+	{
+		sum1042sbox7 = sum1042sbox7 + ( box71042[j].value -1 + 1 );
+	}
+
+	
+	var box41099g = document.getElementsByName("1099gbox4");
+	var k = 0;
+	var sum1099gbox4 = 0;
+	for ( k = 0 ; k < box41099g.length ; k++ )
+	{
+		sum1099gbox4 = sum1099gbox4 + ( box41099g[k].value -1 + 1 );
+	}
+	
+	var line18 = Math.round ( sumw2box2 + sum1042sbox7 + sum1099gbox4 );
+	if (line18 < 0)
+		line18 = 0;
+	document.getElementById('line18').value = line18;
 	calcLine21();
+	
 }
 
-
-
-function calcLine20(){
-	var line20 = document.getElementById("line20_value").value - 1 + 1 ;
-	line20 = Math.round ( line20 );
-	if (line20 < 0)
-		line20 = 0;
-	document.getElementById("line20").value = line20;
-	calcLine21();
-}
-
-*/
 
 function calcLine21(){
 	var line18 = document.getElementById("line18").value - 1 + 1 ;
@@ -253,40 +253,6 @@ function calcLine6_11(){
 }
 
 
-function calcLine18(){
-	var w2box2 = document.getElementsByName("w2box2");
-	var i = 0;
-	var sumw2box2 = 0;
-	for ( i = 0 ; i < w2box2.length ; i++ )
-	{
-		sumw2box2 = sumw2box2 + ( w2box2[i].value -1 + 1 );
-	}
-	
-	
-	var box71042 = document.getElementsByName("1042sbox7");
-	var j = 0;
-	var sum1042sbox7 = 0;
-	for ( j = 0 ; j < box71042.length ; j++ )
-	{
-		sum1042sbox7 = sum1042sbox7 + ( box71042[j].value -1 + 1 );
-	}
-
-	
-	var box41099g = document.getElementsByName("1099gbox4");
-	var k = 0;
-	var sum1099gbox4 = 0;
-	for ( k = 0 ; k < box41099g.length ; k++ )
-	{
-		sum1099gbox4 = sum1099gbox4 + ( box41099g[k].value -1 + 1 );
-	}
-	
-	var line18 = Math.round ( sumw2box2 + sum1042sbox7 + sum1099gbox4 );
-	if (line18 < 0)
-		line18 = 0;
-	document.getElementById('line18').value = line18;
-	calcLine21();
-	
-}
 
 
 function calcstate_local_taxes()
