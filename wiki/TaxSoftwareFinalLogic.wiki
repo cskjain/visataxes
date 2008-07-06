@@ -19,25 +19,25 @@ Line 4: Round (Sum (1099G Box 2))
 
 Line 5: Round (Sum (1042S Box 2))
 
-Line 6: Tax_Treaty();
+Line 6: Tax_Treaty()
 
 Line 7: Line 3 + Line 4 + Line 5
 
 Line 8: 0
 
-Line 9: Student_Interest();
+Line 9: Student_Interest()
 
 Line 10: Line 7 - Line 9
 
-Line 11: 
+Line 11: itemized_deductions()
 
 Line 12: Line 10 - Line 11
 
-Line 13: Exemption_Deduction();
+Line 13: 3400
 
 Line 14: Line 12 - Line 13
 
-Line 15: Calculate_Tax();
+Line 15: Calculate_Tax()
 
 Line 16: 0
 
