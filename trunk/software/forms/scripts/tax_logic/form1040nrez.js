@@ -248,6 +248,7 @@ function calcLine22(){
 	if ( line22 < 0 )
 		line22 = 0 ;
 	document.getElementById("line22").value = line22;
+	document.getElementById("line22_1").value = line22;
 }
 
 function calcLine25(){
@@ -257,6 +258,7 @@ function calcLine25(){
 	if ( line25 < 0 )
 		line25 = 0 ;
 	document.getElementById("line25").value = line25;
+	document.getElementById("line25_1").value = line25;
 }
 
 
