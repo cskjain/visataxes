@@ -160,7 +160,7 @@ if(!document.getElementById("us_city").value==""){
 
 	document.getElementById("comb_us_address2").value= comb_us_address2;
 
-comb_us_address = comb_us_address1 + "," + "" + comb_us_address2 + + "," + "" + "United States" ;
+comb_us_address = comb_us_address1 + "," + "" + comb_us_address2 + "," + "" + "United States" ;
 
 	document.getElementById("comb_us_address").value= comb_us_address;
 
@@ -169,7 +169,7 @@ comb_us_address = comb_us_address1 + "," + "" + comb_us_address2 + + "," + "" + 
 //function for uscombination
 function cmb_usaddress1(){
 	document.getElementById("comb_us_address1").value=document.getElementById("us_street").value;
-	
+	cmb_us_address();
 }
 function cmb_usaddress2(){
 	comb_us_address2="";
@@ -183,6 +183,7 @@ function cmb_usaddress2(){
 		comb_us_address2=comb_us_address2+","+" "+document.getElementById("us_zip").value;
 	}
 	document.getElementById("comb_us_address2").value= comb_us_address2;
+	cmb_us_address();
 }
 //function for comb_foreign_address
 function cmb_comb_foreignaddress(){
