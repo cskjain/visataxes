@@ -855,6 +855,8 @@ function hideDivform1098_E(){
 	document.getElementById('form1098-EDiv').style.display = 'none';
 
 	document.getElementById('1098ebox1').value='';
+	
+	calcLine9();
 
 }
 
