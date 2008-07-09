@@ -154,7 +154,7 @@ function addFromW2()
 
 				+"<td>"
 
-					+"$<input type=\"text\" name = \"w2box17\" onchange=\"calcstate_local_taxes()\">"
+					+"$<input type=\"text\" name = \"w2box17\" onchange=\"calcLine11()\">"
 
 				+"</td>"
 
@@ -172,7 +172,7 @@ function addFromW2()
 
 				+"<td>"
 
-					+"$<input type=\"text\" name = \"w2box19\" onchange=\"calcstate_local_taxes()\">"
+					+"$<input type=\"text\" name = \"w2box19\" onchange=\"calcLine11()\">"
 
 				+"</td>"
 
@@ -236,7 +236,7 @@ function removeFromW2(divId) // Remove form w-2
 
 	calcLine18();
 
-	calcstate_local_taxes();	
+	calcLine11();	
 
 	
 
@@ -254,7 +254,7 @@ function hideFormW2(){ //Hide the main div of form w-2
 
 	calcLine18();
 
-	calcstate_local_taxes();
+	calcLine11();
 
 }
 
@@ -870,4 +870,14 @@ function hideline19Div(){
 
 	calcLine19();
 
+}
+
+function changeAction(x)
+{
+	if ( x == 0 )
+	{
+		document.visataxes.action ="Form1040NREZ.php";
+	}
+	else
+		document.visataxes.action ="Form8843.php";
 }
