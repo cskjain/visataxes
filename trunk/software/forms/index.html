@@ -233,7 +233,7 @@ Loading Tax Software ... Please wait...<br>
                                                         <td>
                                                                 <br>
                         Please select your Marital Status * : 
-                                        <select name="filingstatus" id = "filingstatus" onchange="calcLine_1_2_9_11_13_15();" >
+                                        <select name="filingstatus" id = "filingstatus" onchange="calcLine_1_2_9_13_15();" >
                                                 <option value="single" selected="selected">Single </option>
                                                 <option value="married" >Married </option>
                                         </select> 
@@ -513,7 +513,7 @@ Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="r
      <br />
      <div id="ResidentDisp" style="display:none">
          Resident country for Tax Treaty Calculation * : &nbsp;
-<input type="text" id = "resident_country" name="resident_country" onChange="calcLine6_11();country_logic();tax_treaty();">
+<input type="text" id = "resident_country" name="resident_country" onChange="country_logic();tax_treaty();">
 </div>
 <br />
      
@@ -930,7 +930,21 @@ Line J : Tax Treaty on Wages for Students :
                                                                         </table>
 
                      
+                                 <input type ="hidden" id="comb_fname_mname" name="comb_fname_mname" >
+								<input type ="hidden" id="comb_us_address1" name="comb_us_address1" >
+								<input type ="hidden" id="comb_us_address2" name="comb_us_address2" >
+								<input type ="hidden" id="comb_us_address" name="comb_us_address" >								
+								<input type ="hidden" id="comb_foreign_address" name="comb_foreign_address" >
+								<input type ="hidden" id="comb_current_visa_date" name="comb_current_visa_date">
+								<input type ="hidden" id="comb_tax_forms" name="comb_tax_forms">
+								<input type ="hidden" id="comb_university_address" name="comb_university_address" >
+                               
                                 
+                                
+                                <script language="javascript">
+                                        tax_treaty();
+                                </script>
+
                                 
                                 
                               
