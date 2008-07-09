@@ -145,8 +145,28 @@ function calcLine10(){
 	calcLine12();
 }
 
-function calcLine11(){
-	calculate_tax();
+function calcLine11()
+{
+	var w2box17 = document.getElementsByName("w2box17");
+	var i = 0;
+	var sumw2box17 = 0;
+	for ( i = 0 ; i < w2box17.length ; i++ )
+	{
+		sumw2box17 = sumw2box17 + ( w2box17[i].value -1 + 1 );
+	}
+	
+	var w2box19 = document.getElementsByName("w2box19");
+	var j = 0;
+	var sumw2box19 = 0;
+	for ( j = 0 ; j < w2box19.length ; j++ )
+	{
+		sumw2box19 = sumw2box19 + ( w2box19[j].value -1 + 1 );
+	}
+	
+	var line11 = sumw2box17 + sumw2box19 ;
+	if (line11 < 0)
+		line11 = 0;
+	document.getElementById('line11').value = line11;
 	calcLine12();
 }
 
@@ -267,27 +287,4 @@ function calcLine6_11(){
 	calcLine11();
 }
 
-function calcstate_local_taxes()
-{
-	var w2box17 = document.getElementsByName("w2box17");
-	var i = 0;
-	var sumw2box17 = 0;
-	for ( i = 0 ; i < w2box17.length ; i++ )
-	{
-		sumw2box17 = sumw2box17 + ( w2box17[i].value -1 + 1 );
-	}
-	
-	var w2box19 = document.getElementsByName("w2box19");
-	var j = 0;
-	var sumw2box19 = 0;
-	for ( j = 0 ; j < w2box19.length ; j++ )
-	{
-		sumw2box19 = sumw2box19 + ( w2box19[j].value -1 + 1 );
-	}
-	
-	var state_local_taxes = sumw2box17 + sumw2box19 ;
-	if (state_local_taxes < 0)
-		state_local_taxes = 0;
-	document.getElementById('state_local_taxes').value = state_local_taxes;
-	calcLine11();
-}
+
