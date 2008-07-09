@@ -34,7 +34,7 @@ function tax_treaty(){
 	//citizencountry=document.getElementById('citizencountry').value;
 	
 	//resident_country=document.getElementById('resident_country').value;
-	resident_country=document.getElementById("residentcountry_value").value;
+	resident_country=document.getElementById("residentcountry").value;
 	//get visa type value from the form
 
 	purpose_of_visit=document.getElementById('purpose_of_visit').value;
@@ -293,12 +293,11 @@ function tax_treaty(){
 	
 	if(line6==0){
 
-		document.getElementById("linej").innerHTML = "";
-		document.getElementById("labellinej").innerHTML = "";
+		document.getElementById("linej").value = "";
+		//document.getElementById("labellinej").innerHTML = "";
 	}else{
 		
-		document.getElementById("labellinej").innerHTML = "Line J: Tax Treaty Exemption Amount and Article:";
-		document.getElementById("linej").innerHTML = "Tax Exemption based on Tax Treaty, on wages during Studying and Training: $"+line6+" based on Article: "+article ;;
+document.getElementById("linej").value = "during Studying and Training: $"+line6+" based on Article: "+article ;;
 
 	}
 
