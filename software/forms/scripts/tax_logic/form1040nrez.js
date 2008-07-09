@@ -4,11 +4,10 @@
 
 // update when filing status Line 1 and Line 2 changes
 
-function calcLine_1_2_9_11_13_15()
+function calcLine_1_2_9_13_15()
 {
 	document.getElementById('filingstatus_value').value = document.getElementById('filingstatus').value;
 	calcLine9();
-	calcLine11();
 	calcLine15();
 	
 }
@@ -141,7 +140,6 @@ function calcLine10(){
 	if (line10 < 0)
 		line10 = 0;
 	document.getElementById("line10").value = line10;
-	calcLine11();
 	calcLine12();
 }
 
@@ -282,9 +280,6 @@ function calcLine25(){
 }
 
 
-function calcLine6_11(){
-	tax_treaty();
-	calcLine11();
-}
+
 
 
