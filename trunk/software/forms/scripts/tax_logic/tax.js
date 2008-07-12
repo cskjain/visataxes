@@ -55,9 +55,10 @@ function calculate_tax_average()
 function tax()
 {
     //if marital status is single
-    if (filing_status == "Single")
+    if (filing_status == "single")
     {
-        if (line14 <= 5)
+  
+	if (line14 <= 5)
         {
             line15 = 0;
             return;
@@ -105,7 +106,8 @@ function tax()
     //if marital status is married
     else
     {
-        if (line14 <= 5)
+       
+	if (line14 <= 5)
         {
             line15 = 0;
             return;
