@@ -161,7 +161,7 @@ function calcLine11()
 		sumw2box19 = sumw2box19 + ( w2box19[j].value -1 + 1 );
 	}
 	
-	var line11 = sumw2box17 + sumw2box19 ;
+	var line11 = Math.round ( sumw2box17 + sumw2box19 );
 	if (line11 < 0)
 		line11 = 0;
 	document.getElementById('line11').value = line11;
@@ -178,9 +178,9 @@ function calcLine12(){
 	calcLine14();
 }
 
-// Exemption Deduction Line 13 value for Year 2007 is $3400
+// Exemption Deduction Line 13 value for Year 2008 is $3500
 
-var line13 = 3400;
+var line13 = 3500;
 
 function calcLine14()
 {
