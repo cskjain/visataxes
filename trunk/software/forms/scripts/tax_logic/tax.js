@@ -1,4 +1,6 @@
+// www.VisaTaxes.com Tax Software to file Form 1040NR-EZ and Form 8843
 
+// 2008 Tax Bracket updated for Single and Married Filing Separately
 
 //global variables used to calculate Tax
 var tax_average;
@@ -70,27 +72,27 @@ function tax()
             return;
         }
         
-        else if ( line14  <= 7825)
+        else if ( line14  <= 8025)
         {
             line15 = Math.round(0.10 * tax_average);
             return;
         }
 
-        else if ( (line14 > 7825) && (line14 <= 31850))
+        else if ( (line14 > 8025) && (line14 <= 32550))
         {
-            line15 = Math.round( 782.5 + 0.15 * (tax_average - 7825));
+            line15 = Math.round( 782.5 + 0.15 * (tax_average - 8025));
             return;
         }
 
-        else if ( (line14 > 31850) && (line14 <= 77100))
+        else if ( (line14 > 32550) && (line14 <= 78850))
         {
-            line15 = Math.round( 4386.25 + 0.25 * (tax_average - 31850));
+            line15 = Math.round( 4386.25 + 0.25 * (tax_average - 32550));
             return;
         }
         
-        else if ( (line14 > 77100 ) && (line14 <= 100000))
+        else if ( (line14 > 78850 ) && (line14 <= 100000))
         {
-            line15 = Math.round( 15698.75 + 0.28 * (tax_average - 77100));
+            line15 = Math.round( 15698.75 + 0.28 * (tax_average - 78850));
             return;
         }
         
@@ -119,36 +121,30 @@ function tax()
             return;
         }
         
-        else if ( line14  <= 7825)
+        else if ( line14  <= 8025)
         {
             line15 = Math.round (0.10 * tax_average);
             return;
         }
 
-        else if ( (line14 > 7825) && (line14 <= 31850))
+        else if ( (line14 > 8025) && (line14 <= 32550))
         {
-            line15 = Math.round ( 782.5 + 0.15 * (tax_average - 7825));
+            line15 = Math.round ( 782.5 + 0.15 * (tax_average - 8025));
             return;
         }
 
-        else if ( (line14 > 31850) && (line14 <= 64250))
+        else if ( (line14 > 32550) && (line14 <= 65725))
         {
             line15 = Math.round( 4386.25 + 0.25 * (tax_average - 31850));
             return;
         }
         
-        else if ( (line14 > 64250 ) && (line14 <= 97925))
+        else if ( (line14 > 65725) && (line14 <= 100000))
         {
-            line15 = Math.round ( 12486.25 + 0.28 * (tax_average - 64250));
+            line15 = Math.round ( 12486.25 + 0.28 * (tax_average - 65725));
             return;
         }
-        
-        else if ( (line14 > 97925 ) && (line14 <= 100000))
-        {
-            line15 = Math.round ( 21915.25 + 0.33 * (tax_average - 97925));
-            return;
-        }
-        
+             
         else
         {
             alert(" Since your Taxable Income, is greater than $100,000 you cannot file Form 1040NR-EZ");
