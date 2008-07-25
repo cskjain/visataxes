@@ -113,105 +113,12 @@ Loading Tax Software ... Please wait...<br>
 
         <div id="container-1">
             <ul>
-                <li><a href="#Form1040NR-EZ_Residency_Test"><span>Residency Test</span></a></li>
-                <li><a href="#Form1040NR-EZ_Personal"><span>Personal</span></a></li>
+                                <li><a href="#Form1040NR-EZ_Personal"><span>Personal</span></a></li>
                                 <li><a href="#Form1040NR-EZ_Immigration"><span>Immigration</span></a></li>
                                 <li><a href="#Form1040NR-EZ_Forms" onClick="country_logic();tax_treaty()"><span>Forms</span></a></li>
                                 <li><a href="#Form1040NR-EZ_Review_Submit"><span>Review and Download</span></a></li>
             </ul>
-
-
-  
-                        <!--Tab 1 Body-->
-  
-  
-
-
-            <div id="Form1040NR-EZ_Residency_Test">
-</br>
-</br>
-</br>
-                                        <b>Residency Test Calculator :</b> 
-<a href="help/residency_test.htm" onclick="return popitup('help/residency_test.htm')"
-        >Help Me</a>
-                                        <br /><br />
-                                        Your current Visa Type *&nbsp;:&nbsp;&nbsp;&nbsp;
-                                        <select name="visatype_residency" id="visatype_residency" onchange="selParagraph();">
-                        <option value="Student">Student (F, J, Q, M Visas)</option>
-                        <option value="Teacher">Teacher or Trainee (J, Q Visas)</option>
-                        <option value="Other">Other Visa </option>
-                    </select>
-                                 
-                                 <br />
-                                 <!--display only if Student Option is selected -->
-                        <p id="student" >
-                                    Have you been a Student in US for more than Five Years in United States? * &nbsp;:&nbsp;
-                                                                                    <select name="more5years" id="more5years">
-                                                                                        <option value="Yes">Yes</option>
-                                                                                        <option value="No" selected>No</option>
-                                                                                     </select>
-                                  
-                                  <br />
-                        </p>
-                        <p id="teacher" style="display:none"> 
-                        <!-- display only if Teacher or Trainee option is selected -->
-
-                        Have you been a Teacher or Trainee in US for more than Two Years in United States? * &nbsp;:&nbsp;
-                        <select name="more2years" id="more2years">
-                        <option value="Yes">Yes</option>
-                        <option value="No" selected>No</option>
-                        </select>
-                        <br />
-                        <br />
-                        </p>
-                        <!-- display this section for everyone -->
-               
-                                Are you a US Greencard holder ? *  &nbsp;:&nbsp;
-                                <select name="greencard" id="greencard">
-                                                                        <option value="Yes">Yes</option>
-                                                                        <option value="No" selected>No</option>
-                                                                 </select>                
-                                                                                                 
-                                <br />
-                                <br />
-                                Please enter the Number of Days present in the United States *&nbsp;:
-                                <br />
-                                <br /> 
-                                &nbsp;&nbsp;&nbsp;Year 2008 * :&nbsp;&nbsp;<input type="text" name="days_current" id="days_current" size="5" maxlength="3" />&nbsp;Days
-                                <br /> 
-                                <br /> 
-                                &nbsp;&nbsp;&nbsp;Year 2007 * :&nbsp;&nbsp;<input type="text" name="days_prev" id="days_prev" size="5" maxlength="3" />&nbsp;Days
-                                <br /> 
-                                <br /> 
-                                &nbsp;&nbsp;&nbsp;Year 2006 * :&nbsp;&nbsp;<input type="text" name="days_prev1" id="days_prev1" size="5" maxlength="3" />&nbsp;Days
-                                <br />
-                                <br />
-                                If you still have any questions on your Residency, please post in the <a href="http://forum.visataxes.com" onclick="return popitup('http://forum.visataxes.com')"
-        >Forum</a>
- or <a href="http://www.visataxes.com/contact_us.php" onclick="return popitup('http://www.visataxes.com/contact_us.php')"
-        >Contact Us</a>.
-                                <br />
-                                <br />
-                                <input type="button" name="btnSub" value="SUBMIT" onclick="return printOutput();">
-                                <br /><br />
-
-                                <strong>
-                                Output :</span></strong><div id = "output"></div><br /><br />
-                                <br />
-
-
-<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>
-<br />
-<br />
-                
-<input type="button" value="Continue -->" onClick="$('#container-1').triggerTab(2)">
-
-
-
-                                
-            </div>
-
-                        <!--Tab 2 Body-->
+            <!--Tab 2 Body-->
             <div id="Form1040NR-EZ_Personal">
 
                                       <br>
@@ -641,6 +548,8 @@ Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="r
      <br />
      <br />
     
+// Form Post of Variables from Personal Tab to SetaPDF
+
      <input type="text" name="entry_dates_1" id="entry_dates_1" maxlength="70" size="70">
       <br />
      <input type="text" name="entry_dates_2" id="entry_dates_2" maxlength="70" size="70">
@@ -857,7 +766,7 @@ Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="r
                                                         Line 13: Exemption Deduction:
                                                 </td>
                                                 <td>
-                                                        <input type ="text" id = "line13" name="line13" value = "3400" readonly onchange="calcLine14();">
+                                                        <input type ="text" id = "line13" name="line13" value = "3500" readonly onchange="calcLine14();">
                                                 </td>
                                         </tr>
                                         <tr>
@@ -938,16 +847,7 @@ Line J : Tax Treaty on Wages for Students :
 								<input type ="hidden" id="comb_current_visa_date" name="comb_current_visa_date">
 								<input type ="hidden" id="comb_tax_forms" name="comb_tax_forms">
 								<input type ="hidden" id="comb_university_address" name="comb_university_address" >
-                               
-                                
-                                
-                                <script language="javascript">
-                                        tax_treaty();
-                                </script>
-
-                                
-                                
-                              
+      
 <br />
 <br />
 <br />
