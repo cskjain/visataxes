@@ -12,6 +12,7 @@
 
 
 <body  onload="init()">
+
 <!-- Page Uploading Progress bar Script -->
 
 <div id="loading" style="position:absolute; width:100%; text-align:center; top:300px;">
@@ -24,11 +25,11 @@ Loading Tax Software ... Please wait...<br>
  var ns6=document.getElementById&&!document.all;
  var ie4=document.all;
   if (ns4)
-         ld=document.loading;
+ 	ld=document.loading;
  else if (ns6)
-         ld=document.getElementById("loading").style;
+ 	ld=document.getElementById("loading").style;
  else if (ie4)
-         ld=document.all.loading.style;
+ 	ld=document.all.loading.style;
   function init()
  {
  if(ns4){ld.visibility="hidden";}
@@ -37,7 +38,7 @@ Loading Tax Software ... Please wait...<br>
  </script>
 
 <!-- Tax Logic Scripts Section -->
-<script src="scripts/tax_logic/residency_test.js" type="text/javascript"></script>
+
 <script src="scripts/tax_logic/form1040nrez_ui.js" type="text/javascript"></script>
 <script src="scripts/tax_logic/form1040nrez.js" type="text/javascript"></script>
 <script src="scripts/tax_logic/tax_treaty.js" type="text/javascript"></script>
@@ -61,6 +62,7 @@ Loading Tax Software ... Please wait...<br>
         
 <!--Jquery Multitabs Scripts Section -->
 <link rel="stylesheet" href="css/jquery.tabs.css" type="text/css" media="print, projection, screen">
+<link href="css/style.css" type="text/css" rel="stylesheet">
 <script src="scripts/jquery_multitabs/jquery.tabs.pack.js" type="text/javascript"></script>
 <script type="text/javascript">
             
@@ -113,12 +115,15 @@ Loading Tax Software ... Please wait...<br>
 
         <div id="container-1">
             <ul>
-                                <li><a href="#Form1040NR-EZ_Personal"><span>Personal</span></a></li>
+               
+                <li><a href="#Form1040NR-EZ_Personal"><span>Personal</span></a></li>
                                 <li><a href="#Form1040NR-EZ_Immigration"><span>Immigration</span></a></li>
                                 <li><a href="#Form1040NR-EZ_Forms" onClick="country_logic();tax_treaty()"><span>Forms</span></a></li>
                                 <li><a href="#Form1040NR-EZ_Review_Submit"><span>Review and Download</span></a></li>
             </ul>
-            <!--Tab 1 Body-->
+
+
+   <!--Tab 1 Body-->
             <div id="Form1040NR-EZ_Personal">
 
                                       <br>
@@ -547,8 +552,6 @@ Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="r
      <br />
      <br />
     
-// Form Post of Variables from Personal Tab to SetaPDF
-
      <input type="text" name="entry_dates_1" id="entry_dates_1" maxlength="70" size="70">
       <br />
      <input type="text" name="entry_dates_2" id="entry_dates_2" maxlength="70" size="70">
@@ -765,7 +768,7 @@ Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="r
                                                         Line 13: Exemption Deduction:
                                                 </td>
                                                 <td>
-                                                        <input type ="text" id = "line13" name="line13" value = "3500" readonly onchange="calcLine14();">
+                                                        <input type ="text" id = "line13" name="line13" value = "3500" readonly ">
                                                 </td>
                                         </tr>
                                         <tr>
@@ -835,10 +838,10 @@ Line J : Tax Treaty on Wages for Students :
                                                         </textarea>
                                                 </td>
                                         </tr>
-                                                                        </table>
+                                                                       </table>
 
-                     
-                                 <input type ="hidden" id="comb_fname_mname" name="comb_fname_mname" >
+                              
+                                <input type ="hidden" id="comb_fname_mname" name="comb_fname_mname" >
 								<input type ="hidden" id="comb_us_address1" name="comb_us_address1" >
 								<input type ="hidden" id="comb_us_address2" name="comb_us_address2" >
 								<input type ="hidden" id="comb_us_address" name="comb_us_address" >								
@@ -846,7 +849,7 @@ Line J : Tax Treaty on Wages for Students :
 								<input type ="hidden" id="comb_current_visa_date" name="comb_current_visa_date">
 								<input type ="hidden" id="comb_tax_forms" name="comb_tax_forms">
 								<input type ="hidden" id="comb_university_address" name="comb_university_address" >
-      
+
 <br />
 <br />
 <br />
@@ -897,26 +900,13 @@ Line J : Tax Treaty on Wages for Students :
 <input type="button" value ="<-- Go Back" onClick="$('#container-1').triggerTab(3)">
 </td>
 </tr>
-<tr>
-<tr><td height="64" align="left">
-                         <input type="checkbox" name="chkAccept" id="chkAccept">&nbsp;I accept the <a href="http://www.visataxes.com/terms_of_service.php" onclick="return popitup('http://www.visataxes.com/terms_of_service.php')" 
-        >Terms and Conditions</a> and the <a href="http://www.visataxes.com/privacy.php" onclick="return popitup('http://www.visataxes.com/privacy.php')" 
-        >Privacy Policy</a>  at VisaTaxes.com</td>            
-               
-                                        </tr>
-                                                                                <tr>
-                                                                                        <td align="left">
-                                                                                                        <INPUT TYPE="Image" src="imgs/Download_Form_1040NR_EZ.gif" ALT="Submit button" onclick="changeAction(0);">
-                                                                                                        <INPUT TYPE="IMAGE" src="imgs/Download_Form_8843.gif" ALT="Submit button" onclick="changeAction(1);">
-                                                                                        </td>
-                                        </tr>
-
+								
 
                                 </table>
             </div>
-        </div>
-        </form><br><br><br><br>
-<b> Donate $15 </b> - if you found the Tax Software helpful, by clicking the button below.<br><br>
+       
+        </form>
+<b> Donate $15 </b> - if you found the Tax Software helpful, by clicking the button below.</b><br><br>
 
 <form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/728063127949155" target="_blank" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm">
     <input name="item_name_1" type="hidden" value="Donate $15 - Tax Software"/>
@@ -927,7 +917,5 @@ Line J : Tax Treaty on Wages for Students :
     <input name="_charset_" type="hidden" value="utf-8"/>
     <input alt="" src="https://checkout.google.com/buttons/buy.gif?merchant_id=728063127949155&amp;w=117&amp;h=48&amp;style=white&amp;variant=text&amp;loc=en_US" type="image"/>
 </form>
-
-
 </body>
 </html>
