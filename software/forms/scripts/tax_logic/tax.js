@@ -56,19 +56,26 @@ function calculate_tax_average()
 //function to calculate the tax
 function tax()
 {
-    //if marital status is single
+    //Single
+
     if (filing_status == "single")
     {
   
-	if (line14 <= 5)
+	if (line14 < 5)
         {
             line15 = 0;
             return;
         }
 
-        else if (line14 <= 15)
+        else if (line14 < 15)
         {
             line15 = 1;
+            return;
+        }
+
+         else if (line14 < 25)
+        {
+            line15 = 2;
             return;
         }
         
@@ -80,74 +87,81 @@ function tax()
 
         else if ( (line14 > 8025) && (line14 <= 32550))
         {
-            line15 = Math.round( 782.5 + 0.15 * (tax_average - 8025));
+            line15 = Math.round( 802.5 + 0.15 * (tax_average - 8025));
             return;
         }
 
         else if ( (line14 > 32550) && (line14 <= 78850))
         {
-            line15 = Math.round( 4386.25 + 0.25 * (tax_average - 32550));
+            line15 = Math.round( 4481.25 + 0.25 * (tax_average - 32550));
             return;
         }
         
         else if ( (line14 > 78850 ) && (line14 <= 100000))
         {
-            line15 = Math.round( 15698.75 + 0.28 * (tax_average - 78850));
+            line15 = Math.round( 16056.25 + 0.28 * (tax_average - 78850));
             return;
         }
         
         else
         {
-            alert(" your Taxable Income exceeds, you cannot file Form 1040NR-EZ");
+       alert(" your Taxable Income exceeds $100,000, you cannot file Form 1040NR-EZ");
             line15 = 0;
             return;
         }
 
     }
     
-    //if marital status is married
+    // Married Filing Separately
     else
     {
        
-	if (line14 <= 5)
+	if (line14 < 5)
         {
             line15 = 0;
             return;
         }
-        
-        else if (line14 <= 15) 
+
+        else if (line14 < 15)
         {
             line15 = 1;
+            return;
+        }
+
+         else if (line14 < 25)
+        {
+            line15 = 2;
             return;
         }
         
         else if ( line14  <= 8025)
         {
-            line15 = Math.round (0.10 * tax_average);
+            line15 = Math.round(0.10 * tax_average);
             return;
         }
 
         else if ( (line14 > 8025) && (line14 <= 32550))
         {
-            line15 = Math.round ( 782.5 + 0.15 * (tax_average - 8025));
+            line15 = Math.round( 802.5 + 0.15 * (tax_average - 8025));
             return;
         }
 
         else if ( (line14 > 32550) && (line14 <= 65725))
         {
-            line15 = Math.round( 4386.25 + 0.25 * (tax_average - 31850));
+            line15 = Math.round( 4481.25 + 0.25 * (tax_average - 32550));
             return;
         }
         
         else if ( (line14 > 65725) && (line14 <= 100000))
         {
-            line15 = Math.round ( 12486.25 + 0.28 * (tax_average - 65725));
+            line15 = Math.round ( 12775 + 0.28 * (tax_average - 65725));
             return;
         }
+    
              
         else
         {
-            alert(" Since your Taxable Income, is greater than $100,000 you cannot file Form 1040NR-EZ");
+            alert(" Your Taxable Income, exceeds $100,000, you cannot file Form 1040NR-EZ");
             line15 = 0;
         }
 
