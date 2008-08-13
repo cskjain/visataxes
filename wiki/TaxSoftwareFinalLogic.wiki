@@ -19,13 +19,13 @@ Line 4: Round (Sum (1099G Box 2))
 
 Line 5: Round (Sum (1042S Box 2))
 
-Line 6: Tax_Treaty Function
+Line 6: Tax Treaty Function
 
 Line 7: Line 3 + Line 4 + Line 5
 
 Line 8: 0
 
-Line 9: Student_Interest Function
+Line 9: Student Interest Function
 
 Line 10: Line 7 - Line 9
 
@@ -37,7 +37,7 @@ Line 13: 3500
 
 Line 14: Line 12 - Line 13
 
-Line 15: Calculate_Tax Function
+Line 15: Calculate Tax Function
 
 Line 16: 0
 
