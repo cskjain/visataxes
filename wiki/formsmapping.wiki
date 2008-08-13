@@ -1,6 +1,8 @@
 #labels Form1042-S,Form1040NR-EZ
-*Form 1042-S and Form 1040NR-EZ Mapping*
 
-Form 1042-S Box 2  = Form 1040NR-EZ  Line 5
 
-Form 1042-S Box 7 =  Form 1040NR-EZ  Line 18 
+||Form ||Item and Box || Where to Report on Form 1040NR-EZ||
+
+||Form 1042-S ||Box 2 || Line 5 ||
+
+||Form 1042-S ||Box 7 ||Line 18 || 
