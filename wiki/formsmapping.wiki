@@ -1,7 +1,7 @@
 #labels Form1042-S,Form1040NR-EZ
 
+*FORMS MAPPING - Form W-2, Form 1042-S, Form 1099-G to Form 1040NR-EZ*
 
- *FORMS MAPPING - Form W-2, Form 1042-S, Form 1099-G to Form 1040NR-EZ*
 
 ||*Form*       ||*Item and Box*  || *Where to Report on Form 1040NR-EZ* ||
 || Form 1042-S || Box 2          ||  Line 5                             ||
