@@ -94,21 +94,6 @@ function tax_treaty(){
 
 				break;
 
-			case "Estonia": 
-
-				line6=5000;
-
-				article="21(1)";
-
-				break;
-
-			case "France": 
-
-				line6=5000;
-
-				article="21(1)";
-
-				break;
 
 			case "Germany": 
 
@@ -158,19 +143,20 @@ function tax_treaty(){
 
 				break;
 
-			case "Lithuania": 
-
-				line6=5000;
-
-				article="20(1)";
-
-				break;
 
 			case "Morocco": 
 
 				line6=2000;
 
 				article="18";
+
+				break;
+
+             case "Norway": 
+
+				line6=2000;
+
+				article="16(1)";
 
 				break;
 
@@ -198,13 +184,6 @@ function tax_treaty(){
 
 				break;
 
-			case "Portugal": 
-
-				line6=5000;
-
-				article="23(1)";
-
-				break;
 
 			case "Romania": 
 
@@ -222,13 +201,6 @@ function tax_treaty(){
 
 				break;
 
-			case "Slovenia": 
-
-				line6=5000;
-
-				article="20(1)";
-
-				break;
 
 			case "Spain": 
 
@@ -262,20 +234,12 @@ function tax_treaty(){
 
 				break;
 
-			case "Venezuala": 
-
-				line6=5000;
-
-				article="21(1)";
-
-				break;
 
 			default:
 
 				line6 = 0;
 
 				break;
-
 			
 
 		}
