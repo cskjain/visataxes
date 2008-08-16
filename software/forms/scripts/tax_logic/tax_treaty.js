@@ -56,9 +56,9 @@ function tax_treaty(){
 
 			case "Belgium": 
 
-				line6=2000;
+				line6=9000;
 
-				article="21(1)";
+				article="19(1)(b)";
 
 				break;
 
@@ -97,7 +97,7 @@ function tax_treaty(){
 
 			case "Germany": 
 
-				line6=4000;
+				line6=9000;
 
 				article="20(4)";
 
@@ -152,7 +152,7 @@ function tax_treaty(){
 
 				break;
 
-			case "Pakisthan": 
+			case "Pakistan": 
 
 				line6=5000;
 
