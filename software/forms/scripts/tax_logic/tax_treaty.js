@@ -135,14 +135,6 @@ function tax_treaty(){
 
 				break;
 
-			case "Latvia": 
-
-				line6=5000;
-
-				article="20(1)";
-
-				break;
-
 
 			case "Morocco": 
 
