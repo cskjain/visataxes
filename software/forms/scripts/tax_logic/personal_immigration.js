@@ -16,7 +16,7 @@ var comb_university_address="";
 var comb_current_visa_date="";
 var comb_tax_forms="";
 //for date functions
-
+/*
 $(function()
 
 {
@@ -32,7 +32,7 @@ $(function()
 	$('.date_visa_issued').datePicker({startDate:'01/01/1996'});
 
 });
-
+*/
 // for citizen display
 
 function toggleCitizen(a){
