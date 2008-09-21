@@ -1,0 +1,8 @@
+#labels Form1040NR-EZ,Form8843,Form1040NR,Non-Resident-Tax-Software
+=Unit Testing - 2008 Non Resident Tax Software - Form 1040NR-EZ and Form 8843 =
+
+
+*Draft 2008 Form 1040NR-EZ*
+
+
+*Draft 2008 Form 8843*
