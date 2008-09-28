@@ -38,7 +38,7 @@ Loading Tax Software ... Please wait...<br>
  </script>
 
 <!-- Tax Logic Scripts Section -->
-
+<script src="scripts/tax_logic/initialize.js" type="text/javascript"></script>
 <script src="scripts/tax_logic/form1040nrez_ui.js" type="text/javascript"></script>
 <script src="scripts/tax_logic/form1040nrez.js" type="text/javascript"></script>
 <script src="scripts/tax_logic/tax_treaty.js" type="text/javascript"></script>
@@ -400,7 +400,7 @@ Loading Tax Software ... Please wait...<br>
                                         
                                                                 
                                                                         <br>
-                                                                        Country that issued your passport * :&nbsp;<input type="text" id ="passport_country" name="passport_country"    ><br>
+                                                                        Country that issued your passport * :&nbsp;<input type="text" id ="passport_country" name="passport_country"   onblur="country_logic();" ><br>
                                                         
 
                                                                         <br>
@@ -428,7 +428,7 @@ Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="r
      <br />
      <div id="ResidentDisp" style="display:none">
          Resident country for Tax Treaty Calculation * : &nbsp;
-<input type="text" id = "resident_country" name="resident_country" onChange="country_logic();tax_treaty();">
+<input type="text" id = "resident_country" name="resident_country" onChange="country_logic();">
 </div>
 <br />
      
