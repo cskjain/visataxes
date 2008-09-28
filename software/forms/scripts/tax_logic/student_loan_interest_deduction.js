@@ -1,11 +1,5 @@
 // JavaScript Document
-var D = 0;
-var box11098e = 0;
-var filingstatus = "single";
-var line7 = 0;
-var line8 = 0;
-var line10 = 0;
-var line9=0;
+
 
 function student_interest ()
 {
