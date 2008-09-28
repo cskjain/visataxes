@@ -1,33 +1,7 @@
 
-
-//global variable declaration
-
-var line6 ;
-
-var article ;
-
-//var citizencountry ;
-var resident_country;
-
-//var visatype_treaty ;
-var purpose_of_visit
-var linej;
-
-var article;
-
-var wages;
-
-
-
 //function to calculate the tax 
 
 function tax_treaty(){
-	
-	wages="";
-
-	article="";
-
-	linej="";
 	
 	//get country value from the form
 
