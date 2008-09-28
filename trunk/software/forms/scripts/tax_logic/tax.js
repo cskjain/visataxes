@@ -2,23 +2,10 @@
 
 // 2008 Tax Bracket updated for Single and Married Filing Separately
 
-//global variables used to calculate Tax
-var tax_average;
-var m1;
-var line14;
-var line15;
-var filing_status;
-//--------------------------------------
-
 //controler function
 function calculateTax()
 {
-    //intialization
-    tax_average = 0;
-    m1 = 0;
-    line14 = 0;
-    line15 = 0;
-    filing_status = "";
+   
 
     //get marital status from the form
     filing_status = document.getElementById('filingstatus').value;
