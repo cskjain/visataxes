@@ -9,7 +9,6 @@ function toggleCitizen(a){
 
     e.style.display="block";
 	citizenship_same="no";
-	document.getElementById("citizenship_country").value="Select Country";
 	country_logic();
   } else {
 
@@ -31,12 +30,10 @@ function toggleResident(a){
   if(a==1){
 	resident_same="no";
     e.style.display="block";
-	document.getElementById("resident_country").value="Select Country";
 	country_logic();
 	
 	
   } else {
-	document.getElementById("resident_country").value="Select Country";
     e.style.display="none";
 	resident_same="yes";
 	country_logic();
@@ -70,13 +67,11 @@ function country_logic()
 		
 		if((citizenship_same =="yes")&&(resident_same=="yes")){
 		
-		         citizenship_country = document.getElementById("passport_country").value;
-		         resident_country = document.getElementById("passport_country").value;
-         document.getElementById("passportcountry").value=document.getElementById("passport_country").value;
+		       citizenship_country = document.getElementById("passport_country").value;
+	        resident_country = document.getElementById("passport_country").value;
+         document.getElementById("citizen_country").value=document.getElementById("passport_country").value;
 		 document.getElementById("residentcountry").value=document.getElementById("passport_country").value;
-		 document.getElementById("citizen_country").value=document.getElementById("passport_country").value;
-		  tax_treaty();
-
+		 tax_treaty();
 		}
         
 		          
@@ -113,7 +108,6 @@ function country_logic()
 		 		  tax_treaty();
 
 		  }
-		// document.getElementById("output1").innerHTML="Passport Country :"+passport_country+"<br>"+"Citizenship Country :"+citizenship_country+"<br>"+"Resident Country: "+resident_country;
 
 }
 //function for combination of fname and mname
