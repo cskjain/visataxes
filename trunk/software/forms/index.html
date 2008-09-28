@@ -395,42 +395,30 @@ Loading Tax Software ... Please wait...<br>
                         <div id="Form1040NR-EZ_Immigration"> <br>
              <b>Immigration Information :</b>   <br><br>
                              
-
-                                                                        <b>Country Information :</b><br>
-                                        
+<b>Country Information :</b><br>
+                                                                                                       
+                                                                                                                                           
+                                                                                                            
                                                                 
                                                                         <br>
-                                                                        Country that issued your passport * :&nbsp;<input type="text" id ="passport_country" name="passport_country"   onblur="country_logic();" ><br>
+                                                                        Country that issued your passport * :&nbsp;<input type="text" id ="passport_country" name="passport_country"  onBlur="country_logic();"  ><br>
                                                         
 
                                                                         <br>
                                                                         Enter your passport number * :&nbsp;<input type="text" id = "passport_number" name="passport_number"><br><br>
-                                        
-
-Country of Citizenship in 2008 * :&nbsp;&nbsp;Same as above &nbsp;<input type="radio" id="citizen_same" name="citizen_same"  value="yes" checked="checked" onclick="toggleCitizen(0);"/>&nbsp;&nbsp;Different &nbsp;<input type="radio" id="citizen_same" name="citizen_same"  value="No" onclick="toggleCitizen(1);"/>
-<br />
-     <br />
-                                        
-                <div id="CitizenshipDisp" style="display:none">
-
-                          
-                                                                        Country of Citizenship * :&nbsp;<input type="text" id = "citizenship_country" name="citizenship_country" onBlur="country_logic();">
+                                                                        
+                                                                        Country of Citizenship in 2008* :&nbsp;<input type="text" id ="citizenship_country" name="citizenship_country"  onBlur="country_logic();"  ><br>
                                                         
-</div>        
 
-
-
-
- 
-     Resident country for Tax Treaty Calculation * :  &nbsp;&nbsp; Same as above<input type="radio" id="resident_same" name="resident_same"  value="yes" checked="checked" onclick="toggleResident(0);" />&nbsp;&nbsp;Different<input type="radio" id="resident_same" name="resident_same"  value="No" onclick="toggleResident(1);" /> <a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
+                                                                        <br>
+                                         Resident country for Tax Treaty Calculation * :&nbsp;<input type="text" id ="resident_country" name="resident_country"  onBlur="country_logic();"  >&nbsp;&nbsp;<a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
         >Help Me</a>
-  <br />
-     <br />
-     <div id="ResidentDisp" style="display:none">
-         Resident country for Tax Treaty Calculation * : &nbsp;
-<input type="text" id = "resident_country" name="resident_country" onChange="country_logic();">
-</div>
-<br />
+<br>
+                                                        
+
+                                                                        <br>
+
+</br>           
      
              
      <b>Type of Visa and Dates Information :</b>
