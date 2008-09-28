@@ -178,9 +178,7 @@ function calcLine12(){
 	calcLine14();
 }
 
-// Exemption Deduction Line 13 value for Year 2008 is $3500
 
-var line13 = 3500;
 
 function calcLine14()
 {
