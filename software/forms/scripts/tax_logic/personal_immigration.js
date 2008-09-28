@@ -1,38 +1,4 @@
-// www.VisaTaxes.com 
-//JavaScript Document for Personal and Immigration Tabs in Tax Software
 
-
-var passport_country="Select Country";
-var citizenship_country="Select Country";
-var resident_country="Select Country";
-var citizenship_same = "yes";
-var resident_same = "yes";
-var comb_fname_mname="";
-var comb_us_address="";
-var comb_us_address1="";
-var comb_us_address2="";
-var comb_foreign_address="";
-var comb_university_address="";
-var comb_current_visa_date="";
-var comb_tax_forms="";
-//for date functions
-/*
-$(function()
-
-{
-
-	$('.date_entry').datePicker({startDate:'01/01/1996'});
-
-});
-
-$(function()
-
-{
-
-	$('.date_visa_issued').datePicker({startDate:'01/01/1996'});
-
-});
-*/
 // for citizen display
 
 function toggleCitizen(a){
@@ -98,37 +64,55 @@ function selTaxForm(value){
 }
 
 //function for country selection
-//country_logic ( passport_country, citizenship_country, resident_country, citizenship_same, resident_same)
 function country_logic()
 {
-		//var e=document.getElementById("CitizenshipDisp");
+	
 		
-		passport_country=document.getElementById("passport_country").value;
-		citizenship_country=document.getElementById("citizenship_country").value;
-		resident_country=document.getElementById("resident_country").value;
-	//	alert(passport_country);
 		if((citizenship_same =="yes")&&(resident_same=="yes")){
-			citizenship_country="";
-			resident_country="";
-			citizenship_country = passport_country;
-			resident_country = passport_country;
+		
+		         citizenship_country = document.getElementById("passport_country").value;
+		         resident_country = document.getElementById("passport_country").value;
+         document.getElementById("passportcountry").value=document.getElementById("passport_country").value;
+		 document.getElementById("residentcountry").value=document.getElementById("passport_country").value;
+		 document.getElementById("citizen_country").value=document.getElementById("passport_country").value;
+		  tax_treaty();
+
 		}
         
 		          
          if((citizenship_same=="no")&&(resident_same=="yes")){
-			 resident_country="";
-	         resident_country = citizenship_country;
+         
+	        citizenship_country = document.getElementById("citizenship_country").value;
+	        resident_country = document.getElementById("passport_country").value;
+	         document.getElementById("passportcountry").value=document.getElementById("passport_country").value;
+		 document.getElementById("citizen_country").value=document.getElementById("citizenship_country").value;
+		 document.getElementById("residentcountry").value=document.getElementById("passport_country").value;
+		  tax_treaty();
+
          }
 
          if((citizenship_same=="yes")&&(resident_same=="no")){
-			 citizenship_country="";
-	         citizenship_country = passport_country ;
+         
+         resident_country = document.getElementById("resident_country").value;
+         citizenship_country = document.getElementById("passport_country").value;
+         document.getElementById("passportcountry").value=document.getElementById("passport_country").value;
+		 document.getElementById("citizen_country").value=document.getElementById("passport_country").value;
+		 document.getElementById("residentcountry").value=document.getElementById("resident_country").value;
+		tax_treaty();
+
          }
 		
-		 document.getElementById("passportcountry").value=passport_country;
-		 document.getElementById("citizen_country").value=citizenship_country;
-		 document.getElementById("residentcountry").value=resident_country;
-		  
+		else
+		{
+		citizenship_country = document.getElementById("citizenship_country").value;
+         resident_country = document.getElementById("resident_country").value;
+
+		 document.getElementById("passportcountry").value=document.getElementById("passport_country").value;
+		 document.getElementById("citizen_country").value=document.getElementById("citizenship_country").value;
+		 document.getElementById("residentcountry").value=document.getElementById("resident_country").value;
+		 		  tax_treaty();
+
+		  }
 		// document.getElementById("output1").innerHTML="Passport Country :"+passport_country+"<br>"+"Citizenship Country :"+citizenship_country+"<br>"+"Resident Country: "+resident_country;
 
 }
