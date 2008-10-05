@@ -38,6 +38,7 @@ Loading Tax Software ... Please wait...<br>
  </script>
 
 <!-- Tax Logic Scripts Section -->
+
 <script src="scripts/tax_logic/initialize.js" type="text/javascript"></script>
 <script src="scripts/tax_logic/form1040nrez_ui.js" type="text/javascript"></script>
 <script src="scripts/tax_logic/form1040nrez.js" type="text/javascript"></script>
@@ -49,16 +50,67 @@ Loading Tax Software ... Please wait...<br>
 <!-- Jquery Main Script Section -->
 <script src="scripts/jquery/jquery.js" type="text/javascript"></script>
 
-<!-- Jquery Autocomplete Scripts Section  -->
-<script src="scripts/jquery_autocomplete/jquery.autocomplete.js" type="text/javascript"></script>
-<script src="scripts/jquery_autocomplete/jquery.bgiframe.min.js" type="text/javascript"></script>
-<script src="scripts/jquery_autocomplete/jquery.dimensions.js" type="text/javascript"></script>
-<script src="scripts/jquery_autocomplete/visataxes.autocomplete.js" type="text/javascript"></script>
-<script src="scripts/data/local_data.js" type="text/javascript"></script>
-<link href="css/jquery.autocomplete.css" rel="stylesheet" type="text/css">
-
 <!-- Jquery Json Select Box Plugin -->
 <script src="scripts/jquery_selectbox/jquery.selectboxes.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ jQuery.getJSON("scripts/data/country_data.js",function(jsonData) {
+ $.each(jsonData,function(key,object) {
+ 
+  $("#foreign_country_info").addOption(object.Country_Code,object.Country);
+ 
+	  $("#passport_country_info").addOption(object.Country_Code,object.Country);
+	  
+	  $("#citizenship_country_info").addOption(object.Country_Code,object.Country);
+	  
+	  	  $("#resident_country_info").addOption(object.Country_Code,object.Country);
+	  	  
+	  	  	  
+	    });
+    
+    $("#passport_country_info").change(function() {
+
+		passportcountry_selected = $("#passport_country_info option[@selected]").html();
+		
+		$("#passportcountry").val(passportcountry_selected);
+		
+	});	
+	
+	   $("#citizenship_country_info").change(function() {
+
+		citizenshipcountry_selected = $("#citizenship_country_info option[@selected]").html();
+		
+		$("#citizen_country").val(citizenshipcountry_selected);
+		
+	});	
+	
+	$("#resident_country_info").change(function() {
+
+		resident_country_value = $("#resident_country_info option[@selected]").html();
+		
+		
+		$("#residentcountry").val(resident_country_value);
+		
+		resident_country = resident_country_value;
+		
+		tax_treaty();
+		
+	});	
+	
+		$("#foreign_country_info").change(function() {
+
+		foreign_country_selected = $("#foreign_country_info option[@selected]").html();
+		
+		comb_foreign_address=comb_foreign_address+","+" "+foreign_country_selected;
+			
+		$("#comb_foreign_address").val(comb_foreign_address);
+	
+
+	});	
+ 
+  });
+});
+</script>
 
 <!--Jquery Multitabs Scripts Section -->
 <link rel="stylesheet" href="css/jquery.tabs.css" type="text/css" media="print, projection, screen">
@@ -91,9 +143,7 @@ Loading Tax Software ... Please wait...<br>
 
             });
                         
-
-
-                        
+                      
         </script>
 
 
