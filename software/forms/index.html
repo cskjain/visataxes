@@ -268,7 +268,7 @@ $(document).ready(function(){
 <tr>
                                                         <td>        
                                                                 <br>
-                                                                Country * :&nbsp; <input type="text" id = "foreign_country" name="foreign_country" onBlur="cmb_comb_foreignaddress();">
+                                                                 Foreign Country * :&nbsp; <select id="foreign_country_info"/>
                                                         </td>
                                                 </tr>
                                                 
@@ -443,48 +443,44 @@ $(document).ready(function(){
 
             </div>
                         <!--Tab 2 Body-->
-                        <div id="Form1040NR-EZ_Immigration"> <br>
-             <b>Immigration Information :</b>   <br><br>
+                         <div id="Form1040NR-EZ_Immigration"> 
+                             <table>
+                           
+                            
+              <tr> <td> </br><b>Immigration Information :</b>   </td>  </tr>
                              
-<b>Country Information :</b><br>
+
+                                                                       <tr> <td> </br> <b>Country Information :</b></td>  </tr>
                                                                                                        
                                                                                                                                            
                                                                                                             
                                                                 
-                                                                        <br>
-                                                                        Country that issued your passport * :&nbsp;<input type="text" id ="passport_country" name="passport_country"  onBlur="country_logic();"  ><br>
-                                                        
-
-                                                                        <br>
-                                                                        Enter your passport number * :&nbsp;<input type="text" id = "passport_number" name="passport_number"><br><br>
+                                                                         <tr> <td> </br>
+                                                                        Country that issued your passport * : &nbsp; <select id="passport_country_info"/> </td>  </tr>
+                                                                    
+                                                                        <tr> <td> </br>Enter your passport number * :&nbsp;<input type="text" id = "passport_number" name="passport_number"></td>  </tr>
                                                                         
-                                                                        Country of Citizenship in 2008* :&nbsp;<input type="text" id ="citizenship_country" name="citizenship_country"  onBlur="country_logic();"  ><br>
+                                                                         <tr> <td> </br>Country of Citizenship in 2008* :&nbsp;<select id="citizenship_country_info"/></td>  </tr>
                                                         
 
-                                                                        <br>
-                                         Resident country for Tax Treaty Calculation * :&nbsp;<input type="text" id ="resident_country" name="resident_country"  onBlur="country_logic();"  >&nbsp;&nbsp;<a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
+                                                                    
+                                          <tr><td></br>Resident country for Tax Treaty Calculation * : &nbsp; <select id="resident_country_info"/> &nbsp;<a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
         >Help Me</a>
-<br>
+</b></td>  </tr>
+
                                                         
 
-                                                                        <br>
-
-</br>           
+                                                                       <tr><td></br><b>Type of Visa and Dates Information :</b></td>  </tr>
      
-             
-     <b>Type of Visa and Dates Information :</b>
-     <br />
-     <br />
-     Date you first entered the United States * :
+     <tr><td></br>Date you first entered the United States * :
      <input name="date_entry" id="date_entry" class="date_entry" /> &nbsp; mm/dd/yyyy    (Example: Enter Jan 10, 2005 as 01/10/2005)
-         <br />
-     <br />
+         </td>  </tr>
+    <tr><td></br>
      Type of Visa when you first entered United States * :
-     <input name="visa_entry" id="visa_entry" class="visa_entry" />
-     <br />
-     <br />
+     <input name="visa_entry" id="visa_entry" class="visa_entry" /></td>  </tr>
+  </table>
+  <table>
 
-     <table>
      <tr>
      <td>
 </br>
@@ -493,12 +489,12 @@ $(document).ready(function(){
 
      <td>
 </br>
-     &nbsp;&nbsp;<b>Visa Type</b>
+     <b>Visa Type</b>
      </td>
 
      <td>
 </br>
-     &nbsp;&nbsp;<b>Days</b>
+     <b>Days</b>
      </td>
 </tr>
 <tr>
@@ -514,7 +510,6 @@ $(document).ready(function(){
       &nbsp;&nbsp;<input type="text" id="days_yr7" name="days_yr7" size="12">
      </td>
 </tr>
-
 
   <tr>
      <td>
@@ -605,7 +600,7 @@ $(document).ready(function(){
      
      Dates you entered and left United States in 2008 * : 
 
-<a href="help/dates_entry_departure.htm" onclick="return popitup('help/dates_entry_departure.htm')"
+<a href="https://www.visataxes.com/software/forms/help/dates_entry_departure.htm" onclick="return popitup('https://www.visataxes.com/software/forms/help/dates_entry_departure.htm')"
         >Help Me</a>
      <br />
      <br />
@@ -632,7 +627,7 @@ $(document).ready(function(){
      <div id="taxform" style="display:block">
              Name of the Tax Forms filed in the Year 2007 * : 
              <input type="text" name="tax_forms" id="tax_forms" onChange="cmbcomb_taxforms();" /> 
-<a href="help/prev_year_tax_forms.htm" onclick="return popitup('help/prev_year_tax_forms.htm')">Help Me</a>
+<a href="https://www.visataxes.com/software/forms/help/prev_year_tax_forms.htm" onclick="return popitup('https://www.visataxes.com/software/forms/help/prev_year_tax_forms.htm')">Help Me</a>
         
 <br />
 <br />
