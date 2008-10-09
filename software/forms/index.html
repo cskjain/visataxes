@@ -56,21 +56,14 @@ Loading Tax Software ... Please wait...<br>
 $(document).ready(function(){
  jQuery.getJSON("scripts/data/country_data.js",function(jsonData) {
  $.each(jsonData,function(key,object) {
- 
   $("#foreign_country_info").addOption(object.Country_Code,object.Country);
   $("#foreign_country_info option[@value='select']").attr('selected', 'true');
-
- 
-	  $("#passport_country_info").addOption(object.Country_Code,object.Country);
-	  $("#passport_country_info option[@value='select']").attr('selected', 'true');
-
-	  
-	  $("#citizenship_country_info").addOption(object.Country_Code,object.Country);
-	  $("#citizenship_country_info option[@value='select']").attr('selected', 'true');
-
-	  
-	  	  $("#resident_country_info").addOption(object.Country_Code,object.Country);
-	  	  $("#resident_country_info option[@value='select']").attr('selected', 'true');	  	  
+  $("#passport_country_info").addOption(object.Country_Code,object.Country);
+  $("#passport_country_info option[@value='select']").attr('selected', 'true');
+  $("#citizenship_country_info").addOption(object.Country_Code,object.Country);
+  $("#citizenship_country_info option[@value='select']").attr('selected', 'true');
+  $("#resident_country_info").addOption(object.Country_Code,object.Country);
+  $("#resident_country_info option[@value='select']").attr('selected', 'true');	  	  
 	  	  	  
 	    });
     
