@@ -1,10 +1,4 @@
-
-
-
-
 //This function responsiple for adding new form W-2
-
-
 
 function addFromW2()
 
@@ -422,13 +416,7 @@ function addFrom1042S()
 
 }
 
-	
-
-
-
 //This function responsiple for removing Form W-2
-
-
 
 function removeFrom1042S(divId)
 
@@ -454,8 +442,6 @@ function removeFrom1042S(divId)
 
 }
 
-
-
 function hideForm1042S(){
 
 	document.getElementById('form1042-S').innerHTML ='';
@@ -471,7 +457,6 @@ function hideForm1042S(){
 }
 
 
-
 function showForm1042S(){
 
 	document.getElementById('form1042-S').style.display = 'block';
@@ -482,15 +467,7 @@ function showForm1042S(){
 
 }
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 //This function responsiple for adding new Form 1099-G
-
-
 
 function addFrom1099G()
 
@@ -572,9 +549,6 @@ function addFrom1099G()
 
 			+"</tr>"
 
-			
-
-			
 
 			+"<tr>"
 
@@ -592,9 +566,7 @@ function addFrom1099G()
 
 			+"</tr>"
 
-			
 
-			
 
 			+"<tr>"
 
@@ -612,9 +584,6 @@ function addFrom1099G()
 
 			+"</tr>"
 
-			
-
-			
 
 			+"<tr>"
 
@@ -642,11 +611,7 @@ function addFrom1099G()
 
 }
 
-	
-
 //This function responsiple to remove Form 1099G
-
-
 
 function removeFrom1099G(divId)
 
@@ -664,7 +629,6 @@ function removeFrom1099G(divId)
 
 		document.getElementById('form1099-Gradio_2').checked = true;
 
-		
 
 	calcLine18();
 
@@ -672,15 +636,11 @@ function removeFrom1099G(divId)
 
 }
 
-
-
 function hideForm1099G(){
 
 	document.getElementById('form1099-G').innerHTML ='';
 
 	document.getElementById('form1099-GCounter').value = 0;
-
-	
 
 	calcLine18();
 
@@ -699,12 +659,6 @@ function showForm1099G(){
 		addFrom1099G();
 
 }
-
-
-
-////////////////////////////////////////////////////////////
-
-
 
 function reInitialize(){
 
@@ -740,57 +694,17 @@ function reInitialize(){
 
 			}
 
-
-
-
-
-
-
-
-
-
-
-
-
 function showDiv(divName){
 
 	document.getElementById(divName).style.display = 'block';
 
 }
 
-
-
-
-
-
-
 function hideDiv(divName){
 
 	document.getElementById(divName).style.display = 'none';
 
 }
-
-
-
-function showHideUinvInfo (){
-
-	if ( document.getElementById('purpose_of_visit').value == "student" || document.getElementById('purpose_of_visit').value == "teacher" )
-
-	{
-
-		document.getElementById('university_information').style.display = 'block';
-
-	}
-
-	else{
-
-		document.getElementById('university_information').style.display = 'none';
-
-	}
-
-}
-
-
 
 function showDivform4137bDiv(){
 
@@ -812,8 +726,6 @@ function hideDivform4137b(){
 
 }
 
-
-
 function showDivform8919Div(){
 
 	document.getElementById('form8919Div').style.display = 'block';
@@ -821,8 +733,6 @@ function showDivform8919Div(){
 	document.getElementById('chkform8919_value').value ='Yes';
 
 }
-
-
 
 function hideDivform8919(){
 
@@ -836,8 +746,6 @@ function hideDivform8919(){
 
 }
 
-
-
 function hideDivform1040_C(){
 
 	document.getElementById('form1040-CDiv').style.display = 'none';
@@ -848,8 +756,6 @@ function hideDivform1040_C(){
 
 }
 
-
-
 function hideDivform1098_E(){
 
 	document.getElementById('form1098-EDiv').style.display = 'none';
@@ -859,10 +765,6 @@ function hideDivform1098_E(){
 	calcLine9();
 
 }
-
-
-
-
 
 function hideline19Div(){
 
