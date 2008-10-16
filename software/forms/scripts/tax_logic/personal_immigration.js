@@ -18,8 +18,7 @@ function toggleCitizen(a){
 	citizenship_same="yes";
 	country_logic();
   }
-  
-
+ 
 }
 
 //for resident display
@@ -33,7 +32,6 @@ function toggleResident(b){
     e.style.display="block";
 	country_logic();
 	
-	
   } else {
     e.style.display="none";
 	resident_same="yes";
@@ -41,34 +39,51 @@ function toggleResident(b){
   }
   
 }
-//for tax details display
 
-function selTaxForm(value){
+// purpose of visit DOM change
 
-	var e=document.getElementById("taxform");
+function showHideUinvInfo (){
 
-	if(value=="Yes"){
+	if ( document.getElementById('purpose_of_visit').value == "student" || document.getElementById('purpose_of_visit').value == "teacher" )
 
-		e.style.display="block";	
+	{
 
-	}else{
+		document.getElementById('university_information').style.display = 'block';
 
-		e.style.display="none";
+	}
+
+	else{
+
+		document.getElementById('university_information').style.display = 'none';
 
 	}
 
 }
 
-//function for country selection
-function country_logic()
+//did you file Tax Form in 2007, DOM Change
+
+function selTaxForm()
+
 {
-			 document.getElementById("passportcountry").value=document.getElementById("passport_country").value;
-		 document.getElementById("citizen_country").value=document.getElementById("citizenship_country").value;
-		 document.getElementById("residentcountry").value=document.getElementById("resident_country").value;
-tax_treaty();
-		
-			
+       if ( document.getElementById('prev_year_tax_filing ').value == "Yes") 
+
+       {
+       
+       document.getElementById('taxform').style.display = 'block';
+       
+       }
+
+       else
+
+       {
+
+       document.getElementById('taxform').style.display = 'none';
+
+        }
+
 }
+
+
 //function for combination of fname and mname
 function cmb_name(){
 	comb_fname_mname   =document.getElementById("fname").value+" "+document.getElementById("mname").value;
@@ -122,6 +137,7 @@ function cmb_usaddress2(){
 	document.getElementById("comb_us_address2").value= comb_us_address2;
 	cmb_us_address();
 }
+
 //function for comb_foreign_address
 function cmb_comb_foreignaddress(){
 	comb_foreign_address="";
@@ -137,11 +153,9 @@ function cmb_comb_foreignaddress(){
 	if(!document.getElementById("foreign_zip").value==""){
 		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_zip").value;
 	}
-	if(!document.getElementById("foreign_country").value==""){
-		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_country").value;
-	}
-	document.getElementById("comb_foreign_address").value = comb_foreign_address ;
+
 }
+
 //function for comb_university_address
 function cmb_universityaddress(){
 	comb_university_address="";
@@ -163,6 +177,7 @@ function cmb_universityaddress(){
 	}
 	document.getElementById("comb_university_address").value = comb_university_address;
 }
+
 //function for comb_current_visa_date
 function cmb_current_visadate(){
 	comb_current_visa_date="";
@@ -174,9 +189,10 @@ function cmb_current_visadate(){
 	}
 	document.getElementById("comb_current_visa_date").value = comb_current_visa_date;
 }
+
 //function for comb_tax_forms
 function cmbcomb_taxforms(){
 	comb_tax_forms="";
-	comb_tax_forms="Year 2007"+" "+document.getElementById("tax_forms").value;
+	comb_tax_forms="Year 2007"+","+document.getElementById("tax_forms").value;
 	document.getElementById("comb_tax_forms").value = comb_tax_forms;
 }
