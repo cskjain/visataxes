@@ -264,12 +264,6 @@ function showFormW2(){ //Show the main div of form w-2 and also show a new form 
 
 }
 
-
-
-
-
-
-
 //This function responsiple for adding new Form 1042-S
 
 function addFrom1042S()
