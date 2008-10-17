@@ -20,14 +20,14 @@ function showHideUinvInfo (){
 
 //did you file Tax Form in 2007, DOM Change
 
-function selectTaxForm()
+function showHideUinvInfo()
 
 {
-       if ( document.getElementById('prev_year_tax_filing ').value == "Yes") 
+       if ( document.getElementById('prev_year_tax_filing').value == "No") 
 
        {
        
-       document.getElementById('tax_form').style.display = 'block';
+       document.getElementById('prev_tax_form').style.display = 'none';
        
        }
 
@@ -35,7 +35,7 @@ function selectTaxForm()
 
        {
 
-       document.getElementById('tax_form').style.display = 'none';
+       document.getElementById('prev_tax_form').style.display = 'block';
 
         }
 
