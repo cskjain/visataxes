@@ -1,45 +1,3 @@
-
-// for citizen display
-
-function toggleCitizen(a){
-  
-  var e=document.getElementById("CitizenshipDisp");
-
-  if(a==1){
-
-    e.style.display="block";
-	citizenship_same="no";
-	country_logic();
-  } else 
-  
-  {
-
-    e.style.display="none";
-	citizenship_same="yes";
-	country_logic();
-  }
- 
-}
-
-//for resident display
-
-function toggleResident(b){
-
-  var e=document.getElementById("ResidentDisp");
-
-  if(b==1){
-	resident_same="no";
-    e.style.display="block";
-	country_logic();
-	
-  } else {
-    e.style.display="none";
-	resident_same="yes";
-	country_logic();
-  }
-  
-}
-
 // purpose of visit DOM change
 
 function showHideUinvInfo (){
@@ -62,14 +20,14 @@ function showHideUinvInfo (){
 
 //did you file Tax Form in 2007, DOM Change
 
-function selTaxForm()
+function selectTaxForm()
 
 {
        if ( document.getElementById('prev_year_tax_filing ').value == "Yes") 
 
        {
        
-       document.getElementById('taxform').style.display = 'block';
+       document.getElementById('tax_form').style.display = 'block';
        
        }
 
@@ -77,7 +35,7 @@ function selTaxForm()
 
        {
 
-       document.getElementById('taxform').style.display = 'none';
+       document.getElementById('tax_form').style.display = 'none';
 
         }
 
