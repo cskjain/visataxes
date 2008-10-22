@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Calculating Non Resident Tax Rate Form 1040NR-EZ - Test Case</title>
+<script src="../scripts/tax_logic/tax.js" type="text/javascript"></script>
+</head>
+<body>
+<b>Non Resident Tax Rate</b></br></br>
+<u>Input: </u></br></br>
+<select id="filingstatus" onchange="calculateTax();" name="filingstatus">
+    <option selected="selected" value="single">Single </option>
+    <option value="married">Married </option>
+</select>
+</br></br>
+Line 14: <input id="line14" type="text" onchange="calculateTax();" value="0" name="line14"/>
+</br></br>
+<u>Output:</u></br></br>
+Line 15: <input id="line15" type="text" readonly="" value="0" name="line15"/>
+</br></br>
+</body>
+</html>
