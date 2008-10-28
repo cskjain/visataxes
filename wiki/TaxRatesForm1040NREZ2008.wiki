@@ -68,4 +68,60 @@ $47,300.50 plus 35% of the amount over $174,850
 
 *Single*
 
+If taxable income is at least . . .	
+But not more than . . .	
+Your tax is:
+
+$0	
+$8,025	
+10% of the amount over $0
+
+$8,026	
+$32,550	
+$802.50 plus 15% of the amount over $8,025
+
+$32,551	
+$78,850	
+$4,481.25 plus 25% of the amount over $32,550
+
+$78,851	
+$164,550	
+$16,056.25 plus 28% of the amount over $78,850
+
+$164,551	
+$357,700	
+$40,052.25 plus 33% of the amount over $164,550
+
+$357,701	
+No limit	
+$103,791.75 plus 35% of the amount over $357,700
+
 *Married Filing Separately*
+
+If taxable income is at least . . .	
+But not more than . . .	
+Your tax is:
+
+$0	
+$8,025	
+10% of the amount over $0
+
+$8,025	
+$32,550	
+$802.50 plus 15% of the amount over $8,025
+
+$32,551	
+$65,725	
+$4,481.25 plus 25% of the amount over $32,550
+
+$65,726	
+$100,150	
+$12,775 plus 28% of the amount over $65,725
+
+$100,151	
+$178,850	
+$22,414 plus 33% of the amount over $100,150
+
+$178,851	
+No limit	
+$48,385 plus 35% of the amount over $178,850
