@@ -1,11 +1,11 @@
 #labels 2008Form1040NR-EZ,2008Form8843,IRSForms
-2008 Form 1040NR-EZ and Form 8843 Draft Forms
+*2008 Form 1040NR-EZ and Form 8843 Draft Forms*
 
 Form 1040NR-EZ Draft
 
 Form 8843 Draft
 
 
-2008 Form 1040NR-EZ and Form 8843 - Final release by the IRS
+*2008 Form 1040NR-EZ and Form 8843 - Final release by the IRS*
 
 Dates to be announced.
