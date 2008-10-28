@@ -1,0 +1,43 @@
+#labels TaxScheduleForm1040NR-EZ,TaxBracketForm1040NR
+Tax rates Form 1040NR-EZ
+
+*2007*
+
+*Single*
+
+If your taxable income is at least . . .	
+But not more than . . .	
+Your tax is:
+
+$0	
+$7,825	
+10% of the amount over $0
+
+$7,826	
+$31,850	
+$782.50 plus 15% of the amount over $7,825
+
+$31,851	
+$77,100	
+$4,386.25 plus 25% of the amount over $31,850
+
+$77,101	
+$160,850	
+$15,698.75 plus 28% of the amount over $77,100
+
+$160,851	
+$349,700	
+$39,148.75 plus 33% of the amount over $160,850
+
+$349,701	
+No limit	
+$101,469.25 plus 35% of the amount over $349,700
+
+*Married Filing Separately*
+
+
+*2008*
+
+*Single*
+
+*Married Filing Separately*
