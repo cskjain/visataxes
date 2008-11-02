@@ -6,7 +6,7 @@
 
 function calcLine_1_2_9_13_15()
 {
-	filing_status = document.getElementById('filingstatus').value;
+document.getElementById('filingstatus_value').value = document.getElementById('filingstatus').value;
 	calcLine9_10();
 	calcLine15();
 	
@@ -114,8 +114,7 @@ function calcLine7(){
 	if (line7 < 0)
 		line7 = 0;
 	document.getElementById("line7").value = line7;
-	calcLine10();
-	calcLine9();
+    calcLine9_10();
 }
 
 
@@ -129,12 +128,12 @@ function calcLine9(){
 }
 
 function calcLine10(){
-	var line7 = document.getElementById(''line7'').value -1 + 1 ;
-	var line9 = document.getElementById(''line9'').value -1 + 1 ;
+	var line7 = document.getElementById("line7").value -1 + 1 ;
+	var line9 = document.getElementById("line9").value -1 + 1 ;
 	var line10 = Math.round(line7 -  line9);
 	if (line10 < 0)
 		line10 = 0;
-	document.getElementById(''line10'').value = line10;
+	document.getElementById("line10").value = line10;
 	calcLine12();
 }
 
@@ -215,12 +214,12 @@ function calcLine18()
 	}
 	
 	
-	var box21042 = document.getElementsByName("1042sbox2");
+	var box71042 = document.getElementsByName("1042sbox7");
 	var j = 0;
-	var sum1042sbox2 = 0;
-	for ( j = 0 ; j < box21042.length ; j++ )
+	var sum1042sbox7 = 0;
+	for ( j = 0 ; j < box71042.length ; j++ )
 	{
-		sum1042sbox2 = sum1042sbox2 + ( box21042[j].value -1 + 1 );
+		sum1042sbox7 = sum1042sbox7 + ( box71042[j].value -1 + 1 );
 	}
 
 	
