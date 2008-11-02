@@ -50,7 +50,7 @@ Line 16: 0
 
 Line 17: Line 15
 
-Line 18: Round (Sum (W2 Box 2) + Sum (1099G Box 4))
+Line 18: Round (Sum (W2 Box 2) + Sum(1042-S Box 7) + Sum (1099G Box 4))
 
 Line 19: 0
 
