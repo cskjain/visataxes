@@ -753,6 +753,7 @@ function hideDivform1098_E(){
 
 	document.getElementById('1098ebox1').value='';
 	
+    line9 = 0; 	
 	calcLine9_10();
 
 }
