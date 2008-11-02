@@ -36,7 +36,7 @@ Line 9: Student Interest Function
 
 Line 10: Line 7 - Line 9
 
-Line 11: (Sum (W-2 Box 17))
+Line 11: (Sum (W-2 Box 17) + Sum(W-2 Box 19))
 
 Line 12: Line 10 - Line 11
 
