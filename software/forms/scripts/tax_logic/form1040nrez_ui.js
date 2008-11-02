@@ -264,6 +264,12 @@ function showFormW2(){ //Show the main div of form w-2 and also show a new form 
 
 }
 
+
+
+
+
+
+
 //This function responsiple for adding new Form 1042-S
 
 function addFrom1042S()
@@ -657,23 +663,14 @@ function showForm1099G(){
 function reInitialize(){
 
 				document.getElementById('formw-2radio_2').checked=true;
-
 				document.getElementById('formW-2Counter').value = 0 ;
-
-				
-
+	
 				document.getElementById('form1042-Sradio_2').checked=true;
-
 				document.getElementById('form1042-SCounter').value = 0 ;
-
-				
-
+	
 				document.getElementById('form1099-Gradio_2').checked=true;
-
 				document.getElementById('form1099-GCounter').value = 0 ;
-
-				
-
+		
 				document.getElementById('form4137bradio_2').checked=true;
 
 				document.getElementById('form8919radio_2').checked=true;
@@ -756,7 +753,7 @@ function hideDivform1098_E(){
 
 	document.getElementById('1098ebox1').value='';
 	
-	calcLine9();
+	calcLine9_10();
 
 }
 
