@@ -4,7 +4,7 @@
 function student_interest ()
 {
 	box11098e = document.getElementById('1098ebox1').value;
-	filingstatus = document.getElementById('filingstatus').value;
+	filingstatus = document.getElementById('filingstatus_value').value;
 	line7 = document.getElementById('line7').value;
      
 	
@@ -51,7 +51,7 @@ function student_interest ()
  	}   
 	document.getElementById('line9').value = line9;
 	
-
+    
 
 }  
 
