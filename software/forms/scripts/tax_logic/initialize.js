@@ -44,4 +44,6 @@ var line13 = 3500;
 
 var line8 = 0;
 
+// Line 16 is 0
 
+var line16 = 0;
