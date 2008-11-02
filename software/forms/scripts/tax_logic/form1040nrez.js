@@ -118,10 +118,6 @@ function calcLine7(){
 	calcLine9();
 }
 
-// Line 8 is 0 
-
-var line8 = 0;
-
 
 function calcLine9_10(){
 	calcLine9();
@@ -134,9 +130,8 @@ function calcLine9(){
 
 function calcLine10(){
 	var line7 = document.getElementById("line7").value - 1 + 1 ;
-	var line8 = document.getElementById("line8").value - 1 + 1 ;
 	var line9 = document.getElementById("line9").value - 1 + 1 ;
-	var line10 = Math.round ( line7 - ( line8 + line9 ) );
+	var line10 = Math.round(line7 -  line9);
 	if (line10 < 0)
 		line10 = 0;
 	document.getElementById("line10").value = line10;
