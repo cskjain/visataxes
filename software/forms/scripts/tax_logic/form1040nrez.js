@@ -128,8 +128,8 @@ function calcLine9(){
 }
 
 function calcLine10(){
-	var line7 = document.getElementById("line7").value -1 + 1 ;
-	var line9 = document.getElementById("line9").value -1 + 1 ;
+	var line7 = document.getElementById("line7").value - 1 + 1 ;
+	var line9 = document.getElementById("line9").value - 1 + 1 ;
 	var line10 = Math.round(line7 -  line9);
 	if (line10 < 0)
 		line10 = 0;
