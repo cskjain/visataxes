@@ -5,7 +5,7 @@
 
 [http://www.visataxes.com/software/forms/test/Test-Non%20Resident-Tax-Rate.html]
 
-Student Loan Interest Deduction - Form 1040NR-EZ
+Line 9 : Student Loan Interest Deduction - Form 1040NR-EZ
 
 [http://www.visataxes.com/software/forms/test/Test-Student-Loan-Interest-Deduction.html]
 
