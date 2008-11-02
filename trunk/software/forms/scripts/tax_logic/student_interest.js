@@ -4,11 +4,11 @@
 function student_interest ()
 {
 	box11098e = document.getElementById('1098ebox1').value;
-	    filing_status = document.getElementById('filingstatus').value;
+	    filingstatus = document.getElementById('filingstatus').value;
     	line7 = document.getElementById('line7').value;
      
 	
-	if (filing_status == "single" )          
+	if (filingstatus == "single" )          
 	{
     	
 		   if(box11098e  > 2500)         
