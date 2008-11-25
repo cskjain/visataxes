@@ -1,18 +1,16 @@
 #labels 2008Form1040NR-EZ,2008Form8843,Featured
 *2008 Form 1040NR-EZ and Form 8843 *
 
+
 Form 1040NR-EZ Draft
 
 [http://www.scribd.com/doc/6146575/2008-Form1040NR-EZ-Draft]
+
 
 2008 Form 8843 - Released by the IRS
 
 [http://www.irs.gov/pub/irs-pdf/f8843.pdf]
 
-
-*2008 Form 1040NR-EZ and Form 8843 - Final release by the IRS*
-
-[http://www.irs.gov/formspubs/index.html]
 
 *IRS Posting Schedule*
 
