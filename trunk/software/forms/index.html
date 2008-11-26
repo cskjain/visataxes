@@ -107,9 +107,12 @@ $(document).ready(function(){
 
 		foreign_country_selected = $("#foreign_country_info option[@selected]").html();
 		
-		//comb_foreign_address=comb_foreign_address+","+" "+foreign_country_selected;
-			
-		//$("#comb_foreign_address").val(comb_foreign_address);
+       		$("#foreigncountry").val(foreign_country_selected);
+       		
+       		foreign_country_value = foreign_country_selected;
+       		
+       		cmb_comb_foreignaddress();
+
 
 	});	
 	
@@ -736,6 +739,15 @@ Name of the Tax Forms filed in the Year 2007 * :
                                                         <input type ="text" id = "filingstatus_value" name="filingstatus" value = "single" readonly>
                                                 </td>
                                         </tr>
+                                        <tr>
+                                                <td>
+                                                        Foreign Country :
+                                                </td>
+                                                <td>
+                                                        <input type ="text" id = "foreigncountry" name="foreigncountry"  readonly>
+                                                </td>
+                                        </tr>
+
                        <tr>
                                                 <td>
                                                         Passport Country :
