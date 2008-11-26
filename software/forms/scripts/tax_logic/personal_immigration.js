@@ -101,8 +101,11 @@ function cmb_usaddress2(){
 }
 
 //function for comb_foreign_address
-function cmb_comb_foreignaddress(){
+function cmb_comb_foreignaddress()
+
+{
 	comb_foreign_address="";
+	
 	if(!document.getElementById("foreign_street").value==""){
 		comb_foreign_address=document.getElementById("foreign_street").value;
 	}
@@ -115,6 +118,11 @@ function cmb_comb_foreignaddress(){
 	if(!document.getElementById("foreign_zip").value==""){
 		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_zip").value;
 	}
+	
+comb_foreign_address = comb_foreign_address + "," + foreign_country_value;
+		
+document.getElementById("comb_foreign_address").value= comb_foreign_address;
+
 
 }
 
