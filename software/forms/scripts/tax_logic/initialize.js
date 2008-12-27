@@ -1,5 +1,6 @@
 var foreign_country_value;
 var comb_fname_mname="";
+var complete_name="";
 var comb_us_address="";
 var comb_us_address1="";
 var comb_us_address2="";
