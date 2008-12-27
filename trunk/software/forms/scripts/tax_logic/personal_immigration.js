@@ -45,11 +45,13 @@ function showHideUinvInfo()
 //function for combination of fname and mname
 function cmb_name(){
 	
-	comb_fname_mname =document.getElementById("fname").value+" "+document.getElementById("mname").value+" "+" "+" "+" "+" "+" "+" "+document.getElementById("lname").value;
-	document.getElementById("comb_fname_mname").value = comb_fname_mname; 
+	comb_fname_mname =document.getElementById("fname").value+" "+document.getElementById("mname").value;
 	
-		/*comb_fname_mname_lname   =document.getElementById("fname").value+" "+document.getElementById("mname").value+" "+document.getElementById("lname").value;
-	document.getElementById("comb_fname_mname_lname").value = comb_fname_mname_lname;*/
+	complete_name = document.getElementById("fname").value+" "+document.getElementById("mname").value+" "+document.getElementById("lname").value;
+
+		document.getElementById("comb_fname_mname").value = comb_fname_mname; 
+	
+	document.getElementById("complete_name").value = complete_name;
 	
 } 
 
