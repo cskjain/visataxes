@@ -1,6 +1,6 @@
-// purpose of visit DOM change
+// 'purpose of visit' DOM change
 
-function showHideUinvInfo (){
+function showHideUnivInfo(){
 
 	if ( document.getElementById('purpose_of_visit').value == "student" || document.getElementById('purpose_of_visit').value == "teacher" )
 
@@ -27,6 +27,8 @@ function showHideUinvInfo()
 
        {
        
+       prev_year_tax_filing = "No";
+       
        document.getElementById('prev_tax_form').style.display = 'none';
        
        }
@@ -52,6 +54,7 @@ function cmb_name(){
 		document.getElementById("comb_fname_mname").value = comb_fname_mname; 
 	
 	document.getElementById("complete_name").value = complete_name;
+	
 	
 } 
 
