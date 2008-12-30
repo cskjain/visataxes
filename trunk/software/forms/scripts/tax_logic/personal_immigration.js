@@ -172,7 +172,7 @@ function cmb_entry_visadate(){
 		comb_entry_visa_date=document.getElementById("visa_entry").value;
 	}
 	if(!document.getElementById("date_entry").value==""){
-		comb_entry_visa_date=comb_entry_visa_date+","+" "+document.getElementById("date_entry").value;
+		comb_entry_visa_date=comb_entry_visa_date +","+" "+document.getElementById("date_entry").value;
 	}
 	document.getElementById("comb_entry_visa_date").value = comb_entry_visa_date;
 }
