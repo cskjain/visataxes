@@ -489,15 +489,15 @@ $(document).ready(function(){
 
                                                         
 
-                                                                       <tr><td></br><b>Type of Visa and Dates Information :</b></td>  </tr>
+                                                                     <tr><td></br><b>Type of Visa and Dates Information :</b></td>  </tr>
      
      <tr><td></br>Date you first entered the United States * :
-     <input name="date_entry" id="date_entry" class="date_entry" /> &nbsp; mm/dd/yyyy    (Example: Enter Jan 10, 2005 as 01/10/2005)
+     <input type ="text" name="date_entry" id="date_entry"  class="date_entry"  onchange="cmb_entry_visadate();" /> &nbsp; mm/dd/yyyy    (Example: Enter Jan 10, 2005 as 01/10/2005)
          </td>  </tr>
     <tr><td></br>
      Type of Visa when you first entered United States * :
-     <input name="visa_entry" id="visa_entry" class="visa_entry" /></td>  </tr>
-  </table>
+     <input type="text" name="visa_entry" id="visa_entry" class="visa_entry" onchange="cmb_entry_visadate();" /></td>  </tr>
+       </table>
   <table>
 
      <tr>
