@@ -165,6 +165,21 @@ function cmb_current_visadate(){
 	document.getElementById("comb_current_visa_date").value = comb_current_visa_date;
 }
 
+//function for comb_entry_visa_date
+function cmb_entry_visadate(){
+	comb_entry_visa_date="";
+	if(!document.getElementById("visa_entry").value==""){
+		comb_entry_visa_date=document.getElementById("visa_entry").value;
+	}
+	if(!document.getElementById("date_entry").value==""){
+		comb_entry_visa_date=comb_entry_visa_date+","+" "+document.getElementById("date_entry").value;
+	}
+	document.getElementById("comb_entry_visa_date").value = comb_entry_visa_date;
+}
+
+
+
+
 //function for comb_tax_forms
 function cmbcomb_taxforms(){
 	comb_tax_forms="";
