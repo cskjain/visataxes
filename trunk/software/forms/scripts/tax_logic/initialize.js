@@ -37,7 +37,11 @@ var line15=0;
 var filing_status="";
 //--------------------------------------
 
-// Exemption Deduction Line 13 value for Year 2008 is $3500
+// Standard Deductions Line 11 only for Indian Students for year 2008
+
+var standard_deductions = 5450;
+
+// Exemption Deduction Line 13 value for Year 2008
 
 var line13 = 3500;
 
