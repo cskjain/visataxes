@@ -17,11 +17,11 @@ Loading Tax Software ... Please wait...<br>
  var ns6=document.getElementById&&!document.all;
  var ie4=document.all;
   if (ns4)
- 	ld=document.loading;
+         ld=document.loading;
  else if (ns6)
- 	ld=document.getElementById("loading").style;
+         ld=document.getElementById("loading").style;
  else if (ie4)
- 	ld=document.all.loading.style;
+         ld=document.all.loading.style;
   function init()
  {
  if(ns4){ld.visibility="hidden";}
@@ -51,65 +51,65 @@ $(document).ready(function(){
   $("#foreign_country_info option[@value='select']").attr('selected', 'true');
 
  
-	  $("#passport_country_info").addOption(object.Country_Code,object.Country);
-	  $("#passport_country_info option[@value='select']").attr('selected', 'true');
+          $("#passport_country_info").addOption(object.Country_Code,object.Country);
+          $("#passport_country_info option[@value='select']").attr('selected', 'true');
 
-	  
-	  $("#citizenship_country_info").addOption(object.Country_Code,object.Country);
-	  $("#citizenship_country_info option[@value='select']").attr('selected', 'true');
+          
+          $("#citizenship_country_info").addOption(object.Country_Code,object.Country);
+          $("#citizenship_country_info option[@value='select']").attr('selected', 'true');
 
-	  
-	  	  $("#resident_country_info").addOption(object.Country_Code,object.Country);
-	  	  $("#resident_country_info option[@value='select']").attr('selected', 'true');
-	  
-	  	  	   });
+          
+                    $("#resident_country_info").addOption(object.Country_Code,object.Country);
+                    $("#resident_country_info option[@value='select']").attr('selected', 'true');
+          
+                               });
     
     
     // passport, citizenship and resident values 
 
     $("#passport_country_info").change(function() {
 
-		passportcountry_selected = $("#passport_country_info option[@selected]").html();
-		
-		$("#passportcountry").val(passportcountry_selected);
-		
-	});	
-	
-	   $("#citizenship_country_info").change(function() {
+                passportcountry_selected = $("#passport_country_info option[@selected]").html();
+                
+                $("#passportcountry").val(passportcountry_selected);
+                
+        });        
+        
+           $("#citizenship_country_info").change(function() {
 
-		citizenshipcountry_selected = $("#citizenship_country_info option[@selected]").html();
-		
-		$("#citizen_country").val(citizenshipcountry_selected);
-		
-	});	
-	
-	$("#resident_country_info").change(function() {
+                citizenshipcountry_selected = $("#citizenship_country_info option[@selected]").html();
+                
+                $("#citizen_country").val(citizenshipcountry_selected);
+                
+        });        
+        
+        $("#resident_country_info").change(function() {
 
-		resident_country_value = $("#resident_country_info option[@selected]").html();
-		
-		
-		$("#residentcountry").val(resident_country_value);
-		
-		resident_country = resident_country_value;
-		
-		tax_treaty();
-		
-	});	
-	
-		$("#foreign_country_info").change(function() {
+                resident_country_value = $("#resident_country_info option[@selected]").html();
+                
+                
+                $("#residentcountry").val(resident_country_value);
+                
+                resident_country = resident_country_value;
+                
+                tax_treaty();
+                
+        });        
+        
+                $("#foreign_country_info").change(function() {
 
-		foreign_country_selected = $("#foreign_country_info option[@selected]").html();
-		
-       		$("#foreigncountry").val(foreign_country_selected);
-       		
-       		foreign_country_value = foreign_country_selected;
-       		
-       		cmb_comb_foreignaddress();
+                foreign_country_selected = $("#foreign_country_info option[@selected]").html();
+                
+                       $("#foreigncountry").val(foreign_country_selected);
+                       
+                       foreign_country_value = foreign_country_selected;
+                       
+                       cmb_comb_foreignaddress();
 
 
-	});	
-	
-	});
+        });        
+        
+        });
 });
 
 </script>
@@ -920,13 +920,13 @@ Line J : Tax Treaty on Wages for Students :
                                                                      
                                  <input type ="hidden" id="comb_fname_mname" name="comb_fname_mname" >
                                   <input type ="hidden" id="complete_name" name="complete_name" >
-								<input type ="hidden" id="comb_us_address1" name="comb_us_address1" >
-								<input type ="hidden" id="comb_us_address2" name="comb_us_address2" >
-								<input type ="hidden" id="comb_us_address" name="comb_us_address" >								
-								<input type ="hidden" id="comb_foreign_address" name="comb_foreign_address" >
-								<input type ="hidden" id="comb_current_visa_date" name="comb_current_visa_date">
-								<input type ="hidden" id="comb_tax_forms" name="comb_tax_forms">
-								<input type ="hidden" id="comb_university_address" name="comb_university_address" >
+                                                                <input type ="hidden" id="comb_us_address1" name="comb_us_address1" >
+                                                                <input type ="hidden" id="comb_us_address2" name="comb_us_address2" >
+                                                                <input type ="hidden" id="comb_us_address" name="comb_us_address" >                                                                
+                                                                <input type ="hidden" id="comb_foreign_address" name="comb_foreign_address" >
+                                                                <input type ="hidden" id="comb_current_visa_date" name="comb_current_visa_date">
+                                                                <input type ="hidden" id="comb_tax_forms" name="comb_tax_forms">
+                                                                <input type ="hidden" id="comb_university_address" name="comb_university_address" >
 
 <br />
 <br />
@@ -978,10 +978,10 @@ Line J : Tax Treaty on Wages for Students :
         >Privacy Policy</a>  at VisaTaxes.com</td>            
                
                                         </tr>
-										<tr>
-											<td align="left">
-													<INPUT TYPE="Image" src="imgs/Download_Form1042-S.gif" ALT="Submit button" onclick="changeAction(0);">
-									    </td>
+                                                                                <tr>
+                                                                                        <td align="left">
+                                                                                                        <INPUT TYPE="Image" src="imgs/Download_Form1042S.gif" ALT="Submit button" onclick="changeAction(0);">
+                                                                            </td>
                                         </tr>
 <tr>
 <td>
