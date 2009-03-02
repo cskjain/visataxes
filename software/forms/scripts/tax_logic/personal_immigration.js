@@ -124,9 +124,13 @@ function cmb_comb_foreignaddress()
 		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_zip").value ;
 	}
 	
+		if(!document.getElementById("residentcountry").value==""){
+
 //comb_foreign_address = comb_foreign_address + "," + foreign_country_value;
 
-comb_foreign_address = comb_foreign_address + document.getElementById("residentcountry").value;
+comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("residentcountry").value;
+
+}
 		
 document.getElementById("comb_foreign_address").value= comb_foreign_address;
 
