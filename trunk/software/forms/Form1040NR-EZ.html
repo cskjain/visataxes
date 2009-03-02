@@ -43,7 +43,6 @@ Loading Tax Software ... Please wait...<br>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script> 
 
-
 <!-- Jquery Json Select Box Plugin -->
 
 <script src="scripts/jquery_selectbox/jquery.selectboxes.js" type="text/javascript"></script>
@@ -55,17 +54,15 @@ $(document).ready(function(){
  jQuery.getJSON("scripts/data/country_data.js",function(jsonData) {
  $.each(jsonData,function(key,object) {
  
-  $("#foreign_country_info").addOption(object.Country_Code,object.Country);
-  $("#foreign_country_info option[@value='select']").attr('selected', 'true');
-
  
-          $("#passport_country_info").addOption(object.Country_Code,object.Country);
-          $("#passport_country_info option[@value='select']").attr('selected', 'true');
+ // $("#foreign_country_info").addOption(object.Country_Code,object.Country);
+ // $("#foreign_country_info option[@value='select']").attr('selected', 'true');
 
+         // $("#passport_country_info").addOption(object.Country_Code,object.Country);
+        // $("#passport_country_info option[@value='select']").attr('selected', 'true');
           
-          $("#citizenship_country_info").addOption(object.Country_Code,object.Country);
-          $("#citizenship_country_info option[@value='select']").attr('selected', 'true');
-
+        //  $("#citizenship_country_info").addOption(object.Country_Code,object.Country);
+       //   $("#citizenship_country_info option[@value='select']").attr('selected', 'true');          
           
                     $("#resident_country_info").addOption(object.Country_Code,object.Country);
                     $("#resident_country_info option[@value='select']").attr('selected', 'true');
@@ -74,22 +71,24 @@ $(document).ready(function(){
     
     
     // passport, citizenship and resident values 
+    
+    
 
-    $("#passport_country_info").change(function() {
+  //  $("#passport_country_info").change(function() {
 
-                passportcountry_selected = $("#passport_country_info option[@selected]").html();
+        //        passportcountry_selected = $("#passport_country_info option[@selected]").html();
                 
-                $("#passportcountry").val(passportcountry_selected);
+            //    $("#passportcountry").val(passportcountry_selected);
                 
-        });        
+ //       });        
         
-           $("#citizenship_country_info").change(function() {
+        //   $("#citizenship_country_info").change(function() {
 
-                citizenshipcountry_selected = $("#citizenship_country_info option[@selected]").html();
+              //  citizenshipcountry_selected = $("#citizenship_country_info option[@selected]").html();
                 
-                $("#citizen_country").val(citizenshipcountry_selected);
+             //   $("#citizen_country").val(citizenshipcountry_selected);
                 
-        });        
+   //    });        
         
         $("#resident_country_info").change(function() {
 
@@ -100,9 +99,16 @@ $(document).ready(function(){
                 
                 resident_country = resident_country_value;
                 
+                cmb_comb_foreignaddress();
+
+                
                 tax_treaty();
                 
+
+                
         });        
+        
+
         
                 $("#foreign_country_info").change(function() {
 
@@ -116,6 +122,8 @@ $(document).ready(function(){
 
 
         });        
+        
+        
         
         });
 });
@@ -171,7 +179,7 @@ $(document).ready(function(){
 <div id="content">
 <a name="top"></a>
 
-<h2 class='l2'>2008 Non Resident Tax Software - File Form 1040NR-EZ and Form 8843 Online</h2>
+<h2 class='l2'>2008 Form 1040NR-EZ Software Online - Non Resident Tax Form 1040NR-EZ, Form 8843 Online Software </h2>
 <form name ="visataxes" method="POST">
 <!-- Here are the containers / Tabs -->
 
@@ -180,7 +188,7 @@ $(document).ready(function(){
                
                 <li><a href="#Form1040NR-EZ_Personal"><span>1. Personal</span></a></li>
                                 <li><a href="#Form1040NR-EZ_Immigration"><span>2. Immigration</span></a></li>
-             <li><a href="#Form1040NR-EZ_Forms"><span>3. Forms</span></a></li>
+             <li><a href="#Form1040NR-EZ_Forms"><span>3. Forms</span></a></li> 
                                 <li><a href="#Form1040NR-EZ_Review_Submit"><span>4. Download Form 1040NR-EZ, Form 8843</span></a></li>
             </ul>
 
@@ -208,7 +216,7 @@ $(document).ready(function(){
 
                                                                 <br>
                                                                 
-                                                                Last Name * :&nbsp;<input type="text" id = "lname" name="lname" onChange="cmb_name();">
+                                                                Last Name * :&nbsp;<input type="text" id = "lname"  name ="lname" onChange="cmb_name();">
                                                         </td>
                                                 </tr>
 
@@ -286,13 +294,16 @@ $(document).ready(function(){
                                                                 Zip * :&nbsp;<input type="text" id = "foreign_zip" name="foreign_zip" onChange="cmb_comb_foreignaddress();">
                                                         </td>
                                                 </tr>
+                                                <!--
 <tr>
                                                         <td>        
                                                                 <br>
-                                                                Foreign Country * :&nbsp; <select id="foreign_country_info"/>
+                                                                Foreign Country * :&nbsp; <select id="foreign_country_info">
                                                         </td>
-                                                </tr>
-                                                
+                                                </tr> -->
+                                                          <tr><td></br>Foreign Country of Citizenship * : &nbsp; <select id="resident_country_info"/> &nbsp;<a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
+        >Help Me</a>
+</b></td>  </tr>
                                                                                                 
                                                 <tr>
                                                         <td>
@@ -331,7 +342,7 @@ $(document).ready(function(){
         >Help Me</a>
                                                         </td>
                                                         </tr>
-
+                                                        
                                                         <tr>
                                                                 <td>
                                                                         <br>
@@ -379,20 +390,21 @@ $(document).ready(function(){
                                                         </td>
                                                 </tr>
                                         </table>
-                                        
+                   
+<!-- Start of University Display Block -->
                                         
                                         <div id="university_information">
                                                 <table>
                                                         <tr>
                                                                 <td>
                                                                         <br><br>
-                                                                        <b>University Information * :</b>
+                                                                        <b>University or Research Institution * :</b>
                                                                 </td>
                                                         </tr>
                                                         <tr>
                                                                 <td>
                                                                         <br>
-                                                                        Name of your Educational  Institution * :&nbsp;<input type="text" id = "university_name" name="university_name">
+                                                                        Name of your University or Research Institution * :&nbsp;<input type="text" id = "university_name" name="university_name">
                                                                 </td>
                                                         </tr>
                                                         <tr>
@@ -419,7 +431,7 @@ $(document).ready(function(){
                                                         <tr>
                                                                 <td>
                                                                         <br>
-                                                                        University Phone *:&nbsp;<input type="text" id = "university_phone" name="university_phone" onChange="cmb_universityaddress();">
+                                                                        Phone *:&nbsp;<input type="text" id = "university_phone" name="university_phone" onChange="cmb_universityaddress();">
                                                                 </td>
                                                         </tr>
                                                         <tr>
@@ -432,6 +444,9 @@ $(document).ready(function(){
                                                         </tr>
                                                 </table>
                                         </div>
+                                        
+<!-- End of University Display Block -->
+                                        
                                         <table>
                                                 <tr>
                                                         <td>
@@ -450,52 +465,51 @@ $(document).ready(function(){
                                         </table>
 <br />
 <br />
-<!--<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>-->
+
+
 <br>
 Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
 <br>
-<!--<input type="button" value="Continue" onClick="$('#container-1').triggerTab(2)">-->
-
 
 
             </div>
                         <!--Tab 2 Body-->
-                        <div id="Form1040NR-EZ_Immigration">
-                                                </br>
+                        <div id="Form1040NR-EZ_Immigration"> </br>
                              <table>
                            
                             
               <tr> <td> </br><b>Immigration Information :</b>   </td>  </tr>
                              
 
-                                                                       <tr> <td> </br> <b>Country Information :</b></td>  </tr>
+                                                                       <!--<tr> <td> </br> <b>Country Information :</b></td>  </tr> -->
                                                                                                        
                                                                                                                                            
                                                                                                             
                                                                 
-                                                                         <tr> <td> </br>
-                                                                        Country that issued your passport * : &nbsp; <select id="passport_country_info"/> </td>  </tr>
+                                                                        <!-- <tr> <td> </br>
+                                                                        Country that issued your passport * : &nbsp; <select id="passport_country_info"/> </td>  </tr> -->
                                                                     
                                                                         <tr> <td> </br>Enter your passport number * :&nbsp;<input type="text" id = "passport_number" name="passport_number"></td>  </tr>
                                                                         
-                                                                         <tr> <td> </br>Country of Citizenship in 2008* :&nbsp;<select id="citizenship_country_info"/></td>  </tr>
+                                                                         <!-- <tr> <td> </br>Country of Citizenship in 2008* :&nbsp;<select id="citizenship_country_info"/></td>  </tr> -->
                                                         
 
                                                                     
-                                          <tr><td></br>Resident country for Tax Treaty Calculation * : &nbsp; <select id="resident_country_info"/> &nbsp;<a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
+                                          <!--<tr><td></br>Resident country for Tax Treaty Calculation * : &nbsp; <select id="resident_country_info"/> &nbsp;<a href="help/resident_country_tax_treaty_benefits.htm" onclick="return popitup('help/resident_country_tax_treaty_benefits.htm')"
         >Help Me</a>
-</b></td>  </tr>
+</b></td>  </tr> -->
 
                                                         
 
-<tr><td></br><b>Type of Visa and Dates Information :</b></td>  </tr>
+                                                                       <tr><td></br><b>Type of Visa and Dates Information :</b></td>  </tr>
      
      <tr><td></br>Date you first entered the United States * :
     <input name="date_entry" id="date_entry" class="date_entry" onChange="cmb_entry_visadate();"/> &nbsp; mm/dd/yyyy    (Example: Enter Jan 10, 2005 as 01/10/2005)
          </td>  </tr>
     <tr><td></br>
      Type of Visa when you first entered United States * :
-     <input name="visa_entry" id="visa_entry" class="visa_entry" onchange="cmb_entry_visadate();" /></td>  </tr>       </table>
+     <input name="visa_entry" id="visa_entry" class="visa_entry" onchange="cmb_entry_visadate();" /></td>  </tr>
+  </table>
   <table>
 
      <tr>
@@ -506,12 +520,12 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
 
      <td>
 </br>
-     <b>&nbsp;&nbsp;Visa Type</b>
+   <b>  &nbsp;&nbsp;Visa Type</b>
      </td>
 
      <td>
 </br>
-     <b>&nbsp;&nbsp;Days of presence in the United States</b>
+     <b>  &nbsp;&nbsp;Days of presence in the United States</b>
      </td>
 </tr>
 <tr>
@@ -520,7 +534,7 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-     &nbsp;&nbsp;<input type="text" id="visatype_yr7" name="visatype_yr7"  size = "12" />
+     &nbsp;&nbsp;<input  type="text" id="visatype_yr7" name="visatype_yr7" size = "12" />
      </td>
 
      <td>
@@ -534,7 +548,7 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-     &nbsp;&nbsp;<input type="text" id="visatype_yr6"  name="visatype_yr6" size = "12" />
+     &nbsp;&nbsp;<input type="text" id="visatype_yr6" name="visatype_yr6"  size = "12" />
      </td>
 
      <td>
@@ -547,7 +561,7 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-     &nbsp;&nbsp;<input type="text" id="visatype_yr5"  name="visatype_yr5" size = "12" />
+     &nbsp;&nbsp;<input type="text"  id="visatype_yr5" name="visatype_yr5" size = "12" />
      </td>
 
      <td>
@@ -573,7 +587,7 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-     &nbsp;&nbsp;<input type="text" id="visatype_yr3"  name="visatype_yr3" size = "12" />
+     &nbsp;&nbsp;<input type="text" id="visatype_yr3" name="visatype_yr3"  size = "12" />
      </td>
 
      <td>
@@ -599,7 +613,7 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-     &nbsp;&nbsp;<input type="text" id="visatype_yr_current" name="visatype_yr_current"  size = "12" onBlur="cmb_current_visadate();" />
+     &nbsp;&nbsp;<input type="text" id="visatype_yr_current" name="visatype_yr_current"  size = "12" onchange="cmb_current_visadate();" />
      </td>
 
      <td>
@@ -652,14 +666,6 @@ Name of the Tax Forms filed in the Year 2007 * :
 <br />
 <br />
 Click <a href="#top">Go To Top</a>, and Complete the 'Forms' Tab.
-<!--<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>
-
-                                    
-                                <br>
-                                <br>
-
-<input type="button" value="<-- Go Back" onClick="$('#container-1').triggerTab(1)">
-<input type="button" value="Continue --><!--" onClick="$('#container-1').triggerTab(3)"> -->
                                 
             </div>
                         <!--Tab 3 Body-->
@@ -712,18 +718,16 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Forms' Tab.
                                         $<input type ="text" id = "1098ebox1" name="1098ebox1"  onchange="calcLine9_10();">
                                         
                                 </div>
-                                <br>
-                               
-<br>
-Click <a href="#top">Go To Top</a>, and Download the Forms from 'Download Form 1040NR-EZ' Tab.
-<!--<i>'*' indicates mandatory fields, click <u>Help Me</u> for more information</i>
+                                
+
 
                                 <br>
                                 <br>
                                 
-<input type="button" value="<-- Go Back" onClick="$('#container-1').triggerTab(2)">
-<input type="button" value="Continue --><!--" onClick="$('#container-1').triggerTab(4)"> -->
-                        <br><br>
+Click <a href="#top">Go To Top</a>, and Download the forms from 'Download Form 1040NR-EZ' Tab.
+<br>
+                               
+<br>
                                 <table>
                      <tr>
                          <td><tr><tr>
@@ -733,14 +737,15 @@ Click <a href="#top">Go To Top</a>, and Download the Forms from 'Download Form 1
  <tr><td></td></tr>
                                        <tr>
                                                 <td>
+                                               Filing Status :
                            
-                                                        Filing Status :
+                                                        
                                                 </td>
                                                 <td>
                                                         <input type ="text" id = "filingstatus_value" name="filingstatus" value = "single" readonly>
                                                 </td>
                                         </tr>
-                                        <tr>
+                                      <!--   <tr>
                                                 <td>
                                                         Foreign Country :
                                                 </td>
@@ -764,10 +769,10 @@ Click <a href="#top">Go To Top</a>, and Download the Forms from 'Download Form 1
                                                 <td>
                                                         <input type ="text" id = "citizen_country" name="citizen_country" readonly>
                                                 </td>
-                                        </tr>
+                                        </tr> -->
   <tr>
                                                 <td>
-                                                        Resident Country for Tax Treaty Purposes :
+                                                        Foreign Country of Citizenship :
                                                 </td>
                                                 <td>
                                                         <input type ="text" id = "residentcountry" name="residentcountry"  readonly>
@@ -920,21 +925,25 @@ Click <a href="#top">Go To Top</a>, and Download the Forms from 'Download Form 1
 Line J : Tax Treaty on Wages for Students :                                                        
                                                 </td>
                                                 <td>
-                                                          <textarea  id="linej" name="linej" rows="2" cols="60" readonly>
+                                                        <textarea  id="linej" name="linej" rows="2" cols="60" readonly>
                                                           </textarea>
+                                                      
                                                 </td>
                                         </tr>
-                                                                       </table></br></br>
-                                                                       Click <a href="#top">Go To Top</a>, and Download the Forms from 'Download Form 1040NR-EZ' Tab.
-                                                                       
+                                                                       </table>
+                                                                             <br>
+                                                                             <br>
+                                                                             Click <a href="#top">Go To Top</a>, and Download the forms from 'Download Form 1040NR-EZ' Tab.
                                                                      
                                  <input type ="hidden" id="comb_fname_mname" name="comb_fname_mname" >
                                   <input type ="hidden" id="complete_name" name="complete_name" >
+
                                                                 <input type ="hidden" id="comb_us_address1" name="comb_us_address1" >
                                                                 <input type ="hidden" id="comb_us_address2" name="comb_us_address2" >
                                                                 <input type ="hidden" id="comb_us_address" name="comb_us_address" >                                                                
                                                                 <input type ="hidden" id="comb_foreign_address" name="comb_foreign_address" >
                                                                 <input type ="hidden" id="comb_current_visa_date" name="comb_current_visa_date">
+                                                                <input type ="hidden" id="comb_entry_visa_date" name="comb_entry_visa_date">
                                                                 <input type ="hidden" id="comb_tax_forms" name="comb_tax_forms">
                                                                 <input type ="hidden" id="comb_university_address" name="comb_university_address" >
 
@@ -976,12 +985,8 @@ Line J : Tax Treaty on Wages for Students :
 
                         
                                  </tr>
-<!--<tr>
-<td align="left"><br>
-<input type="button" value ="<-- Go Back" onClick="$('#container-1').triggerTab(3)">
-</td>
-</tr>  -->
-<tr>
+
+
 <tr><td height="64" align="left">
                          <input type="checkbox" name="chkAccept" id="chkAccept" checked ="checked" disabled="disabled">&nbsp;I accept the <a href="https://www.visataxes.com/terms_of_service.php" onclick="return popitup('http://www.visataxes.com/terms_of_service.php')" 
         >Terms and Conditions</a> and the <a href="https://www.visataxes.com/privacy.php" onclick="return popitup('https://www.visataxes.com/privacy.php')" 
