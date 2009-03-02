@@ -121,13 +121,14 @@ function cmb_comb_foreignaddress()
 		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_state").value;
 	}
 	if(!document.getElementById("foreign_zip").value==""){
-		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_zip").value;
+		comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("foreign_zip").value ;
 	}
 	
-comb_foreign_address = comb_foreign_address + "," + foreign_country_value;
+//comb_foreign_address = comb_foreign_address + "," + foreign_country_value;
+
+comb_foreign_address = comb_foreign_address + document.getElementById("residentcountry").value;
 		
 document.getElementById("comb_foreign_address").value= comb_foreign_address;
-
 
 }
 
