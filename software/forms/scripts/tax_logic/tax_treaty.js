@@ -84,6 +84,12 @@ function tax_treaty(){
 				article="22(1)";
 
 				break;
+				
+			case "India": 
+
+				article="21(2)";
+
+				break;
 
 			case "Indonesia": 
 
