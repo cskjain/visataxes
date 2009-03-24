@@ -47,6 +47,7 @@ var line8 = 0;
 
 var line16 = 0;
 
+// Standard Deduction for Year 2008 is $5450
 
+var standard_deduction = 5450;
 
-// Initialize Section Form 1042-S
