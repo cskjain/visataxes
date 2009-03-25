@@ -145,7 +145,7 @@ purpose_of_visit=document.getElementById('purpose_of_visit').value;
 resident_country=document.getElementById("residentcountry").value;
 
 
-if ((resident_country =="India" ) && (purpose_of_visit == "student"))
+if (resident_country =="India" && purpose_of_visit == "student")
 
 {
 
