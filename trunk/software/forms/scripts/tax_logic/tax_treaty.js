@@ -85,11 +85,6 @@ function tax_treaty(){
 
 				break;
 				
-			case "India": 
-
-				article="21(2)";
-
-				break;
 
 			case "Indonesia": 
 
@@ -225,6 +220,7 @@ function tax_treaty(){
 		// do not display linej
 
     }
+
 
 	
 	if(line6==0){
