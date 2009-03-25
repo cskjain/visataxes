@@ -139,6 +139,27 @@ function calcLine10(){
 
 function calcLine11()
 {
+
+resident_country=document.getElementById("residentcountry").value;
+
+
+if (resident_country =="India")
+
+{
+
+document.getElementById("linej").value = "Standard Deduction - Article 21(2) of India US Tax Treaty $" + standard_deduction;
+
+line11 = standard_deduction;
+
+document.getElementById('line11').value = line11;
+
+calcLine12();
+
+}
+
+else
+
+{
 	var w2box17 = document.getElementsByName("w2box17");
 	var i = 0;
 	var sumw2box17 = 0;
@@ -160,6 +181,8 @@ function calcLine11()
 		line11 = 0;
 	document.getElementById('line11').value = line11;
 	calcLine12();
+	
+	}
 }
 
 function calcLine12(){
