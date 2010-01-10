@@ -39,15 +39,15 @@ var line14=0;
 var line15=0;
 var filing_status="";
 
-// Exemption Deduction Line 13 value for Year 2008 is $3500
+// Exemption Deduction Line 13 value for Year 2009 is $3650
 
-var line13 = 3500;
+var line13 = 3650;
 
 var line8 = 0;
 
 var line16 = 0;
 
-// Standard Deduction for Year 2008 is $5450
+// Standard Deduction for Year 2009 is $5700
 
-var standard_deduction = 5450;
+var standard_deduction = 5700;
 
