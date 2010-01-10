@@ -47,7 +47,7 @@ var line8 = 0;
 
 var line16 = 0;
 
-// Standard Deduction for Year 2009 is $5700
+// Standard Deduction for Year 2009 is $5700 for Single
 
 var standard_deduction = 5700;
 
