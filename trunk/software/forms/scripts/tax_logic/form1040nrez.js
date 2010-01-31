@@ -6,7 +6,7 @@
 
 function calcLine_1_2_9_13_15()
 {
-document.getElementById('filingstatus_value').value = document.getElementById('filingstatus').value;
+   document.getElementById('filingstatus_value').value = document.getElementById('filingstatus').value;
         calcLine9_10();
         calcLine15();
         
