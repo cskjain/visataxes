@@ -39,7 +39,7 @@ var line14=0;
 var line15=0;
 var filing_status="";
 
-// Exemption Deduction Line 13 value for Year 2009 is $3650
+// Personal Exemption Deduction Line 13 value for Year 2009 is $3650
 
 var line13 = 3650;
 
