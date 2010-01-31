@@ -231,10 +231,16 @@ function tax_treaty(){
         if(line6==0){
 
                 document.getElementById("linej").value = "";
-                //document.getElementById("labellinej").innerHTML = "";
+                                document.getElementById("tarticle").value = "";
+
+                
+                
         }else{
+        
+     document.getElementById("tarticle").value = article;    
                 
 document.getElementById("linej").value = "during Studying and Training: $"+line6+" based on Article: "+article ;;
+
 
         }
 
