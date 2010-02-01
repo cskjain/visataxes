@@ -2,7 +2,6 @@
 //function to calculate the tax 
 
 function tax_treaty(){
-        
         //get country value from the form
 
         //citizencountry=document.getElementById('citizencountry').value;
@@ -232,15 +231,15 @@ function tax_treaty(){
 
                 document.getElementById("linej").value = "";
                                 document.getElementById("tarticle").value = "";
-
                 
-                
-        }else{
+        }
+		else{
         
-     document.getElementById("tarticle").value = article;    
-                
-document.getElementById("linej").value = "during Studying and Training: $"+line6+" based on Article: "+article ;;
-
+			 document.getElementById("tarticle").value = article;    
+						
+			 document.getElementById("linej").value = "during Studying and Training: $"+line6+" based on Article: "+article ;;
+			 
+			 calcTaxTreatyClaim();
 
         }
 
@@ -250,3 +249,32 @@ document.getElementById("linej").value = "during Studying and Training: $"+line6
 
 }
 
+function calcTaxTreatyClaim(){
+		var total_days = 0;
+		if (document.getElementById("taxtreaty_yr7").value == "yes")
+		{
+			total_days += document.getElementById("days_yr7").value - 0;
+		}
+		if (document.getElementById("taxtreaty_yr6").value == "yes")
+		{
+			total_days += document.getElementById("days_yr6").value - 0;
+		}
+		if (document.getElementById("taxtreaty_yr5").value == "yes")
+		{
+			total_days += document.getElementById("days_yr5").value - 0;
+		}
+		if (document.getElementById("taxtreaty_yr4").value == "yes")
+		{
+			total_days += document.getElementById("days_yr4").value - 0;
+		}
+		if (document.getElementById("taxtreaty_yr3").value == "yes")
+		{
+			total_days += document.getElementById("days_yr3").value - 0;
+		}
+		if (document.getElementById("taxtreaty_yr2").value == "yes")
+		{
+			total_days += document.getElementById("days_yr2").value - 0;
+		}
+		var total_months = Math.round(total_days / 30);
+		document.getElementById("total_months").value = total_months;
+}
