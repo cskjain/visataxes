@@ -66,27 +66,27 @@ function tax()
             return;
         }
         
-        else if ( line14  <= 8025)
+        else if ( line14  <= 8350)
         {
             line15 = Math.round(0.10 * tax_average);
             return;
         }
 
-        else if ( (line14 > 8025) && (line14 <= 32550))
+        else if ( (line14 > 8350) && (line14 <= 33950))
         {
-            line15 = Math.round( 802.5 + 0.15 * (tax_average - 8025));
+            line15 = Math.round( 835.00 + 0.15 * (tax_average - 8350));
             return;
         }
 
-        else if ( (line14 > 32550) && (line14 <= 78850))
+        else if ( (line14 > 33950) && (line14 <= 82250))
         {
-            line15 = Math.round( 4481.25 + 0.25 * (tax_average - 32550));
+            line15 = Math.round( 4675.00 + 0.25 * (tax_average - 33950));
             return;
         }
         
-        else if ( (line14 > 78850 ) && (line14 <= 100000))
+        else if ( (line14 > 82250 ) && (line14 <= 100000))
         {
-            line15 = Math.round( 16056.25 + 0.28 * (tax_average - 78850));
+            line15 = Math.round( 16750.00 + 0.28 * (tax_average - 82250));
             return;
         }
         
@@ -121,27 +121,27 @@ function tax()
             return;
         }
         
-        else if ( line14  <= 8025)
+        else if ( line14  <= 8350)
         {
             line15 = Math.round(0.10 * tax_average);
             return;
         }
 
-        else if ( (line14 > 8025) && (line14 <= 32550))
+        else if ( (line14 > 8350) && (line14 <= 33950))
         {
-            line15 = Math.round( 802.5 + 0.15 * (tax_average - 8025));
+            line15 = Math.round( 835.00 + 0.15 * (tax_average - 8350));
             return;
         }
 
-        else if ( (line14 > 32550) && (line14 <= 65725))
+        else if ( (line14 > 33950) && (line14 <= 68525))
         {
-            line15 = Math.round( 4481.25 + 0.25 * (tax_average - 32550));
+            line15 = Math.round( 4675.00 + 0.25 * (tax_average - 33950));
             return;
         }
         
-        else if ( (line14 > 65725) && (line14 <= 100000))
+        else if ( (line14 > 68525) && (line14 <= 100000))
         {
-            line15 = Math.round ( 12775 + 0.28 * (tax_average - 65725));
+            line15 = Math.round ( 13318.75 + 0.28 * (tax_average - 68525));
             return;
         }
     
