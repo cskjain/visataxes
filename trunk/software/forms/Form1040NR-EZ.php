@@ -563,11 +563,11 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-      &nbsp;&nbsp;<input type="text" id="days_yr7" name="days_yr7" size="12">
+      &nbsp;&nbsp;<input type="text" id="days_yr7" name="days_yr7" size="12" onchange="tax_treaty();">
      </td>
      
      <td>
-&nbsp;&nbsp;<select name="taxtreaty_yr7" id = "taxtreaty_yr7"  >
+&nbsp;&nbsp;<select name="taxtreaty_yr7" id = "taxtreaty_yr7"  onchange="tax_treaty();">
                                                 <option value="no" selected="selected">No </option>
                                                 <option value="yes" >Yes</option>
                                         </select> 
@@ -585,11 +585,11 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-      &nbsp;&nbsp;<input type="text" id="days_yr6" name="days_yr6" size="12">
+      &nbsp;&nbsp;<input type="text" id="days_yr6" name="days_yr6" size="12" onchange="tax_treaty();">
      </td>
      
        <td>
-&nbsp;&nbsp;<select name="taxtreaty_yr6" id = "taxtreaty_yr6"  >
+&nbsp;&nbsp;<select name="taxtreaty_yr6" id = "taxtreaty_yr6"  onchange="tax_treaty();">
                                                 <option value="no" selected="selected">No </option>
                                                 <option value="yes" >Yes</option>
                                         </select> 
@@ -606,11 +606,11 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-      &nbsp;&nbsp;<input type="text" id="days_yr5" name="days_yr5" size="12">
+      &nbsp;&nbsp;<input type="text" id="days_yr5" name="days_yr5" size="12" onchange="tax_treaty();">
      </td>
      
        <td>
-&nbsp;&nbsp;<select name="taxtreaty_yr5" id = "taxtreaty_yr5"  >
+&nbsp;&nbsp;<select name="taxtreaty_yr5" id = "taxtreaty_yr5"  onchange="tax_treaty();">
                                                 <option value="no" selected="selected">No </option>
                                                 <option value="yes" >Yes</option>
                                         </select> 
@@ -627,11 +627,11 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-      &nbsp;&nbsp;<input type="text" id="days_yr4" name="days_yr4" size="12">
+      &nbsp;&nbsp;<input type="text" id="days_yr4" name="days_yr4" size="12" onchange="tax_treaty();">
      </td>
      
        <td>
-&nbsp;&nbsp;<select name="taxtreaty_yr4" id = "taxtreaty_yr4"  >
+&nbsp;&nbsp;<select name="taxtreaty_yr4" id = "taxtreaty_yr4"  onchange="tax_treaty();">
                                                 <option value="no" selected="selected">No </option>
                                                 <option value="yes" >Yes</option>
                                         </select> 
@@ -648,11 +648,11 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-      &nbsp;&nbsp;<input type="text" id="days_yr3" name="days_yr3" size="12">
+      &nbsp;&nbsp;<input type="text" id="days_yr3" name="days_yr3" size="12" onchange="tax_treaty();">
      </td>
      
        <td>
-&nbsp;&nbsp;<select name="taxtreaty_yr3" id = "taxtreaty_yr3"  >
+&nbsp;&nbsp;<select name="taxtreaty_yr3" id = "taxtreaty_yr3"  onchange="tax_treaty();">
                                                 <option value="no" selected="selected">No </option>
                                                 <option value="yes" >Yes</option>
                                         </select> 
@@ -669,11 +669,11 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 
      <td>
-      &nbsp;&nbsp;<input type="text" id="days_yr2" name="days_yr2" size="12">
+      &nbsp;&nbsp;<input type="text" id="days_yr2" name="days_yr2" size="12" onchange="tax_treaty();">
      </td>
      
        <td>
-&nbsp;&nbsp;<select name="taxtreaty_yr2" id = "taxtreaty_yr2"  >
+&nbsp;&nbsp;<select name="taxtreaty_yr2" id = "taxtreaty_yr2"  onchange="tax_treaty();">
                                                 <option value="no" selected="selected">No </option>
                                                 <option value="yes" >Yes</option>
                                         </select> 
@@ -702,7 +702,7 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
      </td>
 </tr>
 </table>
-    
+    <input type="hidden" name="total_months" id ="total_months">
           <br />
      <br />
      Date when your current Visa was issued * :
@@ -719,149 +719,94 @@ Click <a href="#top">Go To Top</a>, and Complete the 'Immigration' Tab.
 <br><br>
 Example: If you Entered US in Jan 30, 2009 and Departed US Nov 15, 2009, mention Entry date as 
 01 30 09 and Departure date as 11 15 09 in MM DD YY format.
-     <br />
-     <br />
-     
-    
-                      
-     
 
-       
-           <u>2009 Entry Dates</u> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <u>2009 Departure Dates</u><br />
-     <br />
-     
-     MM  &nbsp;&nbsp; &nbsp;&nbsp;DD &nbsp;&nbsp; &nbsp;YY &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MM &nbsp;&nbsp; &nbsp;&nbsp;DD &nbsp;&nbsp; &nbsp;YY<br>
+<br />
+<br />
+                      
+     <table width="400px">
+	 <tr>
+		<td align="center">
+           <u>2009 Entry Dates</u>
+		</td>
+		<td align="center">
+		   <u>2009 Departure Dates</u>
+		</td>
+	 </tr>
+	 <tr>
+		<td>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MM   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; YY 
+		</td>
+		<td>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MM   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DD &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; YY 
+		</td>
                     
-                    
-                    
-           <tr>
+     </tr>                          
+     <tr>
            
-            <td>
-     <input type="text" id="entrymonth1" name="entrymonth1"  size = "2" />
-     </td>
-               <td>
-     <input type="text" id="entrydate1" name="entrydate1"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="entryyear1" name="entryyear1"  size = "2" />
-     </td>           
-             <td>
-     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<input type="text" id="departuremonth1" name="departuremonth1"  size = "2" />
-     </td>
-               <td>
-    <input type="text" id="departuredate1" name="departuredate1"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="departureyear1" name="departureyear1"  size = "2" />
-     </td>  
+        <td align="center">
+			<input type="text" id="entrymonth1" name="entrymonth1"  size = "2" />
+			<input type="text" id="entrydate1" name="entrydate1"  size = "2" />
+			<input type="text" id="entryyear1" name="entryyear1"  size = "2" />
+		</td>           
+        <td align="center">
+			<input type="text" id="departuremonth1" name="departuremonth1"  size = "2" />
+			<input type="text" id="departuredate1" name="departuredate1"  size = "2" />
+			<input type="text" id="departureyear1" name="departureyear1"  size = "2" />
+		</td>  
            
-           </tr>
-     
-     
-     
-     <br><br>
-             <tr>
+     </tr>
+     <tr align="center">
            
-            <td>
-     <input type="text" id="entrymonth2" name="entrymonth2"  size = "2" />
-     </td>
-               <td>
-     <input type="text" id="entrydate2" name="entrydate2"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="entryyear2" name="entryyear2"  size = "2" />
-     </td>           
-             <td>
-     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<input type="text" id="departuremonth2" name="departuremonth2"  size = "2" />
-     </td>
-               <td>
-    <input type="text" id="departuredate2" name="departuredate2"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="departureyear2" name="departureyear2"  size = "2" />
-     </td>  
+        <td>
+			<input type="text" id="entrymonth2" name="entrymonth2"  size = "2" />
+			<input type="text" id="entrydate2" name="entrydate2"  size = "2" />
+			<input type="text" id="entryyear2" name="entryyear2"  size = "2" />
+		</td>           
+		<td align="center">
+			<input type="text" id="departuremonth2" name="departuremonth2"  size = "2" />
+			<input type="text" id="departuredate2" name="departuredate2"  size = "2" />
+			<input type="text" id="departureyear2" name="departureyear2"  size = "2" />
+		</td>  
            
-           </tr>
+     </tr>
+	 <tr align="center">
+		<td>
+			<input type="text" id="entrymonth3" name="entrymonth3"  size = "2" />
+			<input type="text" id="entrydate3" name="entrydate3"  size = "2" />
+			<input type="text" id="entryyear3" name="entryyear3"  size = "2" />
+		</td>           
+        <td align="center">
+			<input type="text" id="departuremonth3" name="departuremonth3"  size = "2" />
+			<input type="text" id="departuredate3" name="departuredate3"  size = "2" />
+			<input type="text" id="departureyear3" name="departureyear3"  size = "2" />
+		</td>  
+    </tr>
+    <tr align="center">
+        <td>
+			<input type="text" id="entrymonth4" name="entrymonth4"  size = "2" />
+			<input type="text" id="entrydate4" name="entrydate4"  size = "2" />
+			<input type="text" id="entryyear4" name="entryyear4"  size = "2" />
+		</td>           
+        <td align="center">
+			<input type="text" id="departuremonth4" name="departuremonth4"  size = "2" />
+			<input type="text" id="departuredate4" name="departuredate4"  size = "2" />
+			<input type="text" id="departureyear4" name="departureyear4"  size = "2" />
+		</td>  
+    </tr>
+    <tr>
+        <td align="center">
+			<input type="text" id="entrymonth5" name="entrymonth5"  size = "2" />
+			<input type="text" id="entrydate5" name="entrydate5"  size = "2" />
+			<input type="text" id="entryyear5" name="entryyear5"  size = "2" />
+		</td>           
+        <td align="center">
+			<input type="text" id="departuremonth5" name="departuremonth5"  size = "2" />
+			<input type="text" id="departuredate5" name="departuredate5"  size = "2" />
+			<input type="text" id="departureyear5" name="departureyear5"  size = "2" />
+		</td>  
+     </tr>
            
-           
-           
-                <br><br>
-             <tr>
-           
-            <td>
-     <input type="text" id="entrymonth3" name="entrymonth3"  size = "2" />
-     </td>
-               <td>
-     <input type="text" id="entrydate3" name="entrydate3"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="entryyear3" name="entryyear3"  size = "2" />
-     </td>           
-             <td>
-     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<input type="text" id="departuremonth3" name="departuremonth3"  size = "2" />
-     </td>
-               <td>
-    <input type="text" id="departuredate3" name="departuredate3"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="departureyear3" name="departureyear3"  size = "2" />
-     </td>  
-           
-           </tr>
-           
-           
-           
-           
-                <br><br>
-             <tr>
-           
-            <td>
-     <input type="text" id="entrymonth4" name="entrymonth4"  size = "2" />
-     </td>
-               <td>
-     <input type="text" id="entrydate4" name="entrydate4"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="entryyear4" name="entryyear4"  size = "2" />
-     </td>           
-             <td>
-     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<input type="text" id="departuremonth4" name="departuremonth4"  size = "2" />
-     </td>
-               <td>
-    <input type="text" id="departuredate4" name="departuredate4"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="departureyear4" name="departureyear4"  size = "2" />
-     </td>  
-           
-           </tr>
-           
-           
-                   <br><br>
-             <tr>
-           
-            <td>
-     <input type="text" id="entrymonth5" name="entrymonth5"  size = "2" />
-     </td>
-               <td>
-     <input type="text" id="entrydate5" name="entrydate5"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="entryyear5" name="entryyear5"  size = "2" />
-     </td>           
-             <td>
-     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;<input type="text" id="departuremonth5" name="departuremonth5"  size = "2" />
-     </td>
-               <td>
-    <input type="text" id="departuredate5" name="departuredate5"  size = "2" />
-     </td>
-         <td>
-     <input type="text" id="departureyear5" name="departureyear5"  size = "2" />
-     </td>  
-           
-           </tr>
-           
-    
+    </table>
      
     
      <br><br>
@@ -1194,7 +1139,10 @@ Line J : Tax Treaty on Wages for Students :
 
                                                                 <input type ="hidden" id="comb_us_address1" name="comb_us_address1" >
                                                                 <input type ="hidden" id="comb_us_address2" name="comb_us_address2" >
-                                                                <input type ="hidden" id="comb_us_address" name="comb_us_address" >                                                                
+                                                                <input type ="hidden" id="comb_us_address" name="comb_us_address" >
+
+                                                                <input type ="hidden" id="comb_foreign_address_street" name="comb_foreign_address_street" >
+                                                                
                                                                 <input type ="hidden" id="comb_foreign_address" name="comb_foreign_address" >
                                                                 <input type ="hidden" id="comb_current_visa_date" name="comb_current_visa_date">
                                                                 <input type ="hidden" id="comb_entry_visa_date" name="comb_entry_visa_date">
