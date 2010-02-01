@@ -295,6 +295,3 @@ function calcLine25(){
 }
 
 
-
-
-
