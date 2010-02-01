@@ -895,13 +895,22 @@ Name of the Tax Forms filed in the Year 2008 * :
 
 <br />
 <br />
+
+   Have you applied for a Green Card ?
+     <select name="gc" id="gc" >
+         <option value="Yes" >Yes</option>
+         <option value="No" selected="selected">No</option>
+     </select>
+     <br />
+     <br />
+     <br />
 Click <a href="#top">Go To Top</a>, and Complete the 'Forms' Tab.
                                 
             </div>
                         <!--Tab 3 Body-->
                         <div id="Form1040NR-EZ_Forms"> <br>                                  
         
-                                <b>Forms:</b>  <br> <br> 
+                                <b>Forms:</b>  
                                 
                                 
                                 Do you receive Form W-2? 
