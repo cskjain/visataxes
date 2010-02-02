@@ -138,7 +138,7 @@ comb_foreign_address=comb_foreign_address+","+" "+document.getElementById("resid
                 
 document.getElementById("comb_foreign_address").value= comb_foreign_address;
 
-document.getElementById("comb_foreign_address_street").value= comb_foreign_address;
+document.getElementById("comb_foreign_address_street").value= comb_foreign_address_street;
 
 }
 
@@ -208,6 +208,6 @@ function cmb_entry_visadate()
 //function for comb_tax_forms
 function cmbcomb_taxforms(){
         comb_tax_forms="";
-        comb_tax_forms="Year 2007"+","+document.getElementById("tax_forms").value;
+        comb_tax_forms="Year 2008"+","+document.getElementById("tax_forms").value;
         document.getElementById("comb_tax_forms").value = comb_tax_forms;
 }
